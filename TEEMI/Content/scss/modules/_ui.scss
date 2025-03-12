@@ -1,0 +1,38 @@
+.sr-only-goContent{
+	background-color:$primary;
+	color: #FFF;
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	text-decoration: none;
+	font-size: 1rem;
+	padding: .25rem .5rem 0 .25rem;
+    z-index: 5000;    
+	&:active, &:focus {
+		position: static;
+		width: auto !important;
+		height: auto !important;
+		margin: 0;
+		overflow: visible;
+		clip: auto;
+	}
+}
+
+.fun-showHidePD__button{
+    background-color: #FFF;
+    color: $gray-900;
+    > i{
+        display: inline-block;
+        width: 1.5rem;
+        text-align: center;
+    }
+}
+
+.input-group.rounded-pill{
+    :first-child{
+        border-radius: var(--bs-border-radius-pill) 0 0 var(--bs-border-radius-pill) !important;
+    }
+    :last-child{
+        border-radius: 0 var(--bs-border-radius-pill) var(--bs-border-radius-pill) 0 !important;
+    }
+}
