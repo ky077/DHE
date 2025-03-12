@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="英語文說寫能力快篩系統 EMI Screening Test">
+<meta name="keywords" content="英語,英文,英語文,說,寫,快篩">
+<meta name="author" content="EMI Screening Test, NTNU, National Taiwan Normal University">
+<title>英語文說寫能力快篩系統 EMI Screening Test</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<!-- core CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/styles.css">
+</head>
+
+<body>
+<form>
+  <a href="#content" title="跳到主要內容" tabindex="1" class="visually-hidden-focusable sr-only-goContent">跳到主要內容</a>  
+  <header> </header>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <main id="#content"> 
+    <!-- index-banner start -->
+    <div class="index-banner wow animate__animated animate__fadeIn sticky-top">
+        <!--<span class="wow animate__animated animate__backInDown"></span>--></div>
+    <!-- index-banner end --> 
+    
+    <!-- section1 start -->
+    <div class="index-section1">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-xs-12 col-xxl-10 section1-bg">
+            <div class="row flex-center-md">
+              <div class="col-12 col-xl-6">
+                <div class="section1-circleText wow animate__animated animate__fadeInLeft">
+                  <div class="row">
+                    <div class="col-md-11">
+                      <p>因應大學國際化之趨勢，國內各大學廣設EMI課程。為了評量學生是否具備修習EMI課程所需之英語文能力，同時瞭解學生修習EMI課程之英語文學習狀況，特別開發「英語文說寫能力快篩系統」，滿足學校及學生之需求。</p>
+ <p>「英語文說寫能力快篩系統」為一套快速便捷的線上測驗系統，包含口語和寫作兩個分項測驗，具有可靠且穩定良好的題目品質。口語和寫作測驗採「即測即評」之作法，可立即產出測驗結果。各校可採用作為全英或中文授課分班篩選之基準，亦可採計作為學期前後測比較之參考。請多多利用！</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-10 mx-sm-auto col-xl-6 d-flex flex-column justify-content-center">
+                <div class="section1-btnArea">
+                  <div class="section1-btn speaking wow animate__animated animate__fadeInDown animate__delay-1s"> <a href="speaking/index.html" title="登入後點選進入英語口說評量"> <img src="Content/images/index/icon-speaking.svg" alt="" class="section1-btn-icon"/> <span class="section1-btn-logo">英語口說快篩系統</span> <span class="section1-btn-go">go!</span> </a></div>
+                  <div class="section1-btn writing wow animate__animated animate__fadeInDown animate__delay-1s"> <a href="writing/index.html" title="登入後點選進入英文寫作評量"> <img src="Content/images/index/icon-writing.svg" alt="" class="section1-btn-icon"/> <span class="section1-btn-logo">英文寫作快篩系統</span> <span class="section1-btn-go">go!</span> </a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- section1 end--> 
+  </main>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <footer class="footer"> </footer>
+  <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+  <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+  <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+  <script src="Content/js/jquery-3.6.0.min.js"></script> 
+  <script src="Content/js/bootstrap.bundle.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> 
+  <script src="Content/js/main.js"></script> 
+  <script>
+    //jQuery load header
+    $('header').load('_header.html', function(){
+        //當前頁active狀態
+        $('.navTab-index .nav-link').addClass('active');
+        
+        //模擬 切換語系
+        $('.navTab-lang .dropdown-menu .dropdown-item').click(function(e){
+            e.preventDefault();
+            
+            //取得點取語言
+            let getText = $(this).text();
+            $('.navTab-lang .dropdown-toggle').text(getText);
+
+            //設定html lang=""
+            let getHref = $(this).attr('href').substr(1);
+            $('html').attr('lang', getHref);
+            
+            //模擬 切換語系內容
+            switch( getHref ){
+                case 'zh-Hant-TW': 
+                    $('.navTab-index a').text('首頁');
+                    $('.navTab-info a').text('最新消息');
+                    $('.navTab-register a').text('註冊');
+                    $('.navTab-login a').text('登入');
+                    
+                    $('.index-section1 p:nth-child(1)').html('因應大學國際化之趨勢，國內各大學廣設EMI課程。為了評量學生是否具備修習EMI課程所需之英語文能力，同時瞭解學生修習EMI課程之英語文學習狀況，特別開發「英語文說寫能力快篩系統」，滿足學校及學生之需求。');
+                    $('.index-section1 p:nth-child(2)').html('「英語文說寫能力快篩系統」為一套快速便捷的線上測驗系統，包含口語和寫作兩個分項測驗，具有可靠且穩定良好的題目品質。口語和寫作測驗採「即測即評」之作法，可立即產出測驗結果。各校可採用作為全英或中文授課分班篩選之基準，亦可採計作為學期前後測比較之參考。請多多利用！');
+                    
+                    $('.speaking .section1-btn-logo').text('英語口說評量系統');
+                    $('.writing .section1-btn-logo').text('英文寫作評量系統');
+                    
+                    break;
+
+                case 'en-US': 
+                    $('.navTab-index a').text('Home');
+                    $('.navTab-info a').text('News');
+                    $('.navTab-register a').text('Register');
+                    $('.navTab-login a').text('Login');
+                    
+                    $('.index-section1 p:nth-child(1)').html('In response to the trend of internationalization of universities, various domestic universities have widely established EMI courses. In order to evaluate whether students have the English language ability required to take EMI courses, and at the same time understand the English language learning status of students taking EMI courses, the "English Speaking and Writing Ability Quick Screening System" was specially developed to meet the needs of schools and students.');
+                    $('.index-section1 p:nth-child(2)').html('The "English Speaking and Writing Ability Quick Screening System" is a fast and convenient online test system, including two sub-tests: speaking and writing, with reliable, stable and good question quality. The speaking and writing tests adopt a "test and evaluate" method, which can produce test results immediately. Each school can use it as a benchmark for selecting classes taught in English or Chinese, and can also use it as a reference for comparison between pre- and post-semester tests. Please take advantage of it!');
+                    
+                    $('.speaking .section1-btn-logo').text('SPEAKING');
+                    $('.writing .section1-btn-logo').text('WRITING');
+                    
+                    break;
+
+                default:
+                    $('.navTab-index a').text('首頁');
+                    $('.navTab-info a').text('最新消息');
+                    $('.navTab-register a').text('註冊');
+                    $('.navTab-login a').text('登入');
+                    
+                    $('.index-section1 p:nth-child(1)').html('因應大學國際化之趨勢，國內各大學廣設EMI課程。為了評量學生是否具備修習EMI課程所需之英語文能力，同時瞭解學生修習EMI課程之英語文學習狀況，特別開發「英語文說寫能力快篩系統」，滿足學校及學生之需求。');
+                    $('.index-section1 p:nth-child(2)').html('「英語文說寫能力快篩系統」為一套快速便捷的線上測驗系統，包含口語和寫作兩個分項測驗，具有可靠且穩定良好的題目品質。口語和寫作測驗採「即測即評」之作法，可立即產出測驗結果。各校可採用作為全英或中文授課分班篩選之基準，亦可採計作為學期前後測比較之參考。請多多利用！');
+                    
+                    $('.speaking .section1-btn-logo').text('英語口說評量系統');
+                    $('.writing .section1-btn-logo').text('英文寫作評量系統');
+                    break;    
+            }
+        }); 
+    }); 
+      
+    //jQuery load footer
+    $('footer').load('_footer.html');  
+     
+    //模擬 未登入點系統，跳出訊息
+    $('a[href="speaking/index.html"], a[href="writing/index.html"]').click(function(e){
+        e.preventDefault();
+        
+        alertModalDOM('<div class="text-center">請先註冊/登入。</div>');
+
+        switch ($(this).attr('href')){
+            case 'speaking/index.html':
+                $('#alertModal .btn').removeClass('btn-primary').addClass('btn-primary');
+                break;
+                
+            case 'writing/index.html':
+                $('#alertModal .btn').removeClass('btn-primary').addClass('btn-secondary');
+                break; 
+                
+            default:
+                break;    
+        }
+        
+        //關閉modal後導向登入頁    
+        document.getElementById('alertModal').addEventListener('hide.bs.modal', event => {
+            window.location.href = 'login.html';
+        })
+    });
+    </script>
+</form>
+</body>
+</html>

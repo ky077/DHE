@@ -1,0 +1,21 @@
+.register-section{
+    min-height: calc(100vh - 80px - 11vh);
+    background-image: url("../images/register/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+    display: flex;
+    >.container{
+        background-color: rgba(white, .85);
+    }
+    h2{
+        font-size: 1.5rem;
+        color: $secondary;
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0,0,0, .2);
+        box-shadow: 0 1px rgba(255,255,255, .6); 
+        margin-bottom: 2rem;
+    }
+}

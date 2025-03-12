@@ -1,0 +1,52 @@
+.login-section{ 
+    min-height: calc(100vh - 80px - 11vh);
+    background-image: url("../images/login/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    .login-section-slogan{
+        font-size: 5.5vw;
+        line-height: 1.4;
+        font-weight: 700;
+        font-style: italic;
+        color: #fff;
+        text-shadow: 2px 2px 5px rgba(black, .5), 0px 0px 20px rgba(black, .75); 
+        text-align: center;
+        margin: 2rem 0 1rem 0;
+        @media screen and (min-width: 992px) {
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+        }
+        @media screen and (min-width: 1200px) {
+        font-size: 2rem;
+        margin-bottom: 2rem;    
+        }
+        @media screen and (min-width: 1440px) {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;    
+        }
+    }
+    .login-section-block{
+        background-color: rgba(255,255,255, .75);
+        border-radius: 1rem;
+        box-shadow:  0 0 10px rgba(0,0,0, .25);
+        max-width: 370px;
+        margin: 2rem auto;
+        padding: 1rem 1.5rem;
+        h2{
+            font-size: 1.5rem;
+            color: $secondary;
+            text-align: center;
+            font-weight: bold;
+            margin: 0 -1.5rem 1rem -1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0,0,0, .2);
+            box-shadow: 0 1px rgba(255,255,255, .6);  
+        }
+        .form-group label{
+            font-weight: 400;
+        }
+    } 
+}

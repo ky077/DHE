@@ -1,0 +1,39 @@
+.indexLogin-section {
+    background-color: $gray-100;
+    h2{
+        font-size: 1.8rem;
+        color: $gray-900;
+        text-align: center;
+        margin-top: 3rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0,0,0, .2);
+        box-shadow: 0 1px rgba(255,255,255, .6); 
+    }
+    .index-section1 {
+        padding-bottom: 5rem;
+        .section1-bg {
+            background-image: none;    
+        } 
+        .section1-btnArea {
+            display: flex;
+            justify-content: center;
+            .section1-btn {
+                &::before, &::after {
+                    display: none;
+                }
+            }
+            .section1-btn{
+                >a {
+                    &:disabled, &.disabled, &[disabled], &[disabled="disabled"]{
+                        filter: grayscale(1.0);
+                        pointer-events: none;
+                        cursor: default;
+                        &:hover{
+                            background-color: #fff;
+                        }
+                    }
+                }    
+            }
+        } 
+    }
+}
