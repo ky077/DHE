@@ -1,0 +1,46 @@
+<!-- jQ仿*.master start (aspx請刪除或整理) -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<div id="master"> </div>
+<script src="Content/js/jquery-3.6.0.min.js"></script> 
+<script src="Content/js/imitateMaster.js"></script> 
+<script>imitateMaster('testing.html');</script> 
+<!-- jQ仿*.master end -->
+
+<div ID="Content1" style="display: none;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-11 mx-auto py-3"> 
+        <!-- 說明 start -->
+        <div class="text-center mb-5">
+          <div class="text-start d-inline-block lh-lg"><i class="fa-solid fa-triangle-exclamation fa-2x text-primary mx-1"></i><br>
+            進入測驗之前，請先確認您在安靜的空間操作。<br>
+            為了測試設備錄音品質，請按下方[<i class="fa-solid fa-microphone text-primary mx-1" aria-hidden="true"></i>錄製檔案]按鍵並唸「<span class="text-primary g-fw-500">I’m taking a speaking test.</span>」<br>
+            在本測驗中，當按下錄製檔案，會開始倒數計時且無法中斷。<br>
+            錄製完請按[<i class="fa-solid fa-play text-primary mx-1" aria-hidden="true"></i>播放錄音]檔案聆聽您剛才的錄音，請您確認錄音檔有足夠音量後，方可按下[<i class="fa-solid fa-arrow-right text-primary mx-1" aria-hidden="true"></i>進入測驗]。<br>
+          </div>
+        </div>
+        <!-- 說明 end-->
+        <!-- 警示 start--> 
+        <div class="text-danger d-flex justify-content-center mb-5 ps-3 ps-sm-0"><span class="ms-n3 ms-sm-n3">※</span>若想重複測驗設備，請按[錄製檔案]重新錄製</div>    
+        <!-- 警示 end-->
+        <!-- 錄製檔案 start -->
+        <div class="text-center mb-5">
+          <div class="text-gray-600 mb-2 btn__record-text">錄製檔案</div>
+          <div class="text-primary mb-2 g-fw-700 btn__record-count" style="display: none;"><span class="min">00</span>:<span class="sec">00</span></div>
+          <button type="button" class="btn btn-primary btn-lg btn__record" onClick="REC('10000')" title="錄製檔案"><i class="fa-solid fa-microphone fa-1x" aria-hidden="true"></i></button>
+        </div>
+        <!-- 錄製檔案 end --> 
+        <!-- 播放錄音 start -->
+        <div class="text-center"> <span class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="bottom" title="請先錄製檔案，方可播放錄音聆聽。">
+          <button type="button" class="btn btn-primary btn__playRec disabled" onClick="PLAYREC('10000')" title="播放錄音"><i class="fa-solid fa-play me-1" aria-hidden="true"></i>播放錄音</button>
+          </span> </div>
+        <!-- 播放錄音 end --> 
+      </div>
+      <div class="col-lg-11 mx-auto py-3 align-self-end text-end"> 
+        <!-- NEXT按鈕 start -->
+        <span class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="您必須完成錄音及播放測試，方可進入下一步。"><a role="button" class="btn btn-primary btn-lg btn__circle disabled" href="transition1.html" id="NEXT" title="進入測驗"><i class="fa-solid fa-arrow-right fa-2x" aria-hidden="true"></i></a></span> 
+        <!-- NEXT按鈕 end --> 
+      </div>
+    </div>
+  </div>
+</div>
