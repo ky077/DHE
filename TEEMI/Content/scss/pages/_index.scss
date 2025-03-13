@@ -184,9 +184,28 @@
                 .section1-btn-logo{ color: $teal; }
             }
         }
+		.section1-btn.robot{ 
+            >span{
+                background-color: $green;
+            }
+            &::before{
+                background-color: $green;
+            }
+            &::after{ 
+                background-image: url("../images/index/dot-robot.svg");
+            }
+            >a{
+                >.section1-btn-go{ background-color: $green;}
+            }
+            >a:hover{ 
+                background-color: $green-100;
+                .section1-btn-logo{ color: $green; }
+            }
+        }
         @media screen and (min-width: 1200px) {
-        .section1-btn.speaking{ margin-left: calc(3rem + 2rem - 1.8rem);}
-        .section1-btn.writing{ margin-left: calc(3rem + 2rem - 5.5rem);}   
+        .section1-btn.speaking{ margin-left: calc(3rem + 2rem - .5rem);}
+        .section1-btn.writing{ margin-left: calc(3rem + 2rem - .5rem - 3rem);}  
+		.section1-btn.robot{ margin-left: calc(3rem + 2rem - .5rem - 3rem - 2rem - 3rem - .5rem);}  	
         }
     }
     h3{

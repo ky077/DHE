@@ -89,8 +89,15 @@ header .navbar-nav .navTab-user .nav-link { color: #18ACBA; }
 .index-section1 .section1-btnArea .section1-btn.writing > a > .section1-btn-go { background-color: #18ACBA; }
 .index-section1 .section1-btnArea .section1-btn.writing > a:hover { background-color: #d1eef1; }
 .index-section1 .section1-btnArea .section1-btn.writing > a:hover .section1-btn-logo { color: #18ACBA; }
-@media screen and (min-width: 1200px) { .index-section1 .section1-btnArea .section1-btn.speaking { margin-left: calc(3rem + 2rem - 1.8rem); }
-  .index-section1 .section1-btnArea .section1-btn.writing { margin-left: calc(3rem + 2rem - 5.5rem); } }
+.index-section1 .section1-btnArea .section1-btn.robot > span { background-color: #09896a; }
+.index-section1 .section1-btnArea .section1-btn.robot::before { background-color: #09896a; }
+.index-section1 .section1-btnArea .section1-btn.robot::after { background-image: url("../images/index/dot-robot.svg"); }
+.index-section1 .section1-btnArea .section1-btn.robot > a > .section1-btn-go { background-color: #09896a; }
+.index-section1 .section1-btnArea .section1-btn.robot > a:hover { background-color: #cee7e1; }
+.index-section1 .section1-btnArea .section1-btn.robot > a:hover .section1-btn-logo { color: #09896a; }
+@media screen and (min-width: 1200px) { .index-section1 .section1-btnArea .section1-btn.speaking { margin-left: calc(3rem + 2rem - .5rem); }
+  .index-section1 .section1-btnArea .section1-btn.writing { margin-left: calc(3rem + 2rem - .5rem - 3rem); }
+  .index-section1 .section1-btnArea .section1-btn.robot { margin-left: calc(3rem + 2rem - .5rem - 3rem - 2rem - 3rem - .5rem); } }
 .index-section1 h3 { margin-top: 1rem; margin-bottom: 1rem; padding-left: 15px; }
 .index-section1 p { margin-bottom: 2rem; padding-left: 15px; }
 @media screen and (min-width: 992px) { .index-section1 p { padding-right: 30px; } }
