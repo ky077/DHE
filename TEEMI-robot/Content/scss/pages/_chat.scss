@@ -222,3 +222,13 @@
 	text-align: center;
     padding: 1rem;
 }
+
+.completion-section.chat{
+	.task-complete{
+		&.easy, &.medium, &.hard{
+			&.done{
+				color: $chat-color;
+			}	
+		}
+	}
+}

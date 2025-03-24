@@ -290,6 +290,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 .chatInterface-footer { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding: 1rem; }
 
+.completion-section.chat .task-complete.easy.done, .completion-section.chat .task-complete.medium.done, .completion-section.chat .task-complete.hard.done { color: #fff100; }
+
 .futuristic-frame.practice .topic-section .btn { border-radius: 500px; }
 .futuristic-frame.practice .topic-section .card .card-img { border-radius: 500px; }
 .futuristic-frame.practice .topic-section .card .task-complete.all [class*="bookmark"] { left: calc(150px/2); transform: translateX(-50%); }
@@ -329,6 +331,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 .practiceInterface-footer { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding: 1rem; }
 .practiceInterface-footer .btn { margin-left: 1.5rem; margin-right: 1.5rem; }
+
+.completion-section.practice .task-complete.easy.done, .completion-section.practice .task-complete.medium.done, .completion-section.practice .task-complete.hard.done { color: #FFD8B1; }
 
 .index-btn { display: flex; flex-direction: column-reverse; text-align: center; }
 .index-btn i { font-size: 5rem; color: #09896a; margin-bottom: 1rem; }
