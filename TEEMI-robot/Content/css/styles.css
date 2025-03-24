@@ -366,7 +366,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .difficulty-section .difficulty-title::before, .difficulty-section .difficulty-title::after { content: ""; display: block; flex: 1; border-bottom: 2px solid red; transform-origin: top; }
 .difficulty-section .difficulty-title::before { border-right: 2px solid red; transform: skewX(-30deg); }
 .difficulty-section .difficulty-title::after { border-left: 2px solid red; transform: skewX(30deg); }
-.difficulty-section .difficulty-btn { position: relative; }
+.difficulty-section .difficulty-btn { display: block; position: relative; }
 .difficulty-section .difficulty-btn .task-complete { margin-left: 1px; }
 .difficulty-section .difficulty-btn .task-complete.easy, .difficulty-section .difficulty-btn .task-complete.medium, .difficulty-section .difficulty-btn .task-complete.hard { width: calc(1.25rem + .5rem*2 - 8px); height: calc(1.25rem + .5rem*2 - 8px); font-size: calc(1.25rem + .5rem*2 - 8px); position: absolute; top: 50%; left: 0; transform: translateY(-50%) scale(1.5); transform-origin: left center; }
 .difficulty-section .difficulty-btn .task-complete.easy::after, .difficulty-section .difficulty-btn .task-complete.medium::after, .difficulty-section .difficulty-btn .task-complete.hard::after { display: none; }

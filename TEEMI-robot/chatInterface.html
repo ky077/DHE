@@ -53,7 +53,7 @@
                   <button type="button" class="btn btn-link"> <i class="fa-solid fa-volume-high" aria-hidden="true"></i><span class="visually-hidden">播放</span></button>
                   <div class="dialog-text-content">Hi, what’s your name? Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?</div>
                 </div>
-                <div class="dialog-translate">你叫甚麼名字？</div>
+                <div class="dialog-translate" style="display: none;">你叫甚麼名字？</div>
               </div>
             </div>
             <div class="chatInterface-frame right">
@@ -79,7 +79,7 @@
                   <button type="button" class="btn btn-link"> <i class="fa-solid fa-volume-high" aria-hidden="true"></i><span class="visually-hidden">播放</span></button>
                   <div class="dialog-text-content">Do you live in a dorm, Janie?</div>
                 </div>
-                <div class="dialog-translate"></div>
+                <div class="dialog-translate" style="display: none;"></div>
               </div>
             </div>
             <div class="chatInterface-frame right">
@@ -105,7 +105,7 @@
                   <button type="button" class="btn btn-link"> <i class="fa-solid fa-volume-high" aria-hidden="true"></i><span class="visually-hidden">播放</span></button>
                   <div class="dialog-text-content">Hi, what’s your name? Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?Hi, what’s your name?</div>
                 </div>
-                <div class="dialog-translate">你叫甚麼名字？</div>
+                <div class="dialog-translate" style="display: none;">你叫甚麼名字？</div>
               </div>
             </div>
           </div>
@@ -135,18 +135,22 @@ $('.btn-translate').click(function() {
     const currentState = $(this).attr('data-state');
 	// 選取當前的翻譯目標
 	const translate = $(this).parents('.dialog').find('.dialog-translate');
+	
+	console.log(currentState);
 
     if (currentState === 'toShow') {
         // 如果當前狀態是顯示翻譯，切換為隱藏翻譯
         $(this).attr('data-state', 'toHide'); 
-        $(this).attr('title', '隱藏翻譯');
-		translate.hide();
+		translate.show();
+		
+		$(this).attr('title', '隱藏翻譯');
 		
     } else {
         // 如果當前狀態是隱藏翻譯，切換為顯示翻譯
         $(this).attr('data-state', 'toShow'); 
-        $(this).attr('title', '顯示翻譯'); 
-		translate.show();
+		translate.hide();
+		
+		$(this).attr('title', '顯示翻譯'); 
     }
 });
 	
