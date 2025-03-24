@@ -1,0 +1,97 @@
+.completion-section{
+	.completion-title{
+		font-size: 1.25rem;
+		font-weight: 500;
+		color: $body-color;
+		display: flex;
+		justify-content: center;
+		$dge-space: 1.125em;
+		$section-space: .2em;
+		span{  
+			padding: .5rem 2rem 0 2rem;
+			position: relative;
+			clip-path: polygon(	$dge-space 					$section-space, 
+								calc(100% - #{$dge-space}) 	$section-space, 
+								100% 						calc(100% + 1px), 
+								0% 							calc(100% + 1px) );
+			background-color: rgba($primary, .5);	
+			
+		}
+		&::before, &::after{  //左右框
+			content: "";
+			display: block;
+			flex: 1;
+			background-color: rgba($primary, .5);
+		}
+		&::before{  
+			margin-right: $dge-space*-1;
+			clip-path: polygon(	0%													0%, 
+								calc(100% - #{$section-space}) 						0%, 
+								calc(100% - #{$section-space} - #{$dge-space}) 		calc(100% - #{$section-space}), 
+								0% 													calc(100% - #{$section-space}) );
+		}
+		&::after{
+			margin-left: $dge-space*-1;
+			clip-path: polygon( $section-space								0%, 
+								100% 										0%, 
+								100% 										calc(100% - #{$section-space}), 
+								calc(#{$section-space} + #{$dge-space}) 	calc(100% - #{$section-space}));
+		}
+		
+	}
+	.completion-content{
+		background-color: rgba($primary, .5);
+		padding: 1rem;
+		.completion-bar{
+			display: inline-block;
+			border-radius: 100%;
+			padding: 6px;
+			background: conic-gradient($primary                                      0% calc(var(--completed)/var(--total)*100%), 
+									   #fff calc(var(--completed)/var(--total)*100%) 100%);
+			transform: scale(1.75);
+			margin: 1.75*5%;
+			.task-complete{
+				outline: 3px solid #fff;
+			}
+		}
+	}
+}
+.record-summary + .completion-section, 
+.futuristic-frame-tool + .completion-section, 
+.futuristic-frame-content .completion-section:first-child{
+	.completion-title{
+		&::before, &::after{  //左右框
+			background-color: transparent;
+		}
+	}
+}
+
+.completion-section.chat{
+	$prev-color: transparent;
+	.completion-title{
+		span{
+			background-color: rgba($chat-color, .25);	
+		}
+		&::before, &::after{  //左右框
+			background-color: $prev-color;
+		}
+	}
+	.completion-content{
+		background-color: rgba($chat-color, .25);
+	}
+	
+}
+.completion-section.practice{
+	$prev-color:  rgba($chat-color, .25);	
+	.completion-title{
+		span{
+			background-color: rgba($practice-color, .5);	
+		}
+		&::before, &::after{  //左右框
+			background-color: $prev-color;
+		}
+	}
+	.completion-content{
+		background-color: rgba($practice-color, .5);
+	}
+}

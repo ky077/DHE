@@ -6,77 +6,157 @@ $(document).ready(function () {
   });
 });
 
-//spinner
-function spinner(){ 
-    setTimeout(function () {
-        if ($('#spinner').length > 0) {
-            $('#spinner').removeClass('show'); 
-        }
-    }, 100);
-}
+//播放題目
+function PLAYTITLE(item) {
+  let button_now = $('.btn__playTitle'),
+    button_next = $('.btn__record');
 
-//倒數準備時間
-function PREPARE(el) {
-    var $count = el.find('[class$="count"]');
+  //播放中閃爍效果
+  button_now.addClass('current');
 
-    var totalSec  = parseInt(el.attr('data-sec'));   
-    var countdown = totalSec;    
-    
-    $count.text(countdown);
-    
-    var interval = setInterval(function() {
-        countdown--;  
-        
-        if (countdown <= 0) {
-            clearInterval(interval);
-            
-            $('.prepare').hide(); 
-            $('.record').show();
-            //觸發下一步：錄製檔案
-            REC($('.record-spinner'));
-        } else {
-            $count.text(countdown);
-        }
-    }, 1000);
-    
-    $('.prepare').show();  
+  //模擬播放音效
+  var audio = new Audio(item);
+  var isPlaying = false;
+
+  if (!isPlaying) {
+    audio.play();
+    isPlaying = true;
+
+    // 禁用按鈕  
+    button_now.prop('disabled', true);
+  }
+  audio.addEventListener('ended', function () {
+    isPlaying = false;
+
+    // 啟用按鈕  
+    button_now.prop('disabled', false);
+
+    //結束播放，移除閃爍效果
+    button_now.removeClass('current');
+
+    //顯示[錄製音檔]按鈕、若有tooltip則清除
+    button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
+    $('.tooltip').remove();
+  });
 }
 
 //錄製音檔
-function REC(el) {
-    var $count = el.find('[class$="count"]');
-    var $bar   = el.find('[class$="borderFront"]'); 
-        
-    var totalSec = parseInt(el.attr('data-sec'));   
-    var countdown = totalSec; 
-    
-    el.addClass('current').prop('disabled', true); //for [button]
+let interval;
+function REC(s) {
+  let button_now = $('.btn__record'),
+    button_next = $('.btn__playRec');
 
-    $count.text(countdown);
-    $bar.css({
-        'stroke-dasharray': '100 100',
-        'transition': 'none'
-    });
-    
-    var interval = setInterval(() => {
-        countdown--;    
-        var percentage = countdown / totalSec * 100;
-       
-        if (countdown < 0) {
-            clearInterval(interval);
-            el.removeClass('current').prop('disabled', false); //for [button]
-            //觸發下一步：前往下一題
-            next();    
-        } else {
-            $count.text(countdown + 1); //緩衝1秒
-            $bar.css({
-                'stroke-dasharray': percentage + ' 100',
-                'transition': 'stroke-dasharray 1s linear'
-            });
-        }
-    }, 1000); 
-}    
+  let button_text = $('.btn__record-text'),
+    button_count = $('.btn__record-count');
 
+  if (!button_now.hasClass('current')) {
+    //錄製中皆無法播放錄音
+    button_next.addClass('disabled');
+
+    //錄製中閃爍效果
+    button_now.addClass('active current');
+    button_text.hide();
+    button_count.show();
+
+    //倒數秒數
+    var sec = s.substr(0, s.length - 3);
+
+    button_count.find('.sec').text(sec < 10 ? '0' + sec : sec);
+
+    interval = setInterval(function () {
+      sec--;
+      button_count.find('.sec').text(sec < 10 ? '0' + sec : sec);
+
+      if (sec < 0) {
+        //錄音時間到，移除閃爍效果
+        button_now.removeClass('active current').blur();
+        button_text.show();
+        button_count.hide();
+
+        clearInterval(interval);
+
+        //顯示[播放錄音]按鈕、若有tooltip則清除
+        button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
+        $('.tooltip').remove();
+      }
+    }, 1000);
+  } else {
+    //提前取消錄音，移除閃爍效果
+    button_now.removeClass('active current').blur();
+    button_text.show();
+    button_count.hide();
+
+    clearInterval(interval);
+
+    button_count.find('.sec').text('00');
+
+    //顯示提前取消的無效錄音modal
+    alertModalDOM('<div class="text-danger text-center">錄音時間不能中斷，<br class="d-sm-none">請重新錄音。</div>');
+  }
+}
+
+//播放錄音
+let audio = new Audio();
+let isPlaying = false;
+let hasPlayed = false;
+function PLAYREC(src) {
+  let button_now = $('.btn__playRec'),
+      button_next = $('#NEXT');
+
+  if (isPlaying) {
+    audio.pause();
+  } else {
+    if (!hasPlayed || audio.ended) { 
+      audio.src = src;
+      hasPlayed = true;
+    }
+    audio.play();
+  }
+   
+  audio.addEventListener('play', function () { //播放中
+      isPlaying = true;
+      
+      button_now.addClass('current');                                   //增加閃爍效果 
+      button_now.html('<i class="fa-solid fa-pause me-1"></i>暫停播放'); //更改按鈕狀態
+      
+      //顯示[下一題/完成]按鈕、若有tooltip則清除
+      button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
+      $('.tooltip').remove();  
+  });  
+
+  audio.addEventListener('pause', function () { //播放完
+    isPlaying = false;
+    
+    button_now.removeClass('current');                               //移除閃爍效果
+    button_now.html('<i class="fa-solid fa-play me-1"></i>播放錄音'); //更改按鈕狀態
+      
+    //顯示[下一題/完成]按鈕、若有tooltip則清除
+    button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
+    $('.tooltip').remove();    
+  });  
+    
+  audio.addEventListener('ended', function () { //播放完
+    isPlaying = false;
+    
+    button_now.removeClass('current');                               //移除閃爍效果
+    button_now.html('<i class="fa-solid fa-play me-1"></i>播放錄音'); //更改按鈕狀態
+      
+    //顯示[下一題/完成]按鈕、若有tooltip則清除
+    button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
+    $('.tooltip').remove();    
+  });
+}
+
+//停止播放錄音
+function STOPAUDIO() {  
+  if (!audio.paused) {
+    audio.pause();
+    audio.currentTime = 0;
+    
+    $('.btn__playRec').removeClass('current')                                //移除閃爍效果
+                      .html('<i class="fa-solid fa-play me-1"></i>播放錄音'); //更改按鈕狀態
+  }
+}
 
 //lightbox大螢幕圖片
 function lightboxModal(e) {

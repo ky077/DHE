@@ -1,4 +1,4 @@
-///*播放題目*/
+/*播放題目*/
 .btn__playTitle{
     background-color: transparent;
     border: none;
@@ -42,53 +42,46 @@
     }
 }
 
-.btn__playTitle[disabled], 
-.btn__playTitle[disabled]:hover,
-.btn__playTitle[disabled="disabled"], 
-.btn__playTitle[disabled="disabled"]:hover{
-    color: $primary !important;
+/*錄製音檔*/
+.btn__record{
+    border-radius:  100%;
+    font-size: 1.25rem;
+    width: calc(2em + 1rem + 1rem - 2px);
+    height: calc(2em + 1rem + 1rem - 2px);
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center;
+    box-shadow: 0 0 0.2rem lighten($primary, 15%);
+    background-color: #fff;
+    border-color: transparent;
+    > i{
+        color: $primary;
+        font-size: 1.5rem;
+    }
+    &:hover, &:focus, &:active,
+    &.hover, &.focus, &.active{
+        > i{
+            color: #fff !important;
+        }  
+    }
+    &:disabled,
+    &.disabled,
+    &disabled, &[disabled="disabled"]{
+        background-color: #fff !important;
+        border-color: transparent !important;   
+    }
+}
+.btn__record.current{
+    animation: rec 2s infinite;
+    box-shadow: 0 0 0 0.25rem rgba($primary, .5);
+}
+@keyframes rec {
+    0%   { box-shadow: 0 0 0 0.25rem rgba($primary, .5);}
+    50%  { box-shadow: 0 0 0 0.25rem rgba($primary, 0); }
+    100% { box-shadow: 0 0 0 0.25rem rgba($primary, .5);}    
 }
 
-///*錄製音檔*/
-//.btn__record{ 
-//    border-radius:  100%;
-//    font-size: 1.25rem;
-//    width: calc(2em + 1rem + 1rem - 2px);
-//    height: calc(2em + 1rem + 1rem - 2px);
-//    display: inline-flex;
-//    align-items: center; 
-//    justify-content: center;
-//    box-shadow: 0 0 0.2rem lighten($primary, 15%);
-//    background-color: #fff;
-//    border-color: transparent;
-//    > i{
-//        color: $primary;
-//        font-size: 1.5rem;
-//    }
-//    &:hover, &:focus, &:active,
-//    &.hover, &.focus, &.active{
-//        > i{
-//            color: #fff !important;
-//        }  
-//    }
-//    &:disabled,
-//    &.disabled,
-//    &disabled, &[disabled="disabled"]{
-//        background-color: #fff !important;
-//        border-color: transparent !important;   
-//    }
-//}
-//.btn__record.current{
-//    animation: rec 2s infinite;
-//    box-shadow: 0 0 0 0.25rem rgba(101,93,204, .5);
-//}
-//@keyframes rec {
-//    0%   { box-shadow: 0 0 0 0.25rem rgba($primary, .5);}
-//    50%  { box-shadow: 0 0 0 0.25rem rgba($primary, 0); }
-//    100% { box-shadow: 0 0 0 0.25rem rgba($primary, .5);}    
-//}
-
-///*播放錄音*/
+/*播放錄音*/
 .btn__playRec{
     box-shadow: 0 0 4px lighten($primary, 15%);
     background-color: #fff;
@@ -103,7 +96,7 @@
         color: $primary;
     }
     > i.fa-stop, i.fa-pause{
-        color: $danger;
+        color: $red;
     }
     &:hover, &.hover{ 
         > i{

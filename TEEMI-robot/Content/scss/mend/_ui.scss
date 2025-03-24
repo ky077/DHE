@@ -3,23 +3,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     -webkit-box-shadow: 0 0 0 1000px rgba(139,213,220,.2) inset;
     transition: background-color 5000s ease-in-out 0s;
 }
-::selection {
-    background: $secondary;
-    color: #fff;
-}
-::-moz-selection {
-    background: $secondary;
-    color: #fff;
-}
-img::selection {
-    background: transparent;
-}
-img::-moz-selection {
-    background: transparent;
-}
-[class*="btn-outline"]{
-    background-color: #fff;
-}
 
 .sr-only-goContent{
 	background-color:$primary;
@@ -60,20 +43,12 @@ img::-moz-selection {
     align-items: center; 
     justify-content: center;  
 }
-/*.btn-primary{
-    color: #fff;
-    &:hover, &:focus, &:active, 
-    &.disabled, &[disabled], &[disabled="disabled"]{ 
-        color: #fff !important;    
-    }
-}*/
-.btn-outline-primary{
-    background-color: #fff;
-    border-color: transparent !important;
-    box-shadow: 0 0 4px rgba($primary, .5);
-    &:hover, &:focus, &:active{
-        background-color: $red-100 !important;
-        color: $primary !important;
+.btn{
+	outline: 1px solid var(--bs-btn-border-color);
+	transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+	&:hover{
+		outline-color: transparent !important;
+		outline-offset: 15px;
     }
 }
 
@@ -87,7 +62,7 @@ img::-moz-selection {
     text-align: center;
     margin-bottom: 1rem;
 }
-.style-marker{
+/*.style-marker{
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -98,42 +73,16 @@ img::-moz-selection {
         width: .9rem;
         height: .9rem;
         border-radius: 100%;
-        background-color: $secondary;
+        background-color: $decoration;
         margin-right: .25rem;
     }
-}
+}*/
 .min-ratio{
     @media screen and (min-width: 992px) {
         height: 100% !important;
     }    
 }
 
-.scaleAn{
-    animation: ScaleAn 1s infinite alternate;
-}
-///* ************************************************* */
-.spinner{
-    position: fixed;
-    z-index: 9999; 
-    width: 100%;
-    height: 100%;
-    background-color: rgba(#fff, .5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0; 
-    visibility: hidden; 
-    transition: opacity .5s ease-out, visibility 0s linear .5s; 
-    &.show { 
-        transition: opacity .5s ease-out, visibility 0s linear 0s; 
-        visibility: visible; 
-        opacity: 1; 
-    }
-    .spinner-border{
-        width: 3rem; 
-        height: 3rem;
-    }
-}
 /* ************************************************* */
 .lightboxModal{
     display: block;
@@ -176,215 +125,120 @@ img::-moz-selection {
 }
 
 /* ************************************************* */
-.part-item{ 
-    position: relative;
-    height: 8rem;
-    border-radius: .5rem;
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #fff;
-    .part-content{ 
-        width: calc(100% - 4rem);
-        height: 100%;
-        .part-content-title{  
-            color: #fff;
-            font-size: 1.6rem !important;
-            font-weight: 500 !important;
-            line-height: 1.5 !important;
-            display: inline-flex;
-            height: 100%;
-            align-items: center;
-            padding-left: 3rem;
-            padding-right: 3rem;
-            margin-left: 3rem;
-            position: relative;
-            z-index: 1;
-            &::before{
-                content: "";
-                display: block;
-                position: absolute;
-                top: 0;
-                left: -1.5rem;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                height: 100%;
-                background-color: $primary;
-                transform-origin: bottom;
-                transform: skewX(-20deg);
-                z-index: -1;
-            }
-            &::after{
-                content: "";
-                display: block;
-                position: absolute;
-                top: 0;
-                right: .5rem + 1.5rem;
-                bottom: 0;
-                width: .25rem;
-                height: 100%;
-                background-color: #fff;
-                transform-origin: bottom;
-                transform: skewX(-20deg);
-                z-index: 2;
-            }
-        }
-        .part-content-describe{
-            color: $gray-600;
-            font-size: 1rem !important; 
-            font-weight: 400 !important;
-            line-height: 1.5 !important;
-        }   
-    }  
-    
-}
-a.part-item{
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0,0,0, .05);
-    margin-bottom: 3rem;
-    position: relative;
-    &::after{ 
-        position: relative;
-        color: $primary;
-        font-size: 2rem;
-        content: "\f061"; 
-        font-family: "Font Awesome 6 Free"; 
-	    font-weight: 900;     
-        margin-bottom: 0;    
-    }
-}
-a.part-item:hover{
-    overflow: hidden;
-    &::after{
-        animation: arrowColorAn 1.5s, arrowMoveAn 1s infinite alternate;
-        color: #fff;
-        z-index: 10;
-    }
-    .part-content{ 
-        .part-content-title{ 
-            &::before{
-                transform: skewX(-20deg) scaleX(10);
-                animation: bgScaleAn 1.5s;
-            }
-            &::after{
-                animation: bgMoveAn 1.5s;
-                right: 100%;
-            }
-        }
-    }
+.task-complete{
+	z-index: 9;
+	&.all{
+		position: relative; 
+		[class*="bookmark"]{
+			font-size: 2rem;
+			color: #fff;
+			text-shadow: 1px 1px $primary-200, -1px -1px $primary-200, -1px 1px $primary-200, 1px -1px $primary-200;
+			position: relative;
+		}
+		[class*="crown"]{
+			color: $primary;
+			font-size: .95rem;
+			position: absolute;
+			top: .325em;
+			left: 0;
+		}
+		&.done{
+			[class*="bookmark"]{
+				color: $body-color;
+				text-shadow: none;
+			}	
+		}
+	}
+	&.easy, &.medium, &.hard{
+		width: 2.5rem;
+		height: 2.5rem;
+		font-size: 2.5rem;
+		border-radius: 100%;
+		background-color: #FFF;
+		border: 1px solid $primary-200;
+		color: $primary-200;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		i{
+			font-size: .6em;
+		}
+		&::after{
+			content: "";
+			display: block;
+			font-size: .2em;
+			font-weight: bold;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $primary;
+			text-shadow: 0 0 2px rgba(0,0,0, .25);
+		}
+		&.done{
+			background-color: $primary;	
+			color: $body-color;
+			&::after{
+				color: #fff;
+				text-shadow: 0 0 2px rgba(0,0,0, .5);
+			}
+		}
+	}
+	&.easy::after{
+		content: "Easy";
+	}
+	&.medium::after{
+		content: "Medium";
+	}
+	&.hard::after{
+		content: "Hard";
+	}	
 }
 
-a.part-item.disabled{ 
-    opacity: .65; 
-    &::after{
-        content: "";
-    }
-    &:hover{
-        background-color: #fff;
-        cursor: default;
-    } 
-    .part-content{ 
-        @media screen and (min-width: 768px) {
-        flex-direction: row;    
-        flex-wrap: wrap;
-        }
-        .part-content-title{
-            @media screen and (min-width: 768px) {
-            order: 1 !important;
-                display: inline-block;
-            }    
-        }
-        .part-content-describe{
-            @media screen and (min-width: 768px) {
-            order: 3 !important;
-            } 
-        }
-        .part-content-alert{ 
-            background-color: $red;
-            color: #fff;
-            padding: 0 1rem;
-            border-radius: 2em;
-            font-size: 1.2rem;
-            white-space: nowrap;
-            margin-bottom: .25rem;
-            @media screen and (min-width: 768px) {
-            margin-bottom: 0;     
-            order: 2 !important;  
-            display: inline-block; 
-            margin: .25rem .5rem;
-            }
-        }
-    }
-}
-
-/* ************************************************* */
-.exam-list-group{
-    .list-group-item {
-        border-radius: 0 !important;
-        color: $primary;
-        border-color: transparent; 
-        border-bottom-color: $primary;
-        font-size: 1.2rem;
-        font-weight: 700;
-        padding: .75rem calc(1rem + 1rem + 1rem) .75rem 1rem;
-        margin-bottom: 1rem;
-        line-height: 1.5;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        @media screen and (min-width: 768px) {
-        flex-direction: row;  
-        align-items: center; 
-        flex-wrap: wrap; 
-        }
-        small{
-            color: $gray-600;
-            font-weight: 400;
-            white-space: pre-wrap;
-            margin-right: auto;
-            @media screen and (min-width: 768px) {
-            margin-left: 1rem;
-            }
-        }
-        .exam-progress{
-            font-weight: 500;
-            font-size: 1rem;
-            @media screen and (min-width: 768px) {
-            font-size: 1.1rem;
-            } 
-        }
-        &::after{
-            content: "\f061";
-            font-family: "Font Awesome 6 Free"; 
-            font-weight: 900;  
-            color: $primary;
-            font-size: 1.2rem;
-            position: absolute;
-            top: 50%;
-            right: 1rem;
-            transform: translateY(-50%);
-        }        
-    }
-    .list-group-item.done{
-        color: $secondary;
-        border-bottom-color: $secondary; 
-        &::after{
-            color: $secondary;
-        }
-    }
-    .list-group-item{
-        &:hover, &:focus, &:active{
-            color: $red-600;  
-            border-bottom-color: $red-600; 
-            &::after{
-                color:$red-600;         
-            }
-        }
-    }
-    .list-group-item-action {
-        background-color: transparent;
-    }
+.btn-translate{ 
+	position: relative;
+	[class*="a"]{
+		width: 1.25em;
+		height: 1.25em;
+		font-size: .8em;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	}
+	[class*="globe"]{
+		width: 1.25em;
+		height: 1.25em;
+		font-size: .8em;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&[data-state="toShow"]{
+		[class*="a"]{
+			background-color: $primary;
+			color: #fff;
+			
+		}
+		[class*="globe"]{
+			background-color: transparent;
+			color: $primary;
+			
+		}	
+	}
+	&[data-state="toHide"]{
+		[class*="a"]{
+			background-color: transparent;
+			color: $primary;
+			
+		}
+		[class*="globe"]{
+			background-color: $primary;
+			color: #fff;
+			
+		}	
+	}
 }

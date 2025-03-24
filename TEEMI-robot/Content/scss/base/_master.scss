@@ -1,6 +1,7 @@
 html, body{
     width:100%;
     height:100%;
+	min-width: 100%;
     min-height: 100%;
 	font-family: 'Noto Sans',
                  'Noto Sans TC', 
@@ -9,8 +10,7 @@ html, body{
                  'Heiti TC', 
                  'LiHei Pro',
                  sans-serif !important;
-	letter-spacing:0.05em;
-    background-color: #FFF6EE;
+	letter-spacing: 0.05em;
     font-size: 14px; 
     @media screen and (min-width: 768px) {
     font-size: 16px;    
@@ -18,78 +18,229 @@ html, body{
     @media screen and (min-width: 1200px) {
     font-size: 18px;    
     }
+	@media screen and (min-width: 1400px) {
+    font-size: 20px;    
+    }
+}
+body{
+	background-color: $green-100;
+	background: url("../images/bg.png"), radial-gradient(circle at 20% 20%, $yellow-100, $green-200 125%);
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+	&::-webkit-scrollbar{  
+		width: 10px;     
+		background-color: transparent;
+	}  
+	&::-webkit-scrollbar-track {
+		background-color:  transparent;
+	} 
+	&::-webkit-scrollbar-thumb {
+		background-color: $primary;
+		border-radius: 10px;
+	}
 }
 
-/* ************************************************* */
-.page{
+//主體模板// ************************************************* //
+$chat-color: $secondary;
+$practice-color: $tertiary;
+
+$slash-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='145' height='36' viewBox='0 0 145 36'%3E %3Cg id='Group_185' data-name='Group 185' transform='translate(-9408 -1018)'%3E %3Crect id='Rectangle_66' data-name='Rectangle 66' width='25' height='36' transform='translate(9408 1018)' fill='%23000000'/%3E %3Crect id='Rectangle_67' data-name='Rectangle 67' width='25' height='36' transform='translate(9448 1018)' fill='%23000000'/%3E %3Crect id='Rectangle_68' data-name='Rectangle 68' width='25' height='36' transform='translate(9488 1018)' fill='%23000000'/%3E %3Crect id='Rectangle_69' data-name='Rectangle 69' width='25' height='36' transform='translate(9528 1018)' fill='%23000000'/%3E %3C/g%3E %3C/svg%3E ";
+
+main{ 
 	width: 100%;
 	height: 100%;
-	position: relative;
-	.bg{
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		top:0;
-		left:0;
-		z-index: 0;
-		-webkit-filter: blur(3px) opacity(.5);
-		-moz-filter: blur(3px) opacity(.5);
-		-o-filter: blur(3px) opacity(.5);
-		-ms-filter: blur(3px) opacity(.5);
-		filter: blur(3px) opacity(.5);
-        background-image: url("../images/bg.jpg");
-        background-repeat: no-repeat;
-		background-position: center center;
-		background-size: 100% 100%;
-        background-color: $yellow-100;
+	> [class*="container"]{
+		height: 100%;	
 	}
-	.header{
-		width: 100%;
-        position: relative;
-        z-index: 2;
-		[class*="container"]{ 
-			h1{ 
-                color: $gray-700;
-                margin-bottom: .75rem;
-                margin-top: .75rem;
-                line-height: 1;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                filter: drop-shadow(0 0 5px rgba(#fff, .75));
-                font-weight: 500;    
+}
+
+.robot-frame{  //限制高度，故 dialog::before
+	height: 20%;
+	max-height: 20%;
+	padding: 1rem;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: flex-start;
+	.avatar{ 
+		width: 15%;
+		height: auto;
+		margin: 0 2rem;
+		flex: 0 0 auto;
+		> img, > svg{
+			max-width: auto;
+			max-height: auto;
+		}
+	}
+	.dialog{ 
+		background-color: $white;
+		border-radius: $border-radius;
+		border-top-left-radius: 0;
+		position: relative;
+		box-shadow: $box-shadow-sm;
+		margin-top: 2%;
+		.dialog-text{
+			padding: .75rem 1rem;	
+			max-height: calc(2em*1.2*2 + .75rem*2 + .5rem);
+			overflow-y: auto;
+			h2:last-child{
+				margin-bottom: 0;
+			}
+			&::-webkit-scrollbar{  
+				width: 10px;     
+				background-color: transparent;
+			}  
+			&::-webkit-scrollbar-track {
+				background-color:  transparent;
+			} 
+			&::-webkit-scrollbar-thumb {
+				background-color: $gray-500;
+				border: 2px solid $white;
+				border-radius: 10px;
+			}
+		}
+		&::before{
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 1rem 1rem 0;
+			border-color: transparent $white transparent transparent;
+			position: absolute;
+			top: 0;
+			left: -1rem;
+		}
+	}
+}
+
+@mixin futuristicFrame($color) {
+/*.futuristic-frame{  */
+	$futuristic-border: .325rem;
+	height: calc(100% - 1rem);
+	max-height: calc(100% - 1rem);
+	padding-top: 1rem;
+	position: relative;
+	color: $color;
+	&::before{ 
+		content: "";
+		display: block;
+		width: 55%;
+		height: 25%;
+		max-width: 100%;
+		border-radius: 0 0 $border-radius-xl*1.2 0;
+		border-bottom: $futuristic-border solid $color;
+		border-right: $futuristic-border solid $color;
+		position: absolute;
+		z-index: -1;
+		bottom: -.75rem;
+		right: -.75rem;
+	}
+	&::after{
+		content: "";
+		display: block;
+		position: absolute;
+		z-index: 5;
+		bottom: -.75rem;
+		right: 3rem;
+		min-width: 145px;
+		min-height: 36px;
+		min-width: 145px;
+		min-height: 36px;
+		background-color: $color; 
+		mask-image: url($slash-svg);
+		mask-repeat: no-repeat;
+		mask-size: cover;
+		transform-origin: bottom;
+		transform: skewX(-30deg);
+	}
+	
+	.futuristic-frame-border{
+		height: 100%;
+		max-height: 100%;
+		background-color: rgba($white, .75); 
+		border: $futuristic-border solid $color;
+		border-radius: $border-radius-xl;
+		position: relative;
+		padding-left: 0;
+		padding-right: 3px;
+		&::before{
+			content: "";
+			display: block;
+			width: 70%;
+			height: calc(1.5rem + #{$futuristic-border});
+			clip-path: polygon(0 0%, 100% 0, 100% 100%, 1.5rem 100%);
+			background-color: $color;
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 5;
+			border-radius: 0 $border-radius-xl*.75 0 0;
+		}
+	}
+	.futuristic-frame-content{ 
+		display: flex;
+    	flex-direction: column;
+    	justify-content: space-evenly;
+		align-items: stretch;
+		height: 100%;
+		max-height: 100%;
+		overflow-X: hidden;
+		overflow-y: scroll;
+		padding: 3rem 1.5rem;
+		@media screen and (min-width: 576px) and (max-width: 991px) {
+		padding: 3rem 6rem;	
+		}
+		@media screen and (min-width: 1400px) {
+		padding: 3rem 6rem;		
+		}
+		&::-webkit-scrollbar{  
+			width: 7px;     
+			background-color: transparent;
+		}  
+		&::-webkit-scrollbar-track {
+			background-color:  transparent;
+		} 
+		&::-webkit-scrollbar-thumb {
+			background-color: $color;
+			border-radius: 7px;
+		}
+		&::-webkit-scrollbar-button{ 
+			background-color: transparent;
+			height: 1rem;
+		}
+		.futuristic-frame-tool{ 
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 2;
+			height: calc(1.5rem + 0.325rem);
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding: 0 .75rem;
+			a {
+				color: shade-color($color, 5%);
 			}
 		}
 	}
-	.content{
-		width: 100%;
-        position: relative;
-        @media screen and (min-width: 576px) {
-        padding-bottom: 1.5rem; 
-        }
-        @media screen and (min-width: 992px) {
-        padding-bottom: 2rem;    
-        }
-        @media screen and (min-width: 1200px) {
-        padding-bottom: 3rem;    
-        }
-		[class*="container"]{
-			background-color: rgba(255,255,255, .7);
-            @media screen and (min-width: 576px) {
-            border-radius: .5rem;
-            }
-			> .row{
-                min-height: calc(100vh - (1.325rem + 0.9vw) - .75rem - .75rem - .5rem);
-                @media screen and (min-width: 576px) {
-                min-height: calc(100vh - (1.325rem + 0.9vw) - .75rem - .75rem - .5rem - 1.5rem);    
-                }
-                @media screen and (min-width: 992px) {
-                min-height: calc(100vh - (48px) - .75rem - .75rem - 2rem);  
-                }
-                @media screen and (min-width: 1200px) {
-                min-height: calc(100vh - (48px) - .75rem - .75rem - 3rem);  
-                }
-            }
-		}
-	}
 }
+.futuristic-frame{
+	@include futuristicFrame($primary);
+}
+.futuristic-frame.chat{
+	@include futuristicFrame($chat-color);
+}
+.futuristic-frame.practice{
+	@include futuristicFrame($practice-color);
+}
+.robot-frame + .futuristic-frame{
+	height: calc(80% - 1rem);
+	max-height: calc(80% - 1rem);
+	padding-top: 0;
+	
+}
+
+
