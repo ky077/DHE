@@ -82,16 +82,16 @@ function REC(s) {
     }, 1000);
   } else {
     //提前取消錄音，移除閃爍效果
-    button_now.removeClass('active current').blur();
-    button_text.show();
-    button_count.hide();
-
-    clearInterval(interval);
-
-    button_count.find('.sec').text('00');
+    //button_now.removeClass('active current').blur();
+//    button_text.show();
+//    button_count.hide();
+//
+//    clearInterval(interval);
+//
+//    button_count.find('.sec').text('00');
 
     //顯示提前取消的無效錄音modal
-    alertModalDOM('<div class="text-danger text-center">錄音時間不能中斷，<br class="d-sm-none">請重新錄音。</div>');
+    //alertModalDOM('<div class="text-danger text-center">錄音時間不能中斷，<br class="d-sm-none">請重新錄音。</div>');
   }
 }
 
