@@ -222,6 +222,10 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .task-complete.medium::after { content: "Medium"; }
 .task-complete.hard::after { content: "Hard"; }
 
+.spinner { position: fixed; z-index: 9999; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0); display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: opacity .5s ease-out, visibility 0s linear .5s; }
+.spinner.show { transition: opacity .5s ease-out, visibility 0s linear 0s; visibility: visible; opacity: 1; }
+.spinner .spinner-border { width: 3rem; height: 3rem; }
+
 .futuristic-frame.chat .topic-section .btn { border-radius: 0 500px 500px 500px; }
 .futuristic-frame.chat .topic-section .card .card-img { border-radius: 0 500px 500px 500px; }
 .futuristic-frame.chat .topic-section .card .task-complete.all [class*="bookmark"] { left: 1.5rem; transform: translateX(-50%); }

@@ -198,3 +198,26 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 		content: "Hard";
 	}	
 }
+
+.spinner{
+    position: fixed;
+    z-index: 9999; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#fff, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity .5s ease-out, visibility 0s linear .5s; 
+    &.show { 
+        transition: opacity .5s ease-out, visibility 0s linear 0s; 
+        visibility: visible; 
+        opacity: 1; 
+    }
+    .spinner-border{
+        width: 3rem; 
+        height: 3rem;
+    }
+}

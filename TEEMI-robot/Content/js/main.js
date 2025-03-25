@@ -41,21 +41,16 @@ let interval;
 let isRecording = false; // 用於追蹤是否正在錄音
 function REC(s) {
   let button_now = $('.btn__record');
-  let button_next = $('.btn__playRec');
-  let button_text = $('.btn__record-text');
-  let button_count = $('.btn__record-count');
-
+  let button_next = $('.btn__playRec');//用於 practiceInterface
   if (!isRecording) {
     // 開始錄音
     isRecording = true;
 
-    // 禁用播放按鈕
+    // 禁用播放按鈕，用於 practiceInterface
     button_next.addClass('disabled');
 
     // 顯示錄製中效果
     button_now.addClass('active current');
-    button_text.hide();
-    button_count.show();
 
     // 倒數秒數：判斷是否提供了參數 s
     if (s) {
@@ -68,16 +63,16 @@ function REC(s) {
 
         if (sec < 0) {
           // 錄音時間到，停止錄音
-          stopRecording(button_now, button_next, button_text, button_count);
+          stopRecording(button_now, button_next);
         }
       }, 1000);
     }
   } else {
     // 再次點選停止錄音
-    stopRecording(button_now, button_next, button_text, button_count);
+    stopRecording(button_now, button_next);
   }
 }
-function stopRecording(button_now, button_next, button_text, button_count) {
+function stopRecording(button_now, button_next) {
   isRecording = false;
 
   // 清除倒數計時器（如果存在）
@@ -85,12 +80,12 @@ function stopRecording(button_now, button_next, button_text, button_count) {
 
   // 停止錄音效果
   button_now.removeClass('active current').blur();
-  button_text.show();
-  button_count.hide();
 
-  // 启用播放按鈕並清除 tooltip
-  button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
-  $('.tooltip').remove();
+  // 啟用播放按鈕，用於 practiceInterface
+  button_next.removeClass('disabled');
+	
+  //啟動分析，用於 chatInterface
+  chat_analyze();
 }
 
 //播放錄音

@@ -186,6 +186,91 @@ $('.btn__screenText').click(function() {
 		});
     }
 });
+	
+	
+function chat_analyze() {
+    // 顯示 loading 畫面
+    $('body').prepend(`
+        <div id="spinner" class="spinner show">
+			<div class="spinner-border" role="status">
+			  <span class="visually-hidden-focusable">Loading...</span>
+			</div>
+		</div>
+    `);
+
+    // 模擬 loading 結束（例如 1 秒後）
+    setTimeout(function () {
+        // 移除 loading 畫面
+        $('#spinner').remove();
+
+        // 追加內容
+        $('.chatInterface-content').append(`
+            <div class="chatInterface-frame right">
+                <div class="avatar"><span class="avatar-text">陳</span></div>
+                <div class="dialog">
+                    <div class="dialog-text">
+                        <div class="dialog-text-content">Name is the Janie.</div>
+                    </div>
+                    <div class="dialog-suggest" style="display: none;">
+                        <div>可以說</div>
+                        <button type="button" class="btn btn-link btn__playTitle" onClick="" title="播放">
+                            <span class="visually-hidden">播放</span>
+                        </button>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        `);
+
+        // 捲軸捲動至最底部
+        $('.futuristic-frame-content').animate({
+			scrollTop: $('.futuristic-frame-content')[0].scrollHeight
+		}, 500); 
+		
+		chat_robot();
+    }, 1000); // 模擬 loading 時間：1 秒
+}
+	
+function chat_robot() {	
+	// 顯示 loading 畫面
+    $('body').prepend(`
+        <div id="spinner" class="spinner show">
+			<div class="spinner-border" role="status">
+			  <span class="visually-hidden-focusable">Loading...</span>
+			</div>
+		</div>
+    `);
+	
+	// 模擬 loading 結束（例如 1 秒後）
+    setTimeout(function () {
+        // 移除 loading 畫面
+        $('#spinner').remove();
+
+        // 追加內容
+        $('.chatInterface-content').append(`
+            <div class="chatInterface-frame left">
+              <div class="avatar"> <span class="avatar-img"><img src="Content/images/robot-avatar.png" alt="機器人頭像"></span></div>
+              <div class="dialog">
+                <div class="dialog-tools">
+                  <button type="button" class="btn btn-link btn__translate" aria-expanded="false" aria-label="顯示翻譯" title="顯示翻譯"> </button>
+                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏機器人說的話" title="隱藏機器人說的話"></button>
+                </div>
+                <div class="dialog-text">
+                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
+                  <div class="dialog-text-content">Hi, what’s your name?</div>
+                </div>
+                <div class="dialog-translate" style="display: none;">你叫甚麼名字？</div>
+              </div>
+            </div>
+        `);
+
+        // 捲軸捲動至最底部
+        $('.futuristic-frame-content').animate({
+			scrollTop: $('.futuristic-frame-content')[0].scrollHeight
+		}, 500); 
+		
+    }, 1000); // 模擬 loading 時間：1 秒
+}
 </script>
 </body>
 </html>
