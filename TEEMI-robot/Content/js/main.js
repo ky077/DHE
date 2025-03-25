@@ -120,7 +120,7 @@ function PLAYREC(src) {
   audio.addEventListener('pause', function () { //播放完
     isPlaying = false;
     
-    button_now.removeClass('current');                               //移除閃爍效果
+    button_now.removeClass('current').blur();                              //移除閃爍效果
     button_now.html('<i class="fa-solid fa-play"></i>'); //更改按鈕狀態
       
     //顯示[下一題/完成]按鈕、若有tooltip則清除
@@ -131,7 +131,7 @@ function PLAYREC(src) {
   audio.addEventListener('ended', function () { //播放完
     isPlaying = false;
     
-    button_now.removeClass('current');                               //移除閃爍效果
+    button_now.removeClass('current').blur();                               //移除閃爍效果
     button_now.html('<i class="fa-solid fa-play"></i>'); //更改按鈕狀態
       
     //顯示[下一題/完成]按鈕、若有tooltip則清除
