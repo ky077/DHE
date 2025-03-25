@@ -1,45 +1,50 @@
 /*播放題目*/
-.btn__playTitle{
+.btn__playTitle{  
     background-color: transparent;
     border: none;
-    font-size: 1.2rem;
-    padding: 0;
+    font-size: 1rem;
+    padding: 0 !important;
     position: relative;
     &::before{
         content: "\f028";
+		display: inline-block;
         font-family: "Font Awesome 6 Free"; 
 	    font-weight: 900;
-        display: inline-block;
+        width: 1.3em;
+		height: 1.3em;
+		line-height: 1.3em;
         vertical-align: middle;
-        margin-top: -.25em;
-        line-height: 1.3em;
-        height: 1.3em;
         overflow: hidden;
         text-align: left;
-        width: 1.3em;
+        margin-top: -.25em;
         margin-right: .25rem;
         border-radius: 0;
     }
 }
 .btn__playTitle.current{
-    &::before{
+    &::before{ 
         width: .7em;
         margin-right: calc(.25rem + .2em + .2em + .2em);    
     }
     &::after{
         content: "";
-        display: block;
+        display: inline-block;
         width: .6em;
         height: 1.3em;
         position: absolute;
-        top:50%;
-        left: 0.7em;
-        margin-top: -.65em;
+        top: 50%;
+        left: .7em;
+        margin-top: -.7em;
         background-image: url("../images/volume-3.svg");
         background-size: 100% 100%;
         background-repeat: no-repeat;
         animation: volume 3s infinite;
     }
+	&.disabled, &:disabled, &[disabled], &[disabled="disabled"]{
+		filter: opacity(1);
+		opacity: 1.0;
+		color: $primary;
+	}
 }
 
 /*錄製音檔*/

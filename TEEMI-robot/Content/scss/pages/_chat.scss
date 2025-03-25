@@ -178,7 +178,7 @@
 		.dialog-translate{
 			font-size: .9rem;
 			color: $primary;
-			padding: .25rem 1rem .25rem 2.55rem;
+			padding: .25rem 1rem .25rem 2rem;
 		}
 		.dialog-suggest{
 			font-size: .9rem;
@@ -231,4 +231,88 @@
 			}	
 		}
 	}
+}
+
+.btn__translate{
+	background-color: transparent;
+    border: none;
+    padding: 0 !important;
+	display: inline-flex;
+    &::before{//A
+		content: "\41";
+		display: inline-flex;
+		font-family: "Font Awesome 6 Free"; 
+	    font-weight: 900;
+		font-size: .6em;
+		background-color: $primary;
+		color: $white;
+		border: 2px solid $primary;
+		border-radius: 2px 0 0 2px;
+		width: 1.8em;
+		height: 1.8em;
+		justify-content: center;
+		align-items: center;
+		margin-right: -1px;
+    }
+	&::after{//O
+		content: "\f0ac";
+		display: inline-flex;
+		font-family: "Font Awesome 6 Free"; 
+	    font-weight: 900;
+		font-size: .6em;
+		background-color: transparent;
+		color: $primary;
+		border: 2px solid $primary;
+		border-radius: 0 2px 2px 0;
+		width: 1.8em;
+		height: 1.8em;
+		justify-content: center;
+		align-items: center;
+		margin-left: -1px;
+    }
+}
+.btn__translate[aria-expanded="false"]{ //預設 false-(A)O-無翻譯  
+	&::before{//A
+		background-color: $primary;
+		color: $white;
+    }
+	&::after{//O
+		background-color: transparent;
+		color: $primary;
+    }
+}
+.btn__translate[aria-expanded="true"]{//true-A(O)-有翻譯
+	&::before{//A
+		background-color: transparent;
+		color: $primary;
+    }
+	&::after{//O
+		background-color: $primary;
+		color: $white;
+    }	
+}
+
+
+.btn__screenText{  
+	background-color: transparent;
+    border: none;
+    padding: 0 !important;;
+	width: 2rem;
+	text-align: center;
+    &::before{
+        content: "\f06e";
+		display: inline-block;
+		font-family: "Font Awesome 6 Free"; 
+	    font-weight: 900;
+    }
+}
+.btn__screenText[aria-expanded="true"]{ //true-有眼睛-有顯示機器人說的話
+	&::before{
+		content: "\f06e";
+    }
+}
+.btn__screenText[aria-expanded="false"]{//false-關閉眼睛-關閉機器人說的話
+	&::before{
+		content: "\f070";
+    }
 }

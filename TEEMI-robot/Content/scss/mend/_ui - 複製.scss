@@ -198,3 +198,118 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 		content: "Hard";
 	}	
 }
+
+.btn__translate{ 
+	background-color: transparent;
+    border: none;
+    padding: 0;
+    &::before{
+		content: "\41";
+		display: inline-flex;
+		font-family: "Font Awesome 6 Free"; 
+	    font-weight: 900;
+		font-size: .75em;
+		line-height: 1;
+		background-color: $primary;
+		color: $white;
+		border: 2px solid $primary;
+		border-radius: 2px 0 0 2px;
+		width: 1.4em;
+		height: 1.4em;
+		justify-content: center;
+		align-items: center;
+    }
+	&::after{
+		content: "\f0ac";
+		display: inline-flex;
+		font-family: "Font Awesome 6 Free"; 
+	    font-weight: 900;
+		font-size: .75em;
+		line-height: 1;
+		background-color: transparent;
+		color: $primary;
+		border: 2px solid $primary;
+		border-radius: 0 2px 2px 0;
+		width: 1.4em;
+		height: 1.4em;
+		justify-content: center;
+		align-items: center;
+    }
+	/*position: relative;
+	[class*="a"]{
+		width: 1.25em;
+		height: 1.25em;
+		font-size: .8em;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	}
+	[class*="globe"]{
+		width: 1.25em;
+		height: 1.25em;
+		font-size: .8em;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&[data-state="toShow"]{
+		[class*="a"]{
+			background-color: $primary;
+			color: #fff;
+			
+		}
+		[class*="globe"]{
+			background-color: transparent;
+			color: $primary;
+			
+		}	
+	}
+	&[data-state="toHide"]{
+		[class*="a"]{
+			background-color: transparent;
+			color: $primary;
+			
+		}
+		[class*="globe"]{
+			background-color: $primary;
+			color: #fff;
+			
+		}	
+	}*/
+}
+
+.btn__screenText{ 
+	background-color: transparent;
+    border: none;
+    padding: 0;
+    /*position: relative;
+	width: 2rem;
+	height: 1rem*1.5;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;*/
+    &::before{
+        //content: "\f06e";
+		content: "\f070";
+		display: inline-block;
+		font-family: "Font Awesome 6 Free"; 
+	    font-weight: 900;
+		line-height: 1;
+		//content: "\f070";
+		/*
+		width: 125%;
+		height: 100%;
+		
+        */
+        
+        /*vertical-align: middle;
+        margin-top: -.25em;
+        line-height: 1.3em;
+        
+        overflow: hidden;
+        text-align: left;
+        
+        margin-right: .25rem;
+        border-radius: 0;*/
+    }
+}

@@ -134,11 +134,12 @@ samp { font-family: 'Noto Sans', 'Noto Sans TC', 'Microsoft JhengHei',  'PingFan
 @keyframes flashAn { from { opacity: 1.0; }
   to { opacity: 0.25; } }
 /*播放題目*/
-.btn__playTitle { background-color: transparent; border: none; font-size: 1.2rem; padding: 0; position: relative; }
-.btn__playTitle::before { content: "\f028"; font-family: "Font Awesome 6 Free"; font-weight: 900; display: inline-block; vertical-align: middle; margin-top: -.25em; line-height: 1.3em; height: 1.3em; overflow: hidden; text-align: left; width: 1.3em; margin-right: .25rem; border-radius: 0; }
+.btn__playTitle { background-color: transparent; border: none; font-size: 1rem; padding: 0 !important; position: relative; }
+.btn__playTitle::before { content: "\f028"; display: inline-block; font-family: "Font Awesome 6 Free"; font-weight: 900; width: 1.3em; height: 1.3em; line-height: 1.3em; vertical-align: middle; overflow: hidden; text-align: left; margin-top: -.25em; margin-right: .25rem; border-radius: 0; }
 
 .btn__playTitle.current::before { width: .7em; margin-right: calc(.25rem + .2em + .2em + .2em); }
-.btn__playTitle.current::after { content: ""; display: block; width: .6em; height: 1.3em; position: absolute; top: 50%; left: 0.7em; margin-top: -.65em; background-image: url("../images/volume-3.svg"); background-size: 100% 100%; background-repeat: no-repeat; animation: volume 3s infinite; }
+.btn__playTitle.current::after { content: ""; display: inline-block; width: .6em; height: 1.3em; position: absolute; top: 50%; left: .7em; margin-top: -.7em; background-image: url("../images/volume-3.svg"); background-size: 100% 100%; background-repeat: no-repeat; animation: volume 3s infinite; }
+.btn__playTitle.current.disabled, .btn__playTitle.current:disabled, .btn__playTitle.current[disabled], .btn__playTitle.current[disabled="disabled"] { filter: opacity(1); opacity: 1.0; color: #09896a; }
 
 /*錄製音檔*/
 .btn__record { border-radius: 100%; font-size: 1.25rem; width: calc(2em + 1rem + 1rem - 2px); height: calc(2em + 1rem + 1rem - 2px); display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 0.2rem #0ed1a2; background-color: #fff; border-color: transparent; }
@@ -239,14 +240,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .task-complete.medium::after { content: "Medium"; }
 .task-complete.hard::after { content: "Hard"; }
 
-.btn-translate { position: relative; }
-.btn-translate [class*="a"] { width: 1.25em; height: 1.25em; font-size: .8em; display: inline-flex; justify-content: center; align-items: center; }
-.btn-translate [class*="globe"] { width: 1.25em; height: 1.25em; font-size: .8em; display: inline-flex; justify-content: center; align-items: center; }
-.btn-translate[data-state="toShow"] [class*="a"] { background-color: #09896a; color: #fff; }
-.btn-translate[data-state="toShow"] [class*="globe"] { background-color: transparent; color: #09896a; }
-.btn-translate[data-state="toHide"] [class*="a"] { background-color: transparent; color: #09896a; }
-.btn-translate[data-state="toHide"] [class*="globe"] { background-color: #09896a; color: #fff; }
-
 .futuristic-frame.chat .topic-section .btn { border-radius: 0 500px 500px 500px; }
 .futuristic-frame.chat .topic-section .card .card-img { border-radius: 0 500px 500px 500px; }
 .futuristic-frame.chat .topic-section .card .task-complete.all [class*="bookmark"] { left: 1.5rem; transform: translateX(-50%); }
@@ -279,7 +272,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .chatInterface-frame .dialog .dialog-tools { text-align: right; position: absolute; top: 0; left: 0; right: 0; transform: translateY(-100%); }
 .chatInterface-frame .dialog .dialog-text { background-color: #fff; border-radius: 0.375rem; border-top-left-radius: 0; padding: .75rem 1rem .75rem .5rem; color: #343a40; position: relative; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); display: flex; align-items: flex-start; margin-bottom: .25rem; }
 .chatInterface-frame .dialog .dialog-text::before { content: ""; display: block; width: 0; height: 0; border-style: solid; border-width: 0 1rem 1rem 0; border-color: transparent #fff transparent transparent; position: absolute; top: 0; left: -1rem; }
-.chatInterface-frame .dialog .dialog-translate { font-size: .9rem; color: #09896a; padding: .25rem 1rem .25rem 2.55rem; }
+.chatInterface-frame .dialog .dialog-translate { font-size: .9rem; color: #09896a; padding: .25rem 1rem .25rem 2rem; }
 .chatInterface-frame .dialog .dialog-suggest { font-size: .9rem; color: #09896a; }
 .chatInterface-frame .dialog .dialog-suggest .btn { padding-top: 0; padding-bottom: 0; }
 
@@ -291,6 +284,23 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .chatInterface-footer { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding: 1rem; }
 
 .completion-section.chat .task-complete.easy.done, .completion-section.chat .task-complete.medium.done, .completion-section.chat .task-complete.hard.done { color: #fff100; }
+
+.btn__translate { background-color: transparent; border: none; padding: 0 !important; display: inline-flex; }
+.btn__translate::before { content: "\41"; display: inline-flex; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: .6em; background-color: #09896a; color: #fff; border: 2px solid #09896a; border-radius: 2px 0 0 2px; width: 1.8em; height: 1.8em; justify-content: center; align-items: center; margin-right: -1px; }
+.btn__translate::after { content: "\f0ac"; display: inline-flex; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: .6em; background-color: transparent; color: #09896a; border: 2px solid #09896a; border-radius: 0 2px 2px 0; width: 1.8em; height: 1.8em; justify-content: center; align-items: center; margin-left: -1px; }
+
+.btn__translate[aria-expanded="false"]::before { background-color: #09896a; color: #fff; }
+.btn__translate[aria-expanded="false"]::after { background-color: transparent; color: #09896a; }
+
+.btn__translate[aria-expanded="true"]::before { background-color: transparent; color: #09896a; }
+.btn__translate[aria-expanded="true"]::after { background-color: #09896a; color: #fff; }
+
+.btn__screenText { background-color: transparent; border: none; padding: 0 !important; width: 2rem; text-align: center; }
+.btn__screenText::before { content: "\f06e"; display: inline-block; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+
+.btn__screenText[aria-expanded="true"]::before { content: "\f06e"; }
+
+.btn__screenText[aria-expanded="false"]::before { content: "\f070"; }
 
 .futuristic-frame.practice .topic-section .btn { border-radius: 500px; }
 .futuristic-frame.practice .topic-section .card .card-img { border-radius: 500px; }

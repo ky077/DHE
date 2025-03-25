@@ -7,9 +7,9 @@ $(document).ready(function () {
 });
 
 //播放題目
-function PLAYTITLE(item) {
-  let button_now = $('.btn__playTitle'),
-    button_next = $('.btn__record');
+function PLAYTITLE(button, item) {
+  let button_now = $(button),
+      button_next = $('.btn__record');
 
   //播放中閃爍效果
   button_now.addClass('current');
@@ -33,10 +33,6 @@ function PLAYTITLE(item) {
 
     //結束播放，移除閃爍效果
     button_now.removeClass('current');
-
-    //顯示[錄製音檔]按鈕、若有tooltip則清除
-    button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
-    $('.tooltip').remove();
   });
 }
 
