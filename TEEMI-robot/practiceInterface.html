@@ -48,7 +48,7 @@
             </div>
           </div>
           <div class="practiceInterface-topic">
-            <button type="button" class="btn btn-link"><i class="fa-solid fa-volume-high" aria-hidden="true"></i><span class="visually-hidden">聽聽看</span></button>
+			<button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Does the rent include utilities like gas, water, and electricity_.mp3')"><span class="visually-hidden">播放</span></button>
             <div>
 				<div><span class="speak-excellent">Does </span>
 					<span class="speak-excellent">the </span>
@@ -67,9 +67,11 @@
             <i class="fas fa-smile-beam level-good" aria-hidden="true"></i><span class="visually-hidden">Good</span><!-- --> 
             <i class="fa-solid fa-face-meh level-fair" aria-hidden="true"></i><span class="visually-hidden">Fair</span><!-- --></div>
           <div class="practiceInterface-footer">
-            <button type="button" class="btn btn-primary btn-lg btn__record" title="播放錄音"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
-            <button type="button" class="btn btn-primary btn-lg btn__record" title="錄製檔案"><i class="fa-solid fa-microphone fa-1x" aria-hidden="true"></i></button>
-            <button type="button" class="btn btn-primary btn-lg btn__record" title="下一句" onClick="window.location='practiceEnd.html'"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+			<button type="button" class="btn btn-primary btn-lg btn__playRec" title="播放錄音" onClick="PLAYREC('Content/temp/模擬點選播放錄音.mp3')"><i class="fa-solid fa-play" aria-hidden="true"></i></button>  
+			  
+			  
+            <button type="button" class="btn btn-primary btn-lg btn__record" onclick="REC()" title="錄製檔案"><i class="fa-solid fa-microphone fa-1x" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-primary btn-lg btn-next" title="下一句" onClick="window.location='practiceEnd.html'"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
           </div>
           
           <!-- --> </div>

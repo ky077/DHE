@@ -38,57 +38,59 @@ function PLAYTITLE(button, item) {
 
 //錄製音檔
 let interval;
+let isRecording = false; // 用於追蹤是否正在錄音
 function REC(s) {
-  let button_now = $('.btn__record'),
-    button_next = $('.btn__playRec');
+  let button_now = $('.btn__record');
+  let button_next = $('.btn__playRec');
+  let button_text = $('.btn__record-text');
+  let button_count = $('.btn__record-count');
 
-  let button_text = $('.btn__record-text'),
-    button_count = $('.btn__record-count');
+  if (!isRecording) {
+    // 開始錄音
+    isRecording = true;
 
-  if (!button_now.hasClass('current')) {
-    //錄製中皆無法播放錄音
+    // 禁用播放按鈕
     button_next.addClass('disabled');
 
-    //錄製中閃爍效果
+    // 顯示錄製中效果
     button_now.addClass('active current');
     button_text.hide();
     button_count.show();
 
-    //倒數秒數
-    var sec = s.substr(0, s.length - 3);
-
-    button_count.find('.sec').text(sec < 10 ? '0' + sec : sec);
-
-    interval = setInterval(function () {
-      sec--;
+    // 倒數秒數：判斷是否提供了參數 s
+    if (s) {
+      let sec = parseInt(s, 10); // 將秒數轉換為整數
       button_count.find('.sec').text(sec < 10 ? '0' + sec : sec);
 
-      if (sec < 0) {
-        //錄音時間到，移除閃爍效果
-        button_now.removeClass('active current').blur();
-        button_text.show();
-        button_count.hide();
+      interval = setInterval(function () {
+        sec--;
+        button_count.find('.sec').text(sec < 10 ? '0' + sec : sec);
 
-        clearInterval(interval);
-
-        //顯示[播放錄音]按鈕、若有tooltip則清除
-        button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
-        $('.tooltip').remove();
-      }
-    }, 1000);
+        if (sec < 0) {
+          // 錄音時間到，停止錄音
+          stopRecording(button_now, button_next, button_text, button_count);
+        }
+      }, 1000);
+    }
   } else {
-    //提前取消錄音，移除閃爍效果
-    //button_now.removeClass('active current').blur();
-//    button_text.show();
-//    button_count.hide();
-//
-//    clearInterval(interval);
-//
-//    button_count.find('.sec').text('00');
-
-    //顯示提前取消的無效錄音modal
-    //alertModalDOM('<div class="text-danger text-center">錄音時間不能中斷，<br class="d-sm-none">請重新錄音。</div>');
+    // 再次點選停止錄音
+    stopRecording(button_now, button_next, button_text, button_count);
   }
+}
+function stopRecording(button_now, button_next, button_text, button_count) {
+  isRecording = false;
+
+  // 清除倒數計時器（如果存在）
+  clearInterval(interval);
+
+  // 停止錄音效果
+  button_now.removeClass('active current').blur();
+  button_text.show();
+  button_count.hide();
+
+  // 启用播放按鈕並清除 tooltip
+  button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
+  $('.tooltip').remove();
 }
 
 //播放錄音
@@ -113,7 +115,7 @@ function PLAYREC(src) {
       isPlaying = true;
       
       button_now.addClass('current');                                   //增加閃爍效果 
-      button_now.html('<i class="fa-solid fa-pause me-1"></i>暫停播放'); //更改按鈕狀態
+      button_now.html('<i class="fa-solid fa-pause"></i>'); //更改按鈕狀態
       
       //顯示[下一題/完成]按鈕、若有tooltip則清除
       button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
@@ -124,7 +126,7 @@ function PLAYREC(src) {
     isPlaying = false;
     
     button_now.removeClass('current');                               //移除閃爍效果
-    button_now.html('<i class="fa-solid fa-play me-1"></i>播放錄音'); //更改按鈕狀態
+    button_now.html('<i class="fa-solid fa-play"></i>'); //更改按鈕狀態
       
     //顯示[下一題/完成]按鈕、若有tooltip則清除
     button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
@@ -135,7 +137,7 @@ function PLAYREC(src) {
     isPlaying = false;
     
     button_now.removeClass('current');                               //移除閃爍效果
-    button_now.html('<i class="fa-solid fa-play me-1"></i>播放錄音'); //更改按鈕狀態
+    button_now.html('<i class="fa-solid fa-play"></i>'); //更改按鈕狀態
       
     //顯示[下一題/完成]按鈕、若有tooltip則清除
     button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');

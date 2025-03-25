@@ -110,7 +110,7 @@
             </div>
           </div>
           <div class="chatInterface-footer">
-            <button type="button" class="btn btn-primary btn-lg btn__record" onclick="REC('10000')" title="錄製檔案"><i class="fa-solid fa-microphone fa-1x" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-primary btn-lg btn__record" onclick="REC()" title="錄製檔案"><i class="fa-solid fa-microphone fa-1x" aria-hidden="true"></i></button>
           </div>
           <!-- --> 
         </div>
@@ -130,8 +130,7 @@
 <!-- This web Javascript --> 
 <script src="Content/js/main.js"></script> 
 <script>
-	
-	
+//[A|地球] 翻譯	
 $('.btn__translate').click(function() {
     // 判斷目前的按鈕狀態
     const currentState = $(this).attr('aria-expanded');	
@@ -160,8 +159,7 @@ $('.btn__translate').click(function() {
     }
 });
 	
-	
-	
+//[眼睛] 機器人說的話
 $('.btn__screenText').click(function() {
     // 判斷目前的按鈕狀態
     const currentState = $(this).attr('aria-expanded');	console.log(currentState);
