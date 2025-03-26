@@ -46,8 +46,8 @@
               <div class="avatar"> <span class="avatar-img"><img src="Content/images/robot-avatar.png" alt="機器人頭像"></span></div>
               <div class="dialog">
                 <div class="dialog-tools">
-                  <button type="button" class="btn btn-link btn__translate" aria-expanded="false" aria-label="顯示翻譯" title="顯示翻譯"> </button>
-                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏機器人說的話" title="隱藏機器人說的話"></button>
+                  <button type="button" class="btn btn-link btn__translate" aria-expanded="false" aria-label="顯示翻譯" title="顯示翻譯" onClick="TRANSLATE(this)"> </button>
+                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏機器人說的話" title="隱藏機器人說的話" onClick="SCREENTEXT(this)"></button>
                 </div>
                 <div class="dialog-text">
                   <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
@@ -72,8 +72,8 @@
               <div class="avatar"> <span class="avatar-img"><img src="Content/images/robot-avatar.png" alt="機器人頭像"></span></div>
               <div class="dialog">
                 <div class="dialog-tools">
-                  <button type="button" class="btn btn-link btn__translate" aria-expanded="false" aria-label="顯示翻譯" title="顯示翻譯"> </button>
-                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏機器人說的話" title="隱藏機器人說的話"></button>
+                  <button type="button" class="btn btn-link btn__translate" aria-expanded="false" aria-label="顯示翻譯" title="顯示翻譯" onClick="TRANSLATE(this)"> </button>
+                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏機器人說的話" title="隱藏機器人說的話" onClick="SCREENTEXT(this)"></button>
                 </div>
                 <div class="dialog-text">
                   <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Do you live in a dorm, Janie_.mp3')"><span class="visually-hidden">播放</span></button>
@@ -98,8 +98,8 @@
               <div class="avatar"> <span class="avatar-img"><img src="Content/images/robot-avatar.png" alt="機器人頭像"></span></div>
               <div class="dialog">
                 <div class="dialog-tools">
-                  <button type="button" class="btn btn-link btn__translate" aria-expanded="false" aria-label="顯示翻譯" title="顯示翻譯"> </button>
-                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏機器人說的話" title="隱藏機器人說的話"></button>
+                  <button type="button" class="btn btn-link btn__translate" aria-expanded="false" aria-label="顯示翻譯" title="顯示翻譯" onClick="TRANSLATE(this)"> </button>
+                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏機器人說的話" title="隱藏機器人說的話" onClick="SCREENTEXT(this)"></button>
                 </div>
                 <div class="dialog-text">
                   <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
@@ -109,6 +109,7 @@
               </div>
             </div>
           </div>
+		  <!-- -->	
           <div class="chatInterface-footer">
             <button type="button" class="btn btn-primary btn-lg btn__record" onclick="REC()" title="錄製檔案"><i class="fa-solid fa-microphone fa-1x" aria-hidden="true"></i></button>
           </div>
@@ -130,62 +131,65 @@
 <!-- This web Javascript --> 
 <script src="Content/js/main.js"></script> 
 <script>
-//[A|地球] 翻譯	
-$('.btn__translate').click(function() {
+//翻譯	
+function TRANSLATE(button) { 
     // 判斷目前的按鈕狀態
-    const currentState = $(this).attr('aria-expanded');	
-	// 選取當前的翻譯顯示區塊
-	const translate = $(this).parents('.dialog').find('.dialog-translate');
+    const currentState = $(button).attr('aria-expanded') === 'true';
+    // 選取當前的翻譯顯示區塊
+    const translateTarget = $(button).parents('.dialog').find('.dialog-translate');
 
-    if (currentState === 'false') { 
-		// 當前、預設狀態是false-(A)O-無翻譯，要顯示翻譯
-        $(this).attr('aria-expanded', 'true'); 
-		translate.show();
-		
-		$(this).attr({
-			'aria-label': '隱藏翻譯',
-			'title': 	  '隱藏翻譯'
-		});
-		
-    } else {  
-		// 當前狀態true-A(O)-有翻譯，要關閉翻譯
-        $(this).attr('aria-expanded', 'false'); 
-		translate.hide();
-		
-		$(this).attr({
-					'aria-label': '顯示翻譯',
-					'title': 	  '顯示翻譯'
-				});
+    if (!currentState) {
+        // 當前狀態為 false：顯示翻譯
+        $(button).attr('aria-expanded', 'true');
+        translateTarget.show();
+
+        // 更新按鈕的屬性（隱藏翻譯）
+        $(button).attr({
+            'aria-label': '隱藏翻譯',
+            'title': '隱藏翻譯'
+        });
+    } else {
+        // 當前狀態為 true：隱藏翻譯
+        $(button).attr('aria-expanded', 'false');
+        translateTarget.hide();
+
+        // 更新按鈕的屬性（顯示翻譯）
+        $(button).attr({
+            'aria-label': '顯示翻譯',
+            'title': '顯示翻譯'
+        });
     }
-});
+}
 	
 //[眼睛] 機器人說的話
-$('.btn__screenText').click(function() {
+function SCREENTEXT(button) {
     // 判斷目前的按鈕狀態
-    const currentState = $(this).attr('aria-expanded');	console.log(currentState);
+    const currentState = $(button).attr('aria-expanded');	
 	// 選取當前的文字區塊
-	const content = $(this).parents('.dialog').find('.dialog-text-content');
+	const content = $(button).parents('.dialog').find('.dialog-text-content');
 
     if (currentState === 'true') { 
 		// 當前、預設狀態是true-有眼睛-有顯示機器人說的話，要關閉機器人說的話
-		$(this).attr('aria-expanded', 'false'); 
+		$(button).attr('aria-expanded', 'false'); 
 		content.css('color', 'transparent');
 		
-		$(this).attr({
+		$(button).attr({
 			'aria-label': '關閉機器人說的話',
 			'title': 	  '關閉機器人說的話'
 		});
     } else {  
 		// 當前狀態(關閉眼睛)，要顯示機器人說的話
-		$(this).attr('aria-expanded', 'true'); 
+		$(button).attr('aria-expanded', 'true'); 
 		content.css('color', '');
 		
-        $(this).attr({
+        $(button).attr({
 			'aria-label': '顯示機器人說的話',
 			'title': 	  '顯示機器人說的話'
 		});
     }
-});
+}
+	
+	
 	
 	
 function chat_analyze() {
@@ -248,18 +252,18 @@ function chat_robot() {
 
         // 追加內容
         $('.chatInterface-content').append(`
-            <div class="chatInterface-frame left">
+             <div class="chatInterface-frame left">
               <div class="avatar"> <span class="avatar-img"><img src="Content/images/robot-avatar.png" alt="機器人頭像"></span></div>
               <div class="dialog">
                 <div class="dialog-tools">
-                  <button type="button" class="btn btn-link btn__translate" aria-expanded="false" aria-label="顯示翻譯" title="顯示翻譯"> </button>
-                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏機器人說的話" title="隱藏機器人說的話"></button>
+                  <button type="button" class="btn btn-link btn__translate" aria-expanded="false" aria-label="顯示翻譯" title="顯示翻譯" onClick="TRANSLATE(this)"> </button>
+                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏機器人說的話" title="隱藏機器人說的話" onClick="SCREENTEXT(this)"></button>
                 </div>
                 <div class="dialog-text">
-                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
-                  <div class="dialog-text-content">Hi, what’s your name?</div>
+                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Do you live in a dorm, Janie_.mp3')"><span class="visually-hidden">播放</span></button>
+                  <div class="dialog-text-content">Do you live in a dorm, Janie?</div>
                 </div>
-                <div class="dialog-translate" style="display: none;">你叫甚麼名字？</div>
+                <div class="dialog-translate" style="display: none;">珍妮，你住在宿舍嗎？</div>
               </div>
             </div>
         `);
