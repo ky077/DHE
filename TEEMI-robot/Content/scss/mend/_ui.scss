@@ -62,27 +62,16 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     text-align: center;
     margin-bottom: 1rem;
 }
-/*.style-marker{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: .9rem;
-    color: $gray-600;
-    .marker-circle{
-        display: inline-block;
-        width: .9rem;
-        height: .9rem;
-        border-radius: 100%;
-        background-color: $decoration;
-        margin-right: .25rem;
-    }
-}*/
+
 .min-ratio{
     @media screen and (min-width: 992px) {
         height: 100% !important;
     }    
 }
 
+[data-bs-toggle="tooltip"] a{
+	display: block;
+}
 /* ************************************************* */
 .lightboxModal{
     display: block;

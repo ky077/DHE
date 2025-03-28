@@ -191,30 +191,57 @@ transform: rotate(0deg);
           <div class="difficulty-section">
             <h3 class="difficulty-title"><span>英語難度</span></h3>
             <div class="row g-5">
-              <div class="col"><span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】" > <a class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn" href="chatInterface.html">
+              <div class="col"><span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】" >
+                <input type="radio" class="btn-check" name="radio-enDiff" id="en1">
+                <label for="en1" class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn">
                 <div class="task-complete easy done" title="已完成"><i class="fas fa-star" aria-hidden="true"></i></div>
-                簡單</a> </span> </div>
-              <div class="col"> <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】" ><a class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn" href="chatInterface.html">
+                簡單
+                </label>
+                </span> </div>
+              <div class="col"> <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】" >
+                <input type="radio" class="btn-check" name="radio-enDiff" id="en2">
+                <label for="en2" class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn">
                 <div class="task-complete medium" title="未完成"><i class="fas fa-star" aria-hidden="true"></i></div>
-                中等</a></span> </div>
-              <div class="col"> <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】" ><a class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn" href="chatInterface.html">
+                中等
+                </label>
+                </span> </div>
+              <div class="col"> <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】" >
+                <input type="radio" class="btn-check" name="radio-enDiff" id="en3">
+                <label for="en3" class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn">
                 <div class="task-complete hard" title="未完成"><i class="fas fa-star" aria-hidden="true"></i></div>
-                困難</a></span> </div>
+                困難
+                </label>
+                </span> </div>
             </div>
           </div>
           <div class="difficulty-section">
             <h3 class="difficulty-title"><span>專科知能難度</span></h3>
             <div class="row g-5">
-              <div class="col"> <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】"><a class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn" href="chatInterface.html">
+              <div class="col"> <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】">
+                <input type="radio" class="btn-check" name="radio-speDiff" id="spe1">
+                <label for="spe1" class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn">
                 <div class="task-complete easy done" title="已完成"><i class="fas fa-star" aria-hidden="true"></i></div>
-                簡單</a></span> </div>
-              <div class="col"> <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】"><a class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn" href="chatInterface.html">
+                簡單
+                </label>
+                </span> </div>
+              <div class="col"> <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】">
+                <input type="radio" class="btn-check" name="radio-speDiff" id="spe2">
+                <label for="spe2" class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn">
                 <div class="task-complete medium" title="未完成"><i class="fas fa-star" aria-hidden="true"></i></div>
-                中等</a></span> </div>
-              <div class="col"> <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】"><a class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn" href="chatInterface.html">
+                中等
+                </label>
+                </span> </div>
+              <div class="col"> <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="A2程度，【描述描述描述描述描述描述描述描述】">
+                <input type="radio" class="btn-check" name="radio-speDiff" id="spe3">
+                <label for="spe3" class="btn btn-outline-primary btn-lg rounded-pill w-100 difficulty-btn">
                 <div class="task-complete hard" title="未完成"><i class="fas fa-star" aria-hidden="true"></i></div>
-                困難</a></span> </div>
+                困難
+                </label>
+                </span> </div>
             </div>
+          </div>
+          <div class="row flex-column g-5 align-items-center mt-1">
+            <div class="col-5"><span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="請先選擇難度"> <a class="btn btn-outline-primary btn-lg rounded-pill w-100 disabled" href="chatInterface.html" id="START">開始聊天</a></span> </div>
           </div>
           <!-- --> 
         </div>
@@ -232,6 +259,36 @@ transform: rotate(0deg);
 <script src="Content/widgets/WOW-master/dist/wow.min.js"></script> 
 
 <!-- This web Javascript --> 
-<script src="Content/js/main.js"></script>
+<script src="Content/js/main.js"></script> 
+<script>
+$(document).ready(function () {
+    // 監聽所有的 radio 按鈕變化
+    $('input[type="radio"]').on('change', function () {
+        // 獲取所有的 radio group name
+        var radioGroups = {};
+        $('input[type="radio"]').each(function () {
+            radioGroups[$(this).attr('name')] = false;
+        });
+
+        // 檢查每個 group 是否有選中的選項
+        $('input[type="radio"]:checked').each(function () {
+            radioGroups[$(this).attr('name')] = true;
+        });
+
+        // 確認所有 group 都已選擇
+        var allSelected = Object.values(radioGroups).every(function (value) {
+            return value;
+        });
+
+        // 如果所有 group 已選擇，移除 disabled
+        if (allSelected) {
+            $('#START').removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
+			$('.futuristic-frame-content').animate({scrollTop:$('#START').offset().top}, 1000);
+        } else {
+            $('#START').addClass('disabled');
+        }
+    });
+});
+</script>
 </body>
 </html>
