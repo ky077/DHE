@@ -1,4 +1,8 @@
 .record-summary{
+	@media screen and (min-width: 576px) and (max-width: 991px) {
+	margin-left: -3rem;
+	margin-right: -3rem;
+	}
 	.record-title{
 		color: $body-color;
 		display: flex;
@@ -49,6 +53,7 @@
 		.end-an-robot{
 			display: inline-block;
 			width: 240px;
+			max-width: 58.33333334%;
 			height: auto;
 		}
 		.end-an-ball{
@@ -85,6 +90,8 @@
 }
 
 .record-summary +.end-animate {
+	@media screen and (min-width: 576px) {
 	margin-top: -10%;
+	}
 }
 

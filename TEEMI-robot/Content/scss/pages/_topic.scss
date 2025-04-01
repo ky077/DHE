@@ -1,5 +1,5 @@
 //待確認改名
-.topic-section{
+.topic-section{ 
 	margin-top: 1.5rem;
 	margin-bottom: 3rem;
 	text-align: center;
@@ -45,8 +45,8 @@
 			border-color: $gray-300;
 		}
 		.card-img{
-			width: 150px;
-			flex: 0 0 150px;
+			width: 30%;
+			flex: 0 0 30%;
 			overflow: hidden;
 			margin-bottom: auto;
 			img{
@@ -55,7 +55,7 @@
 			}
 		}
 		.card-body{ 
-			padding: .5rem .75rem .5rem .5rem;
+			padding: .5rem 2.5rem .5rem .5rem;
 			flex: 1 1 auto;
 			.card-title{
 				font-size: 1.25rem;

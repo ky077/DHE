@@ -1,5 +1,9 @@
 .difficulty-section{
 	margin-bottom: 3rem;
+	@media screen and (min-width: 576px) and (max-width: 991px) {
+	margin-left: -3rem;
+	margin-right: -3rem;
+	}
 	.difficulty-title{
 		color: $body-color;
 		margin-bottom: 2rem;

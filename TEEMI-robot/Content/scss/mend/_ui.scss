@@ -69,8 +69,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     }    
 }
 
-[data-bs-toggle="tooltip"] a{
-	display: block;
+[data-bs-toggle="tooltip"] {
+	position: relative;
+	a{
+		display: block;
+	}
 }
 /* ************************************************* */
 .lightboxModal{
@@ -115,7 +118,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 /* ************************************************* */
 .task-complete{
-	z-index: 5;
+	z-index: 4;
 	&.all{
 		position: relative; 
 		[class*="bookmark"]{

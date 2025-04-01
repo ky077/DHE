@@ -9,7 +9,7 @@ $(document).ready(function () {
 //播放題目
 function PLAYTITLE(button, item) {
   let button_now = $(button),
-      button_next = $('.btn__record');
+    button_next = $('.btn__record');
 
   //播放中閃爍效果
   button_now.addClass('current');
@@ -39,115 +39,124 @@ function PLAYTITLE(button, item) {
 //錄製音檔
 let interval;
 let isRecording = false; // 用於追蹤是否正在錄音
-function REC(s) {
+function REC(s, isChatInterface = false) {
   let button_now = $('.btn__record');
-  let button_next = $('.btn__playRec');//用於 practiceInterface
+  let button_disabled = $('.btn__playRec'); //用於 practiceInterface
   if (!isRecording) {
     // 開始錄音
     isRecording = true;
 
     // 禁用播放按鈕，用於 practiceInterface
-    button_next.addClass('disabled');
+    button_disabled.addClass('disabled');
 
     // 顯示錄製中效果
-    button_now.addClass('active current');
+    button_now.attr('title', '停止錄製'); //更改title  
+    button_now.addClass('active current'); //增加閃爍效果
+    button_now.html('<i class="fa-solid fa-stop" aria-hidden="true"></i>'); //更改按鈕狀態  
 
-    // 倒數秒數：判斷是否提供了參數 s
+    // 倒數秒數：判斷是否提供了參數 s (用於是否限制錄音時間)
     if (s) {
       let sec = parseInt(s, 10); // 將秒數轉換為整數
-      button_count.find('.sec').text(sec < 10 ? '0' + sec : sec);
+      //button_count.find('.sec').text(sec < 10 ? '0' + sec : sec);
 
       interval = setInterval(function () {
         sec--;
-        button_count.find('.sec').text(sec < 10 ? '0' + sec : sec);
+        //button_count.find('.sec').text(sec < 10 ? '0' + sec : sec);
 
         if (sec < 0) {
           // 錄音時間到，停止錄音
-          stopRecording(button_now, button_next);
+          stopRecording(button_now, button_disabled, isChatInterface);
         }
       }, 1000);
     }
   } else {
-    // 再次點選停止錄音
-    stopRecording(button_now, button_next);
+    // 再次點選則停止錄音
+    stopRecording(button_now, button_disabled, isChatInterface);
   }
 }
-function stopRecording(button_now, button_next) {
+
+function stopRecording(button_now, button_disabled, isChatInterface) {
   isRecording = false;
 
   // 清除倒數計時器（如果存在）
   clearInterval(interval);
 
   // 停止錄音效果
-  button_now.removeClass('active current').blur();
+  button_now.attr('title', '錄製檔案'); //更改title 	
+  button_now.removeClass('active current').blur(); //移除閃爍效果
+  button_now.html('<i class="fa-solid fa-microphone fa-1x" aria-hidden="true"></i>'); //更改按鈕狀態	
 
   // 啟用播放按鈕，用於 practiceInterface
-  button_next.removeClass('disabled');
-	
+  button_disabled.removeClass('disabled');
+
   //啟動分析，用於 chatInterface
-  chat_analyze();
+  if (isChatInterface) {
+    chat_analyze();
+  }
 }
 
 //播放錄音
 let audio = new Audio();
 let isPlaying = false;
 let hasPlayed = false;
+
 function PLAYREC(src) {
   let button_now = $('.btn__playRec'),
-      button_next = $('#NEXT');
+    button_disabled = $('.btn__record');
 
   if (isPlaying) {
     audio.pause();
   } else {
-    if (!hasPlayed || audio.ended) { 
+    if (!hasPlayed || audio.ended) {
       audio.src = src;
       hasPlayed = true;
     }
     audio.play();
   }
-   
-  audio.addEventListener('play', function () { //播放中
-      isPlaying = true;
-      
-      button_now.addClass('current');                                   //增加閃爍效果 
-      button_now.html('<i class="fa-solid fa-pause"></i>'); //更改按鈕狀態
-      
-      //顯示[下一題/完成]按鈕、若有tooltip則清除
-      button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
-      $('.tooltip').remove();  
-  });  
 
-  audio.addEventListener('pause', function () { //播放完
+  audio.addEventListener('play', function () { //播放中
+    isPlaying = true;
+
+    // 禁用錄製按鈕，用於 practiceInterface
+    button_disabled.addClass('disabled');
+
+    button_now.attr('title', '停止播放'); //更改title
+    button_now.addClass('current').blur(); //增加閃爍效果 
+    button_now.html('<i class="fa-solid fa-pause" aria-hidden="true"></i>'); //更改按鈕樣式
+  });
+
+  audio.addEventListener('pause', function () { //播放暫停
     isPlaying = false;
-    
-    button_now.removeClass('current').blur();                              //移除閃爍效果
-    button_now.html('<i class="fa-solid fa-play"></i>'); //更改按鈕狀態
-      
-    //顯示[下一題/完成]按鈕、若有tooltip則清除
-    button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
-    $('.tooltip').remove();    
-  });  
-    
+
+    button_now.attr('title', '播放錄音'); //更改title	
+    button_now.removeClass('current').blur(); //移除閃爍效果
+    button_now.html('<i class="fa-solid fa-play" aria-hidden="true"></i>'); //更改按鈕狀態
+
+    // 啟用播放按鈕，用於 practiceInterface
+    button_disabled.removeClass('disabled');
+  });
+
   audio.addEventListener('ended', function () { //播放完
     isPlaying = false;
-    
-    button_now.removeClass('current').blur();                               //移除閃爍效果
-    button_now.html('<i class="fa-solid fa-play"></i>'); //更改按鈕狀態
-      
-    //顯示[下一題/完成]按鈕、若有tooltip則清除
-    button_next.removeClass('disabled').unwrap('[data-bs-toggle="tooltip"]');
-    $('.tooltip').remove();    
+
+    button_now.attr('title', '播放錄音'); //更改title	
+    button_now.removeClass('current'); //移除閃爍效果
+    button_now.html('<i class="fa-solid fa-play" aria-hidden="true"></i>'); //更改按鈕狀態
+
+    // 啟用播放按鈕，用於 practiceInterface
+    button_disabled.removeClass('disabled');
   });
 }
 
 //停止播放錄音
-function STOPAUDIO() {  
+function STOPAUDIO(button_now, button_next) {
   if (!audio.paused) {
     audio.pause();
     audio.currentTime = 0;
-    
-    $('.btn__playRec').removeClass('current')                                //移除閃爍效果
-                      .html('<i class="fa-solid fa-play me-1"></i>播放錄音'); //更改按鈕狀態
+
+    button_now.attr('title', '播放錄音'); //更改title	
+    button_now.removeClass('current'); //移除閃爍效果
+    button_now.html('<i class="fa-solid fa-play" aria-hidden="true"></i>'); //更改按鈕狀態
   }
 }
 

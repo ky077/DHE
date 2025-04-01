@@ -42,14 +42,14 @@
 	.completion-content{
 		background-color: rgba($primary, .5);
 		padding: 1rem;
-		.completion-bar{
+		.completion-bar{ 
 			display: inline-block;
 			border-radius: 100%;
 			padding: 6px;
 			background: conic-gradient($primary                                      0% calc(var(--completed)/var(--total)*100%), 
 									   #fff calc(var(--completed)/var(--total)*100%) 100%);
 			transform: scale(1.75);
-			margin: 1.75*5%;
+			margin: calc(6px + 1rem);
 			.task-complete{
 				outline: 3px solid #fff;
 			}
