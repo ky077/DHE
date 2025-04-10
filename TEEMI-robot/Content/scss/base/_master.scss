@@ -56,25 +56,25 @@ main{
 }
 
 .robot-frame{  //限制高度，故 dialog::before
-	height: 20%;
-	max-height: 20%;
+	height: 20vh;
+	max-height: 20vh;
 	padding: 1rem;
 	position: relative;
 	z-index: 5;
 	display: flex;
 	align-items: flex-start;
-	.avatar{ 
+	.avatar{  
 		flex: 0 0 auto;
+		width: auto;
 		height: 20vh;
 		margin: 0 1rem 0 0;
-		clip-path: polygon(0% 1%, 100% 0%, 100% 75%, 80% 75%, 80% 100%, 20% 100%, 20% 75%, 0% 75%);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 1rem 100%, 1rem calc(100% - 1rem), 0 calc(100% - 1rem));
 		@media screen and (min-width: 992px) {
 		height: 22.5vh;	
 		margin: 0 1rem;	
 		}
 		> img, > svg{  
-			max-width: auto;
-			max-height: auto;
+			width: auto;
 			height: 100%;
 		}
 	}
