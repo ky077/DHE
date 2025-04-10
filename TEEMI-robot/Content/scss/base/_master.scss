@@ -58,7 +58,7 @@ main{
 .robot-frame{  //限制高度，故 dialog::before
 	height: 20vh;
 	max-height: 20vh;
-	padding: 1rem;
+	padding: 0 1rem;
 	position: relative;
 	z-index: 5;
 	display: flex;

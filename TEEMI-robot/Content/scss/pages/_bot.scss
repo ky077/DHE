@@ -217,7 +217,7 @@
 }
 @keyframes bendLeftAn {
   0% {transform: rotate( 0deg);}
- 50% {transform: rotate(20deg);}
+ 50% {transform: rotate(15deg);}
 100% {transform: rotate( 0deg);}
 }
 #TEEMI-Bot-bend #leftHand {
@@ -225,9 +225,9 @@
 	animation: bendLeftAn 2s infinite;
 }
 @keyframes bendBotAn {
-  0% {transform: rotate(1deg);}
+  0% {transform: rotate(.5deg);}
  50% {transform: rotate( 0deg);}
-100% {transform: rotate(1deg);}
+100% {transform: rotate(.5deg);}
 }
 #TEEMI-Bot-bend {
 	transform-origin: 335px 530px;
