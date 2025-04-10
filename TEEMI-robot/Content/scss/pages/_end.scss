@@ -50,8 +50,12 @@
 	.end-an{  
 		display: inline-block;
 		width: 335px;
-		max-width: 50%;
+		max-width: 75%;
 		position: relative;
+		@media screen and (min-width: 768px) {
+		width: 335px;
+		max-width: 50%;
+		}
 		.end-an-robot{  
 			width: 100%;
 			height: auto;
@@ -73,14 +77,14 @@
 				background-color: transparent;
 				border-color: transparent;
 				color: red;
-				width: 4rem;
-				height: 4rem;
-				font-size: 4rem;
-				@media screen and (min-width: 576px) {
+				width: 5rem;
+				height: 5rem;
+				font-size: 5rem;
+				/*@media screen and (min-width: 576px) {
 				width: 5rem;
 				height: 5rem;
 				font-size: 5rem;	
-				}
+				}*/
 				.done{
 					color: red;
 				}
