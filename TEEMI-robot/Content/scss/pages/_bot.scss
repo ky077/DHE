@@ -216,9 +216,9 @@
 	animation: bendRightAn 2s infinite;
 }
 @keyframes bendLeftAn {
-  0% {transform: rotate( 0deg);}
- 50% {transform: rotate(15deg);}
-100% {transform: rotate( 0deg);}
+  0% {transform: rotate( 0deg) translateX( 0px);}
+ 50% {transform: rotate(15deg) translateX(-5px);}
+100% {transform: rotate( 0deg) translateX( 0px);}
 }
 #TEEMI-Bot-bend #leftHand {
 	transform-origin: 503.6px 314.2px;
