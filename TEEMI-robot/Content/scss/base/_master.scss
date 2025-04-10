@@ -62,7 +62,8 @@ main{
 	position: relative;
 	z-index: 5;
 	display: flex;
-	align-items: flex-start;
+	/*align-items: flex-start;*/
+	align-items: center;
 	.avatar{  
 		flex: 0 0 auto;
 		width: auto;
@@ -84,10 +85,9 @@ main{
 		border-top-left-radius: 0;
 		position: relative;
 		box-shadow: $box-shadow-sm;
-		margin-top: 2%;
 		.dialog-text{
 			padding: .75rem 1rem;	
-			max-height: calc(2em*1.2*2 + .75rem*2 + .5rem);
+			max-height: 16vh;
 			overflow-y: auto;
 			h2, .h4{
 				@media screen and (max-width: 575px) {
