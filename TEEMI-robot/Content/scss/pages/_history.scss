@@ -66,32 +66,4 @@
 	}
 }
 
-.completion-section.chat{
-	$prev-color: transparent;
-	.completion-title{
-		span{
-			background-color: rgba($chat-color, .25);	
-		}
-		&::before, &::after{  //左右框
-			background-color: $prev-color;
-		}
-	}
-	.completion-content{
-		background-color: rgba($chat-color, .25);
-	}
-	
-}
-.completion-section.practice{
-	$prev-color:  rgba($chat-color, .25);	
-	.completion-title{
-		span{
-			background-color: rgba($practice-color, .5);	
-		}
-		&::before, &::after{  //左右框
-			background-color: $prev-color;
-		}
-	}
-	.completion-content{
-		background-color: rgba($practice-color, .5);
-	}
-}
+

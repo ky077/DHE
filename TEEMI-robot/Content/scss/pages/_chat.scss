@@ -19,7 +19,7 @@
 						transform: translateX(-50%);
 					}
 					&.done{
-						[class*="bookmark"]{
+						[class*="crown"]{
 							color: $chat-color;
 						}	
 					}
@@ -354,4 +354,20 @@
 	&::before{
 		content: "\f070";
     }
+}
+
+.completion-section.chat{
+	$prev-color: transparent;
+	.completion-title{
+		span{
+			background-color: rgba($chat-color, .25);	
+		}
+		&::before, &::after{  //左右框
+			background-color: $prev-color;
+		}
+	}
+	.completion-content{
+		background-color: rgba($chat-color, .25);
+	}
+	
 }

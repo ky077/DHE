@@ -20,7 +20,7 @@
 						transform: translateX(-50%);
 					}
 					&.done{
-						[class*="bookmark"]{
+						[class*="crown"]{
 							color: $practice-color;
 						}	
 					}
@@ -174,5 +174,20 @@
 				color: $practice-color;
 			}	
 		}
+	}
+}
+
+.completion-section.practice{
+	$prev-color:  rgba($chat-color, .25);	
+	.completion-title{
+		span{
+			background-color: rgba($practice-color, .25);	
+		}
+		&::before, &::after{  //左右框
+			background-color: $prev-color;
+		}
+	}
+	.completion-content{
+		background-color: rgba($practice-color, .25);
 	}
 }

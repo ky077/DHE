@@ -1,20 +1,23 @@
+$bot-primary:   #0ADA86;  //body green
+$bot-secondary: #F4CE36;  //dialogue yellow
+$bot-tertiary:  #237DAF;  //shadow blue
 [id*="TEEMI-Bot-"]{
 	#face {
 		fill: #fff;
 	}
 	#body, #rightHand, #leftHand{
-		fill: #51b77c;
+		fill: $bot-primary;
 	}
 	#foot, #rightEye, #leftEye, #mouth, #tele, #bodyShadow{
-		fill: #2577a6;
+		fill: $bot-tertiary;
 	}
 
 	//announce
 	#leftHand2{
-		fill: #51b77c;
+		fill: $bot-primary;
 	}
 	#trumpetMain{
-		fill: #EBC83F;
+		fill: $bot-secondary;
 	}
 	#trumpetTrump{
 		fill: #F5CF37;
@@ -25,7 +28,7 @@
 	
 	//love
 	#heart {
-		fill: #ebc83f;
+		fill: $bot-secondary;
 	}
 }
 

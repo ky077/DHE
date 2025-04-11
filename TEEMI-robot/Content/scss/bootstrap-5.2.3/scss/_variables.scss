@@ -36,14 +36,14 @@ $grays: (
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:    #0d6efd !default;
+$blue:    #65B5EA !default;//<-- <-- robot #237DAF
 $indigo:  #6610f2 !default;
 $purple:  #4A40C3 !default;//<-- change for TEEMI
 $pink:    #C340B2 !default;//<-- change for TEEMI
 $red:     #dc3545 !default;
-$orange:  #FFD8B1 !default;//#FF9E3C !default;//<-- robot
-$yellow:  #fff100 !default;//<-- robot
-$green:   #09896a !default;//<-- robot
+$orange:  #FFD8B1 !default;//<-- robot, bout not used
+$yellow:  #F4CE36 !default;//<-- robot #F4CE36
+$green:   #0AA773 !default;//<-- robot #0ADA86
 $teal:    #18ACBA !default;//<-- change for TEEMI
 $cyan:    #0dcaf0 !default;
 // scss-docs-end color-variables
@@ -300,7 +300,7 @@ $cyans: (
 // scss-docs-start theme-color-variables
 $primary:       $green !default;//<-- robot
 $secondary:     $yellow !default;//<-- robot
-$tertiary:      $orange !default;//<-- robot
+$tertiary:      $blue !default;//<-- robot
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
