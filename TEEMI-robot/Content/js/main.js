@@ -39,7 +39,7 @@ function PLAYTITLE(button, item) {
 //錄製音檔
 let interval;
 let isRecording = false; // 用於追蹤是否正在錄音
-function REC(s, isChatInterface = false) {
+function REC(s, isChatInterface) { 
   let button_now = $('.btn__record');
   let button_disabled = $('.btn__playRec'); //用於 practiceInterface
   if (!isRecording) {
@@ -75,7 +75,7 @@ function REC(s, isChatInterface = false) {
   }
 }
 
-function stopRecording(button_now, button_disabled, isChatInterface) {
+function stopRecording(button_now, button_disabled, isChatInterface) { 
   isRecording = false;
 
   // 清除倒數計時器（如果存在）

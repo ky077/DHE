@@ -6,21 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="英語文說寫能力檢測平台 聊天機器人">
 <meta name="author" content="英語文說寫能力檢測平台">
-<meta property="og:locale" content="zh-Hans-TW" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="英語文說寫能力檢測平台 聊天機器人" >
-<meta property="og:description" content="英語文說寫能力檢測平台 聊天機器人" >
-<meta property="og:url" content="https://teemi.tw/">
-<meta property="og:image" content="Content/images/TEEMI-bot.png">
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="543" />
-<meta property="og:image:height" content="481" />
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="英語文說寫能力檢測平台 聊天機器人">
-<meta name="twitter:image" content="Content/images/TEEMI-bot.png">
-<meta itemprop="name" content="英語文說寫能力檢測平台 聊天機器人">
-<meta itemprop="description" content="英語文說寫能力檢測平台 聊天機器人">
-<meta itemprop="image" content="Content/images/TEEMI-bot.png">
 <title>聊天機器人 | 英語文說寫能力檢測平台</title>
 <link rel="shortcut icon" type="image/x-icon" href="./Content/images/favicon.ico">
 <!-- Google Web Fonts -->
@@ -54,7 +39,7 @@
       <div class="futuristic-frame-border">
         <div class="futuristic-frame-content px-0"> 
           <!-- -->
-          <div class="futuristic-frame-tool"> <a href="chatEnd.html" title="結束對話 Finish"><i class="fa-solid fa-arrow-right-from-bracket me-1" aria-hidden="true"></i><span>結束對話</span>&nbsp;<span>Finish</span></a> </div>
+          <div class="futuristic-frame-tool"> <a href="chatEnd.html"><i class="fa-solid fa-arrow-right-from-bracket me-1" aria-hidden="true"></i><span>結束對話</span>&nbsp;<span>Finish</span></a> </div>
           <!-- -->
           <div class="chatInterface-content">
             <div class="chatInterface-frame left">
@@ -126,7 +111,7 @@
           </div>
           <!-- -->
           <div class="chatInterface-footer">
-            <button type="button" class="btn btn-primary btn-lg btn__record" onclick="REC(true)" title="錄製檔案"><i class="fa-solid fa-microphone fa-1x" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-primary btn-lg btn__record" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone fa-1x" aria-hidden="true"></i></button>
           </div>
           <!-- --> 
         </div>
@@ -204,9 +189,7 @@ function SCREENTEXT(button) {
     }
 }
 	
-	
-	
-	
+//模擬分析loading
 function chat_analyze() {
     // 顯示 loading 畫面
     $('body').prepend(`
