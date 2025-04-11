@@ -160,9 +160,9 @@ main{
 @mixin futuristicFrame($color) {
 ///*.futuristic-frame{  */
 	$futuristic-border: .325rem;
-	height: calc(100% - 1rem);
-	max-height: calc(100% - 1rem);
-	padding-top: 1rem;
+	height: calc(100% - 2rem );
+	max-height: calc(100% - 2rem);
+	padding-top: 2rem;
 	position: relative;
 	color: $color;
 	&::before{ 
@@ -286,6 +286,7 @@ main{
 	@include futuristicFrame($practice-color);
 }
 .robot-frame + .futuristic-frame{
+	padding-top: 1rem;
 	height: calc(80% - 1rem);
 	max-height: calc(80% - 1rem);
 	padding-top: 0;
