@@ -52,7 +52,6 @@ header {
 		padding: 0 .75rem;
 		line-height: 1;
 		width: 6rem;
-		/*max-width: 150px;*/
 		height: auto;
 		position: absolute;
 		top:0;
@@ -160,9 +159,9 @@ main{
 @mixin futuristicFrame($color) {
 ///*.futuristic-frame{  */
 	$futuristic-border: .325rem;
-	height: calc(100% - 2rem );
-	max-height: calc(100% - 2rem);
-	padding-top: 2rem;
+	height: calc(100% - 1rem);
+	max-height: calc(100% - 1rem);
+	padding-top: 1rem;
 	position: relative;
 	color: $color;
 	&::before{ 
@@ -226,11 +225,12 @@ main{
     	flex-direction: column;
     	justify-content: space-evenly;
 		align-items: stretch;
-		height: 100%;
-		max-height: 100%;
+		height: calc(100% - (1.5rem + #{$futuristic-border}));
+		max-height: calc(100% - (1.5rem + #{$futuristic-border}));
 		overflow-X: hidden;
 		overflow-y: scroll;
-		padding: 4rem 1.5rem 3rem 1.5rem;
+		padding: 3rem 1.5rem;
+		margin-top: calc(1.5rem + #{$futuristic-border});
 		@media screen and (min-width: 576px) and (max-width: 991px) {
 		padding: 3rem 6rem;	
 		}
@@ -248,10 +248,10 @@ main{
 			background-color: $color;
 			border-radius: 7px;
 		}
-		&::-webkit-scrollbar-button{ 
+		/*&::-webkit-scrollbar-button{ 
 			background-color: transparent;
 			height: 1rem;
-		}
+		}*/
 		.futuristic-frame-tool{ 
 			position: absolute;
 			top: 0;
@@ -289,7 +289,6 @@ main{
 	padding-top: 1rem;
 	height: calc(80% - 1rem);
 	max-height: calc(80% - 1rem);
-	padding-top: 0;
 }
 
 
