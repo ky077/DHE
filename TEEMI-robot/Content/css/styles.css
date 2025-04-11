@@ -464,21 +464,21 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .futuristic-frame.practice .topic-section .card .card-img { border-radius: 500px; margin-bottom: 0; }
 .futuristic-frame.practice .topic-section .card .task-complete.all [class*="bookmark"] { left: calc(150px/2); transform: translateX(-50%); }
 .futuristic-frame.practice .topic-section .card .task-complete.all [class*="crown"] { left: calc(150px/2); transform: translateX(-50%); }
-.futuristic-frame.practice .topic-section .card .task-complete.all.done [class*="crown"] { color: #65B5EA; }
-.futuristic-frame.practice .topic-section .card .task-complete.done { color: #65B5EA; }
+.futuristic-frame.practice .topic-section .card .task-complete.all.done [class*="crown"] { color: #84c4ee; }
+.futuristic-frame.practice .topic-section .card .task-complete.done { color: #84c4ee; }
 .futuristic-frame.practice .difficulty-section .difficulty-title span { border-top-color: #65B5EA; }
 .futuristic-frame.practice .difficulty-section .difficulty-title span::before, .futuristic-frame.practice .difficulty-section .difficulty-title span::after { background-color: #65B5EA; }
 .futuristic-frame.practice .difficulty-section .difficulty-title::before, .futuristic-frame.practice .difficulty-section .difficulty-title::after { border-bottom-color: #65B5EA; }
 .futuristic-frame.practice .difficulty-section .difficulty-title::before { border-right-color: #65B5EA; }
 .futuristic-frame.practice .difficulty-section .difficulty-title::after { border-left-color: #65B5EA; }
-.futuristic-frame.practice .difficulty-section .difficulty-btn .task-complete.easy.done, .futuristic-frame.practice .difficulty-section .difficulty-btn .task-complete.medium.done, .futuristic-frame.practice .difficulty-section .difficulty-btn .task-complete.hard.done { color: #65B5EA; }
+.futuristic-frame.practice .difficulty-section .difficulty-btn .task-complete.easy.done, .futuristic-frame.practice .difficulty-section .difficulty-btn .task-complete.medium.done, .futuristic-frame.practice .difficulty-section .difficulty-btn .task-complete.hard.done { color: #84c4ee; }
 .futuristic-frame.practice .record-summary .record-title span { border-bottom-color: #65B5EA; }
 .futuristic-frame.practice .record-summary .record-title::before, .futuristic-frame.practice .record-summary .record-title::after { border-top-color: #65B5EA; }
 .futuristic-frame.practice .record-summary .record-title::before { border-right-color: #65B5EA; }
 .futuristic-frame.practice .record-summary .record-title::after { border-left-color: #65B5EA; }
 .futuristic-frame.practice .record-summary .record-val { border-bottom-color: #F4CE36; }
-.futuristic-frame.practice .end-animate .end-an .end-an-ball .task-complete { color: #65B5EA; }
-.futuristic-frame.practice .end-animate .end-an .end-an-ball .task-complete .done { color: #65B5EA; }
+.futuristic-frame.practice .end-animate .end-an .end-an-ball .task-complete { color: #84c4ee; }
+.futuristic-frame.practice .end-animate .end-an .end-an-ball .task-complete .done { color: #84c4ee; }
 
 .practiceInterface-bar { display: flex; align-items: center; width: 70%; width: calc(70% + 3rem); height: calc(1.5rem + 0.325rem); position: absolute; top: 0; right: 0; z-index: 9; }
 .practiceInterface-bar .progress-count { color: #0AA773; flex: 1; min-width: 3rem; text-align: right; }
@@ -500,7 +500,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .practiceInterface-footer { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding: 1rem; margin-bottom: 1rem; }
 .practiceInterface-footer .btn { margin-left: 1rem; margin-right: 1rem; }
 
-.completion-section.practice .task-complete.easy.done, .completion-section.practice .task-complete.medium.done, .completion-section.practice .task-complete.hard.done { color: #65B5EA; }
+.completion-section.practice .task-complete.easy.done, .completion-section.practice .task-complete.medium.done, .completion-section.practice .task-complete.hard.done { color: #84c4ee; }
 
 .completion-section.practice .completion-title span { background-color: rgba(101, 181, 234, 0.25); }
 .completion-section.practice .completion-title::before, .completion-section.practice .completion-title::after { background-color: rgba(244, 206, 54, 0.25); }
