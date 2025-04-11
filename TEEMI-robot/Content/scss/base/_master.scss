@@ -47,6 +47,24 @@ $practice-color: $tertiary;  //blue
 
 $slash-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='145' height='36' viewBox='0 0 145 36'%3E %3Cg id='Group_185' data-name='Group 185' transform='translate(-9408 -1018)'%3E %3Crect id='Rectangle_66' data-name='Rectangle 66' width='25' height='36' transform='translate(9408 1018)' fill='%23000000'/%3E %3Crect id='Rectangle_67' data-name='Rectangle 67' width='25' height='36' transform='translate(9448 1018)' fill='%23000000'/%3E %3Crect id='Rectangle_68' data-name='Rectangle 68' width='25' height='36' transform='translate(9488 1018)' fill='%23000000'/%3E %3Crect id='Rectangle_69' data-name='Rectangle 69' width='25' height='36' transform='translate(9528 1018)' fill='%23000000'/%3E %3C/g%3E %3C/svg%3E ";
 
+header {
+	.header-logo{ 
+		padding: 0 .75rem;
+		line-height: 1;
+		width: 6rem;
+		/*max-width: 150px;*/
+		height: auto;
+		position: absolute;
+		top:0;
+		left: 0;
+		@media screen and (min-width: 1200px) {
+		width: 10%;	
+		}
+		img, svg{
+			width: 100%;	
+		}
+	}
+}
 main{ 
 	width: 100%;
 	height: 100%;
@@ -200,7 +218,7 @@ main{
 			top: 0;
 			right: 0;
 			z-index: 5;
-			border-radius: 0 $border-radius-xl*.75 0 0;
+			border-radius: 0 $border-radius-xl*.5 0 0;
 		}
 	}
 	.futuristic-frame-content{ 
