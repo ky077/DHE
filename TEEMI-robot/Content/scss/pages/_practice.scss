@@ -148,8 +148,11 @@
 .level-excellent, .speak-excellent{
 	color: $teal;
 }
-.level-good, .speak-good{
+.level-good{
 	color: $yellow-500;
+}
+.speak-good{
+	color: $yellow-600;
 }
 .level-fair, .speak-fair{
 	color: $red;

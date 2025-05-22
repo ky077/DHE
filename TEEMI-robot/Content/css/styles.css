@@ -489,7 +489,9 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 .level-excellent, .speak-excellent { color: #18ba96; }
 
-.level-good, .speak-good { color: #F4CE36; }
+.level-good { color: #F4CE36; }
+
+.speak-good { color: #c3a52b; }
 
 .level-fair, .speak-fair { color: #dc3545; }
 
