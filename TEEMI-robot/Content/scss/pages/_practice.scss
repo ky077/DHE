@@ -138,6 +138,8 @@
 	justify-content: center;
 }
 .practiceInterface-feedback{ 
+	display: flex;
+    justify-content: center;
 	text-align: center;
 	i {	
 		font-size: 4.25rem;
@@ -147,10 +149,16 @@
 	color: $teal;
 }
 .level-good, .speak-good{
-	color: $yellow-600;
+	color: $yellow-500;
 }
 .level-fair, .speak-fair{
 	color: $red;
+}
+[class*="level-"]{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 .5rem;
 }
 
 .practiceInterface-footer{
