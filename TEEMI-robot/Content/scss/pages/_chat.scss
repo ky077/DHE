@@ -368,3 +368,24 @@
 	}
 	
 }
+
+.modal-start{
+	.robot-frame{ 
+		height: auto;
+		max-height: unset;
+		filter: drop-shadow(#{$box-shadow-sm});
+		.avatar{
+			
+		}
+		.dialog {
+			//background-color: $secondary-100;
+			.dialog-text {
+				max-height: unset;
+				overflow-y: auto;
+			}
+			&::before{ 
+				//border-color: transparent $secondary-100 transparent transparent;
+			}
+		}
+	}
+}

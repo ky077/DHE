@@ -456,6 +456,9 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .completion-section.chat .completion-title::before, .completion-section.chat .completion-title::after { background-color: transparent; }
 .completion-section.chat .completion-content { background-color: rgba(244, 206, 54, 0.25); }
 
+.modal-start .robot-frame { height: auto; max-height: unset; filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)); }
+.modal-start .robot-frame .dialog .dialog-text { max-height: unset; overflow-y: auto; }
+
 .futuristic-frame.practice .topic-section .btn { border-radius: 500px; }
 .futuristic-frame.practice .topic-section .card .card-img { border-radius: 500px; margin-bottom: 0; }
 .futuristic-frame.practice .topic-section .card .task-complete.all [class*="bookmark"] { left: calc(150px/2); transform: translateX(-50%); }
