@@ -161,8 +161,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 		}
 	}
 	&.easy, &.medium, &.hard{
-		width: 2.5rem;
-		height: 2.5rem;
+		width: calc(2.5rem + 3px*2);
+		height: calc(2.5rem + 3px*2);
 		font-size: 2.5rem;
 		border-radius: 100%;
 		background-color: #FFF;

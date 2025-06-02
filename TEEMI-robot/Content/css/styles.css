@@ -235,7 +235,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .task-complete.all [class*="bookmark"] { font-size: 2rem; color: #fff; text-shadow: 1px 1px #9ddcc7, -1px -1px #9ddcc7, -1px 1px #9ddcc7, 1px -1px #9ddcc7; position: relative; }
 .task-complete.all [class*="crown"] { color: #9ddcc7; font-size: .95rem; position: absolute; top: .325em; left: 0; }
 .task-complete.all.done [class*="bookmark"] { color: #0AA773; text-shadow: none; }
-.task-complete.easy, .task-complete.medium, .task-complete.hard { width: 2.5rem; height: 2.5rem; font-size: 2.5rem; border-radius: 100%; background-color: #FFF; border: 1px solid #9ddcc7; color: #9ddcc7; display: flex; justify-content: center; align-items: center; }
+.task-complete.easy, .task-complete.medium, .task-complete.hard { width: calc(2.5rem + 3px*2); height: calc(2.5rem + 3px*2); font-size: 2.5rem; border-radius: 100%; background-color: #FFF; border: 1px solid #9ddcc7; color: #9ddcc7; display: flex; justify-content: center; align-items: center; }
 .task-complete.easy i, .task-complete.medium i, .task-complete.hard i { font-size: .6em; }
 .task-complete.easy::after, .task-complete.medium::after, .task-complete.hard::after { content: ""; display: block; font-size: .2em; font-weight: bold; position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center; color: #0AA773; text-shadow: 0 0 2px rgba(0, 0, 0, 0.25); }
 .task-complete.easy.done, .task-complete.medium.done, .task-complete.hard.done { background-color: #0AA773; color: #343a40; }
@@ -593,7 +593,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .completion-section .completion-title::before { margin-right: -1.125em; clip-path: polygon(0% 0%, calc(100% - 0.2em) 0%, calc(100% - 0.2em - 1.125em) calc(100% - 0.2em), 0% calc(100% - 0.2em)); }
 .completion-section .completion-title::after { margin-left: -1.125em; clip-path: polygon(0.2em 0%, 100% 0%, 100% calc(100% - 0.2em), calc(0.2em + 1.125em) calc(100% - 0.2em)); }
 .completion-section .completion-content { background-color: rgba(10, 167, 115, 0.5); padding: 1rem; }
-.completion-section .completion-content .completion-bar { display: inline-block; border-radius: 100%; padding: 6px; background: conic-gradient(#0AA773 0% calc(var(--completed)/var(--total)*100%), #fff calc(var(--completed)/var(--total)*100%) 100%); transform: scale(1.75); margin: calc(6px + 1rem); }
-.completion-section .completion-content .completion-bar .task-complete { outline: 3px solid #fff; -webkit-outline-radius: 100% !important; -moz-outline-radius: 100% !important; -ms-outline-radius: 100% !important; -o-outline-radius: 100% !important; outline-radius: 100% !important; }
+.completion-section .completion-content .completion-bar { display: inline-block; border-radius: 100%; padding: 3px; background: conic-gradient(#0AA773 0% calc(var(--completed)/var(--total)*100%), #fff calc(var(--completed)/var(--total)*100%) 100%); transform: scale(1.75); margin: calc(6px + 1rem); }
+.completion-section .completion-content .completion-bar .task-complete { border: 3px solid #fff; }
 
 .record-summary + .completion-section .completion-title::before, .record-summary + .completion-section .completion-title::after, .futuristic-frame-tool + .completion-section .completion-title::before, .futuristic-frame-tool + .completion-section .completion-title::after, .futuristic-frame-content .completion-section:first-child .completion-title::before, .futuristic-frame-content .completion-section:first-child .completion-title::after { background-color: transparent; }
