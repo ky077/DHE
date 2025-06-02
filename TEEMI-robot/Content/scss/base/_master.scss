@@ -248,7 +248,7 @@ main{
 			background-color: $color;
 			border-radius: 7px;
 		}
-		.futuristic-frame-tool{ 
+		.futuristic-frame-tool{  
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -261,11 +261,15 @@ main{
 			padding: 0 .75rem;
 			a {
 				color: shade-color($color, 5%);
+				line-height: 1;
 				> span{
 					display: none;
 					@media screen and (min-width: 992px) {
 					display: inline;
 					}
+				}
+				i{
+					font-size: 1.25rem; 
 				}
 			}
 			

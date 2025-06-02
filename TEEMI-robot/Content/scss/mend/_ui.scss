@@ -51,9 +51,12 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 		outline-offset: 15px;
     }
 }
-.rounded-pill{
-	outline-radius: var(--bs-border-radius-pill) !important;
+.btn.rounded-pill{
+	-webkit-outline-radius: var(--bs-border-radius-pill) !important;
 	-moz-outline-radius: var(--bs-border-radius-pill) !important;
+	-ms-outline-radius: var(--bs-border-radius-pill) !important;
+	-o-outline-radius: var(--bs-border-radius-pill) !important;
+	outline-radius: var(--bs-border-radius-pill) !important;
 }
 
 .style-h3{

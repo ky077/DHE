@@ -41,9 +41,10 @@ main > [class*="container"] { height: 100%; }
 .futuristic-frame .futuristic-frame-content::-webkit-scrollbar-track { background-color: transparent; }
 .futuristic-frame .futuristic-frame-content::-webkit-scrollbar-thumb { background-color: #0AA773; border-radius: 7px; }
 .futuristic-frame .futuristic-frame-content .futuristic-frame-tool { position: absolute; top: 0; left: 0; right: 0; z-index: 9; height: calc(1.5rem + 0.325rem); display: flex; flex-direction: row; align-items: center; padding: 0 .75rem; }
-.futuristic-frame .futuristic-frame-content .futuristic-frame-tool a { color: #0a9f6d; }
+.futuristic-frame .futuristic-frame-content .futuristic-frame-tool a { color: #0a9f6d; line-height: 1; }
 .futuristic-frame .futuristic-frame-content .futuristic-frame-tool a > span { display: none; }
 @media screen and (min-width: 992px) { .futuristic-frame .futuristic-frame-content .futuristic-frame-tool a > span { display: inline; } }
+.futuristic-frame .futuristic-frame-content .futuristic-frame-tool a i { font-size: 1.25rem; }
 
 .futuristic-frame.chat { height: calc(100% - 1rem); max-height: calc(100% - 1rem); padding-top: 1rem; position: relative; color: #F4CE36; }
 .futuristic-frame.chat::before { content: ""; display: block; width: 55%; height: 25%; max-width: 100%; border-radius: 0 0 1.2rem 0; border-bottom: 0.325rem solid #F4CE36; border-right: 0.325rem solid #F4CE36; position: absolute; z-index: -1; bottom: -.75rem; right: -.75rem; }
@@ -57,9 +58,10 @@ main > [class*="container"] { height: 100%; }
 .futuristic-frame.chat .futuristic-frame-content::-webkit-scrollbar-track { background-color: transparent; }
 .futuristic-frame.chat .futuristic-frame-content::-webkit-scrollbar-thumb { background-color: #F4CE36; border-radius: 7px; }
 .futuristic-frame.chat .futuristic-frame-content .futuristic-frame-tool { position: absolute; top: 0; left: 0; right: 0; z-index: 9; height: calc(1.5rem + 0.325rem); display: flex; flex-direction: row; align-items: center; padding: 0 .75rem; }
-.futuristic-frame.chat .futuristic-frame-content .futuristic-frame-tool a { color: #e8c433; }
+.futuristic-frame.chat .futuristic-frame-content .futuristic-frame-tool a { color: #e8c433; line-height: 1; }
 .futuristic-frame.chat .futuristic-frame-content .futuristic-frame-tool a > span { display: none; }
 @media screen and (min-width: 992px) { .futuristic-frame.chat .futuristic-frame-content .futuristic-frame-tool a > span { display: inline; } }
+.futuristic-frame.chat .futuristic-frame-content .futuristic-frame-tool a i { font-size: 1.25rem; }
 
 .futuristic-frame.practice { height: calc(100% - 1rem); max-height: calc(100% - 1rem); padding-top: 1rem; position: relative; color: #65B5EA; }
 .futuristic-frame.practice::before { content: ""; display: block; width: 55%; height: 25%; max-width: 100%; border-radius: 0 0 1.2rem 0; border-bottom: 0.325rem solid #65B5EA; border-right: 0.325rem solid #65B5EA; position: absolute; z-index: -1; bottom: -.75rem; right: -.75rem; }
@@ -73,9 +75,10 @@ main > [class*="container"] { height: 100%; }
 .futuristic-frame.practice .futuristic-frame-content::-webkit-scrollbar-track { background-color: transparent; }
 .futuristic-frame.practice .futuristic-frame-content::-webkit-scrollbar-thumb { background-color: #65B5EA; border-radius: 7px; }
 .futuristic-frame.practice .futuristic-frame-content .futuristic-frame-tool { position: absolute; top: 0; left: 0; right: 0; z-index: 9; height: calc(1.5rem + 0.325rem); display: flex; flex-direction: row; align-items: center; padding: 0 .75rem; }
-.futuristic-frame.practice .futuristic-frame-content .futuristic-frame-tool a { color: #60acde; }
+.futuristic-frame.practice .futuristic-frame-content .futuristic-frame-tool a { color: #60acde; line-height: 1; }
 .futuristic-frame.practice .futuristic-frame-content .futuristic-frame-tool a > span { display: none; }
 @media screen and (min-width: 992px) { .futuristic-frame.practice .futuristic-frame-content .futuristic-frame-tool a > span { display: inline; } }
+.futuristic-frame.practice .futuristic-frame-content .futuristic-frame-tool a i { font-size: 1.25rem; }
 
 .robot-frame + .futuristic-frame { padding-top: 1rem; height: calc(80% - 1rem); max-height: calc(80% - 1rem); }
 
@@ -204,6 +207,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 .btn { outline: 1px solid var(--bs-btn-border-color); transition: all 2s cubic-bezier(0.19, 1, 0.22, 1); }
 .btn:hover { outline-color: transparent !important; outline-offset: 15px; }
+
+.btn.rounded-pill { -webkit-outline-radius: var(--bs-border-radius-pill) !important; -moz-outline-radius: var(--bs-border-radius-pill) !important; -ms-outline-radius: var(--bs-border-radius-pill) !important; -o-outline-radius: var(--bs-border-radius-pill) !important; outline-radius: var(--bs-border-radius-pill) !important; }
 
 .style-h3 { color: #0AA773; font-weight: bold; background-color: #ceede3; border-radius: 4em; padding-top: .5rem; padding-bottom: .5rem; text-align: center; margin-bottom: 1rem; }
 
@@ -580,6 +585,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .completion-section .completion-title::after { margin-left: -1.125em; clip-path: polygon(0.2em 0%, 100% 0%, 100% calc(100% - 0.2em), calc(0.2em + 1.125em) calc(100% - 0.2em)); }
 .completion-section .completion-content { background-color: rgba(10, 167, 115, 0.5); padding: 1rem; }
 .completion-section .completion-content .completion-bar { display: inline-block; border-radius: 100%; padding: 6px; background: conic-gradient(#0AA773 0% calc(var(--completed)/var(--total)*100%), #fff calc(var(--completed)/var(--total)*100%) 100%); transform: scale(1.75); margin: calc(6px + 1rem); }
-.completion-section .completion-content .completion-bar .task-complete { outline: 3px solid #fff; }
+.completion-section .completion-content .completion-bar .task-complete { outline: 3px solid #fff; -webkit-outline-radius: 100% !important; -moz-outline-radius: 100% !important; -ms-outline-radius: 100% !important; -o-outline-radius: 100% !important; outline-radius: 100% !important; }
 
 .record-summary + .completion-section .completion-title::before, .record-summary + .completion-section .completion-title::after, .futuristic-frame-tool + .completion-section .completion-title::before, .futuristic-frame-tool + .completion-section .completion-title::after, .futuristic-frame-content .completion-section:first-child .completion-title::before, .futuristic-frame-content .completion-section:first-child .completion-title::after { background-color: transparent; }

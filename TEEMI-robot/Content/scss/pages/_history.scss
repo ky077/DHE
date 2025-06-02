@@ -52,6 +52,11 @@
 			margin: calc(6px + 1rem);
 			.task-complete{
 				outline: 3px solid #fff;
+				-webkit-outline-radius: 100% !important;
+				-moz-outline-radius: 100% !important;
+				-ms-outline-radius: 100% !important;
+				-o-outline-radius: 100% !important;
+				outline-radius: 100% !important;
 			}
 		}
 	}
