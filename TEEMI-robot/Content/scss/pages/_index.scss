@@ -10,7 +10,9 @@
 	.btn:not(:hover){
 		color: $primary;
 		border-color: $primary;
-		outline-color: $primary;
+		&::after{
+			border:  1px solid $primary;;
+		}
 	}
 }
 .index-btn.chat{

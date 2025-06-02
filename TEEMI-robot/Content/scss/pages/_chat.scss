@@ -3,6 +3,14 @@
 	.topic-section{
 		.btn{
 			border-radius: 0 500px 500px 500px;	
+			&::after{
+				border-radius: 0 500px 500px 500px;	
+			}
+			&:hover{
+				&::after{
+					transform: scale(1.075, 1.25);
+				}
+			}
 		}
 		.card{
 			.card-img{
@@ -276,35 +284,46 @@
 	display: inline-flex;
     &::before{//A
 		content: "\41";
-		display: inline-flex;
 		font-family: "Font Awesome 6 Free"; 
+		display: inline-flex;
+		width: 1.8em;
+		height: 1.8em;
+		line-height: 1.8em; 
+		position: relative;
 	    font-weight: 900;
 		font-size: .6em;
 		background-color: $primary;
 		color: $white;
-		border: 2px solid $primary;
+		border: 2px solid $primary !important;
 		border-radius: 2px 0 0 2px;
-		width: 1.8em;
-		height: 1.8em;
 		justify-content: center;
 		align-items: center;
 		margin-right: -1px;
     }
 	&::after{//O
 		content: "\f0ac";
-		display: inline-flex;
 		font-family: "Font Awesome 6 Free"; 
+		display: inline-flex;
+		width: 1.8em;
+		height: 1.8em;
+		line-height: 1.8em; 
+		position: relative;
+		border: 2px solid $primary !important;
 	    font-weight: 900;
 		font-size: .6em;
 		background-color: transparent;
 		color: $primary;
-		border: 2px solid $primary;
 		border-radius: 0 2px 2px 0;
-		width: 1.8em;
-		height: 1.8em;
 		justify-content: center;
 		align-items: center;
 		margin-left: -1px;
+    }
+	
+	&:hover{
+		&::after{
+			transform: none;
+			transition: none;
+		}
     }
 }
 .btn__translate[aria-expanded="false"]{ //預設 false-(A)O-無翻譯  

@@ -63,11 +63,17 @@
         color: $primary;
         font-size: 1.5rem;
     }
+	&::after{ 
+		border-radius:  100%;
+	}
     &:hover, &:focus, &:active,
     &.hover, &.focus, &.active{
         > i{
             color: #fff !important;
         }  
+		&::after{
+			transform: scale(1.5, 1.5) !important;
+		}
     }
     &:disabled,
     &.disabled,

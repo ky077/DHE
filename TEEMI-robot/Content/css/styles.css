@@ -162,7 +162,9 @@ samp { font-family: 'Noto Sans', 'Noto Sans TC', 'Microsoft JhengHei',  'PingFan
 
 .btn__record, .btn__playRec, .btn-next { border-radius: 100%; font-size: 1.25rem; width: calc(2em + 1rem + 1rem - 2px); height: calc(2em + 1rem + 1rem - 2px); display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 0.2rem #0eefa5; background-color: #fff; border-color: transparent; }
 .btn__record > i, .btn__playRec > i, .btn-next > i { color: #0AA773; font-size: 1.5rem; }
+.btn__record::after, .btn__playRec::after, .btn-next::after { border-radius: 100%; }
 .btn__record:hover > i, .btn__record:focus > i, .btn__record:active > i, .btn__record.hover > i, .btn__record.focus > i, .btn__record.active > i, .btn__playRec:hover > i, .btn__playRec:focus > i, .btn__playRec:active > i, .btn__playRec.hover > i, .btn__playRec.focus > i, .btn__playRec.active > i, .btn-next:hover > i, .btn-next:focus > i, .btn-next:active > i, .btn-next.hover > i, .btn-next.focus > i, .btn-next.active > i { color: #fff !important; }
+.btn__record:hover::after, .btn__record:focus::after, .btn__record:active::after, .btn__record.hover::after, .btn__record.focus::after, .btn__record.active::after, .btn__playRec:hover::after, .btn__playRec:focus::after, .btn__playRec:active::after, .btn__playRec.hover::after, .btn__playRec.focus::after, .btn__playRec.active::after, .btn-next:hover::after, .btn-next:focus::after, .btn-next:active::after, .btn-next.hover::after, .btn-next.focus::after, .btn-next.active::after { transform: scale(1.5, 1.5) !important; }
 .btn__record:disabled, .btn__record.disabled, .btn__recorddisabled, .btn__record[disabled="disabled"], .btn__playRec:disabled, .btn__playRec.disabled, .btn__playRecdisabled, .btn__playRec[disabled="disabled"], .btn-next:disabled, .btn-next.disabled, .btn-nextdisabled, .btn-next[disabled="disabled"] { background-color: #fff !important; border-color: transparent !important; }
 
 .btn__record.current, .btn__playRec.current { animation: rec 2s infinite; box-shadow: 0 0 0 0.25rem rgba(10, 167, 115, 0.5); background-color: #0AA773; }
@@ -205,10 +207,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 .btn__circle { border-radius: 100%; width: calc(2em + 1rem + 1rem - 2px); height: calc(2em + 1rem + 1rem - 2px); display: inline-flex; align-items: center; justify-content: center; }
 
-.btn { outline: 1px solid var(--bs-btn-border-color); transition: all 2s cubic-bezier(0.19, 1, 0.22, 1); }
-.btn:hover { outline-color: transparent !important; outline-offset: 15px; }
+.btn { position: relative; }
+.btn::after { content: ""; display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border: 1px solid var(--bs-btn-border-color); }
+.btn:hover::after { border: 1px solid transparent; transform: scale(1.15, 1.5); transition: all 2s cubic-bezier(0.19, 1, 0.22, 1); }
 
-.btn.rounded-pill { -webkit-outline-radius: var(--bs-border-radius-pill) !important; -moz-outline-radius: var(--bs-border-radius-pill) !important; -ms-outline-radius: var(--bs-border-radius-pill) !important; -o-outline-radius: var(--bs-border-radius-pill) !important; outline-radius: var(--bs-border-radius-pill) !important; }
+.btn.rounded-pill::after { border-radius: var(--bs-border-radius-pill) !important; }
 
 .style-h3 { color: #0AA773; font-weight: bold; background-color: #ceede3; border-radius: 4em; padding-top: .5rem; padding-bottom: .5rem; text-align: center; margin-bottom: 1rem; }
 
@@ -390,6 +393,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 #TEEMI-Bot-here #leftHand { transform-origin: 463.6px 265.4px; animation: hereLeftAn 3s infinite; }
 
 .futuristic-frame.chat .topic-section .btn { border-radius: 0 500px 500px 500px; }
+.futuristic-frame.chat .topic-section .btn::after { border-radius: 0 500px 500px 500px; }
+.futuristic-frame.chat .topic-section .btn:hover::after { transform: scale(1.075, 1.25); }
 .futuristic-frame.chat .topic-section .card .card-img { border-radius: 0 500px 500px 500px; }
 .futuristic-frame.chat .topic-section .card .task-complete.all [class*="bookmark"] { left: 1.5rem; transform: translateX(-50%); }
 .futuristic-frame.chat .topic-section .card .task-complete.all [class*="crown"] { left: 1.5rem; transform: translateX(-50%); }
@@ -441,8 +446,9 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .completion-section.chat .task-complete.easy.done, .completion-section.chat .task-complete.medium.done, .completion-section.chat .task-complete.hard.done { color: #F4CE36; }
 
 .btn__translate { background-color: transparent; border: none; padding: 0 !important; display: inline-flex; }
-.btn__translate::before { content: "\41"; display: inline-flex; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: .6em; background-color: #0AA773; color: #fff; border: 2px solid #0AA773; border-radius: 2px 0 0 2px; width: 1.8em; height: 1.8em; justify-content: center; align-items: center; margin-right: -1px; }
-.btn__translate::after { content: "\f0ac"; display: inline-flex; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: .6em; background-color: transparent; color: #0AA773; border: 2px solid #0AA773; border-radius: 0 2px 2px 0; width: 1.8em; height: 1.8em; justify-content: center; align-items: center; margin-left: -1px; }
+.btn__translate::before { content: "\41"; font-family: "Font Awesome 6 Free"; display: inline-flex; width: 1.8em; height: 1.8em; line-height: 1.8em; position: relative; font-weight: 900; font-size: .6em; background-color: #0AA773; color: #fff; border: 2px solid #0AA773 !important; border-radius: 2px 0 0 2px; justify-content: center; align-items: center; margin-right: -1px; }
+.btn__translate::after { content: "\f0ac"; font-family: "Font Awesome 6 Free"; display: inline-flex; width: 1.8em; height: 1.8em; line-height: 1.8em; position: relative; border: 2px solid #0AA773 !important; font-weight: 900; font-size: .6em; background-color: transparent; color: #0AA773; border-radius: 0 2px 2px 0; justify-content: center; align-items: center; margin-left: -1px; }
+.btn__translate:hover::after { transform: none; transition: none; }
 
 .btn__translate[aria-expanded="false"]::before { background-color: #0AA773; color: #fff; }
 .btn__translate[aria-expanded="false"]::after { background-color: transparent; color: #0AA773; }
@@ -465,6 +471,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .modal-start .robot-frame .dialog .dialog-text { max-height: unset; overflow-y: auto; }
 
 .futuristic-frame.practice .topic-section .btn { border-radius: 500px; }
+.futuristic-frame.practice .topic-section .btn::after { border-radius: 500px; }
+.futuristic-frame.practice .topic-section .btn:hover::after { transform: scale(1.075, 1.25); }
 .futuristic-frame.practice .topic-section .card .card-img { border-radius: 500px; margin-bottom: 0; }
 .futuristic-frame.practice .topic-section .card .task-complete.all [class*="bookmark"] { left: calc(150px/2); transform: translateX(-50%); }
 .futuristic-frame.practice .topic-section .card .task-complete.all [class*="crown"] { left: calc(150px/2); transform: translateX(-50%); }
@@ -516,7 +524,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 .index-btn { display: flex; flex-direction: column-reverse; text-align: center; }
 .index-btn i { font-size: 5rem; color: #0AA773; margin-bottom: 1rem; }
-.index-btn .btn:not(:hover) { color: #0AA773; border-color: #0AA773; outline-color: #0AA773; }
+.index-btn .btn:not(:hover) { color: #0AA773; border-color: #0AA773; }
+.index-btn .btn:not(:hover)::after { border: 1px solid #0AA773; }
 
 .index-btn.chat .btn:hover + i { color: #F4CE36; transition: all 1s cubic-bezier(0.19, 1, 0.22, 1); }
 

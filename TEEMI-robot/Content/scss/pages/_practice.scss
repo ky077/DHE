@@ -3,6 +3,14 @@
 	.topic-section{
 		.btn{
 			border-radius: 500px;	
+			&::after{
+				border-radius: 500px;
+			}
+			&:hover{
+				&::after{
+					transform: scale(1.075, 1.25);
+				}
+			}
 		}
 		.card{
 			.card-img{
