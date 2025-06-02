@@ -51,6 +51,10 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 		outline-offset: 15px;
     }
 }
+.rounded-pill{
+	outline-radius: var(--bs-border-radius-pill) !important;
+	-moz-outline-radius: var(--bs-border-radius-pill) !important;
+}
 
 .style-h3{
     color: $primary;
