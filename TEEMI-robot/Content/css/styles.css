@@ -169,6 +169,7 @@ samp { font-family: 'Noto Sans', 'Noto Sans TC', 'Microsoft JhengHei',  'PingFan
 
 .btn__record.current, .btn__playRec.current { animation: rec 2s infinite; box-shadow: 0 0 0 0.25rem rgba(10, 167, 115, 0.5); background-color: #0AA773; }
 .btn__record.current > i, .btn__playRec.current > i { color: #fff; }
+.btn__record.current::after, .btn__playRec.current::after { display: none; }
 
 .text-gray-100 { color: #f8f9fa; }
 
@@ -411,8 +412,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .futuristic-frame.chat .record-summary .record-title::before { border-right-color: #F4CE36; }
 .futuristic-frame.chat .record-summary .record-title::after { border-left-color: #F4CE36; }
 .futuristic-frame.chat .record-summary .record-val { border-bottom-color: #F4CE36; }
-.futuristic-frame.chat .end-animate .end-an .end-an-ball .task-complete { color: #F4CE36; }
-.futuristic-frame.chat .end-animate .end-an .end-an-ball .task-complete .done { color: #F4CE36; }
+.futuristic-frame.chat .end-animate .end-an .end-an-ball .task-complete { color: rgba(255, 255, 255, 0.75); }
+.futuristic-frame.chat .end-animate .end-an .end-an-ball .task-complete.done { color: #F4CE36; }
 
 .chatInterface-content { padding-bottom: calc((2em + 1rem + 1rem - 2px) + 1rem); }
 
@@ -489,8 +490,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .futuristic-frame.practice .record-summary .record-title::before { border-right-color: #65B5EA; }
 .futuristic-frame.practice .record-summary .record-title::after { border-left-color: #65B5EA; }
 .futuristic-frame.practice .record-summary .record-val { border-bottom-color: #F4CE36; }
-.futuristic-frame.practice .end-animate .end-an .end-an-ball .task-complete { color: #84c4ee; }
-.futuristic-frame.practice .end-animate .end-an .end-an-ball .task-complete .done { color: #84c4ee; }
+.futuristic-frame.practice .end-animate .end-an .end-an-ball .task-complete { color: rgba(255, 255, 255, 0.75); }
+.futuristic-frame.practice .end-animate .end-an .end-an-ball .task-complete.done { color: #84c4ee; }
 
 .practiceInterface-bar { display: flex; align-items: center; width: 70%; width: calc(70% + 3rem); height: calc(1.5rem + 0.325rem); position: absolute; top: 0; right: 0; z-index: 9; }
 .practiceInterface-bar .progress-count { color: #0AA773; flex: 1; min-width: 3rem; text-align: right; }

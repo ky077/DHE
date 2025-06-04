@@ -90,8 +90,8 @@
 		.end-an{ 
 			.end-an-ball{
 				.task-complete{
-					color: $chat-color;
-					.done{
+					color: rgba($white, .75);
+					&.done{
 						color: $chat-color;
 					}
 				}

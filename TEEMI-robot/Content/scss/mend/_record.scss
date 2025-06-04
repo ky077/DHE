@@ -89,5 +89,8 @@
 	> i{
         color: #fff;
     }
+	&::after{ 
+		display: none;
+	}
 }
 
