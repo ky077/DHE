@@ -224,8 +224,8 @@ function confirmModalDOM(html) {
                       <div class="modal-body pt-5">`
     + html
     + `<div class="text-center mt-4 mb-3">
-                          <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-dismiss="modal">取消</button>  
-                          <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-dismiss="modal">確定</button>
+                          <button type="button" class="btn btn-primary rounded-pill px-4 mx-2" data-bs-dismiss="modal">取消</button>  
+                          <button type="button" class="btn btn-primary rounded-pill px-4 mx-2" data-bs-dismiss="modal" id="OK">確定</button>
                         </div>
                       </div>
                     </div>

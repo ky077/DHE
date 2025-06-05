@@ -16,9 +16,10 @@
         vertical-align: middle;
         overflow: hidden;
         text-align: left;
-        margin-top: -.25em;
+        margin-top: -.125em;
         margin-right: .25rem;
         border-radius: 0;
+		font-size: 1.25rem;
     }
 }
 .btn__playTitle.current{
@@ -48,26 +49,38 @@
 }
 
 //錄製音檔、播放錄音、下一句 樣式
-.btn__record, .btn__playRec, .btn-next{
-    border-radius:  100%;
-    font-size: 1.25rem;
-    width: calc(2em + 1rem + 1rem - 2px);
-    height: calc(2em + 1rem + 1rem - 2px);
+.btn__record, .btn__playRec, 
+.btn__next, .btn-next,
+.btn__end, .btn-end{
+    border-radius: 100%;
     display: inline-flex;
     align-items: center; 
     justify-content: center;
     box-shadow: 0 0 0.2rem lighten($primary, 15%);
     background-color: #fff;
     border-color: transparent;
+	&.btn-lg{
+		width: calc(2em + 1rem + 1rem - 2px);
+    	height: calc(2em + 1rem + 1rem - 2px);	
+		> i{
+        	font-size: 1.5rem;
+    	}
+	}
+	&.btn-sm{
+		width: calc(1em + 1rem + 1rem - 2px);
+    	height: calc(1em + 1rem + 1rem - 2px);	
+		> i{
+        	font-size: 1rem;
+    	}
+	}
     > i{
         color: $primary;
-        font-size: 1.5rem;
     }
 	&::after{ 
 		border-radius:  100%;
 	}
-    &:hover, &:focus, &:active,
-    &.hover, &.focus, &.active{
+    &:hover, &:active,
+    &.hover, &.active{
         > i{
             color: #fff !important;
         }  
@@ -81,6 +94,18 @@
         background-color: #fff !important;
         border-color: transparent !important;   
     }
+	
+	&.btn-empty{
+		--bs-btn-border-color: transparent;
+		box-shadow: none !important; 
+   		background-color: transparent !important; 
+    	border-color: transparent !important; 
+		pointer-events: none;
+		
+		> i{
+			color: transparent !important; 
+		}
+	}
 }
 .btn__record.current, .btn__playRec.current{
     animation: rec 2s infinite;
@@ -93,4 +118,5 @@
 		display: none;
 	}
 }
+
 

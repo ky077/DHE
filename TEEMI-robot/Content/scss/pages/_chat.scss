@@ -265,6 +265,10 @@
 	text-align: center;
     padding: 1rem;
 	margin-bottom: 1rem;
+	.btn{
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
 }
 
 .completion-section.chat{
@@ -386,25 +390,4 @@
 		background-color: rgba($chat-color, .25);
 	}
 	
-}
-
-.modal-start{
-	.robot-frame{ 
-		height: auto;
-		max-height: unset;
-		filter: drop-shadow(#{$box-shadow-sm});
-		.avatar{
-			
-		}
-		.dialog {
-			//background-color: $secondary-100;
-			.dialog-text {
-				max-height: unset;
-				overflow-y: auto;
-			}
-			&::before{ 
-				//border-color: transparent $secondary-100 transparent transparent;
-			}
-		}
-	}
 }
