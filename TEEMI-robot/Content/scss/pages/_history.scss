@@ -185,22 +185,24 @@
 		}
 	}
 	
-	.log-list + .log-text:not([style="display:none;"]) {
-		
-	}
-	
-	
+	$accordion1-img-width: 64px;
 	.log-accordion1{
 		--bs-accordion-border-color: transparent;
 		.accordion-img{
-			width: 50px;
-			border-radius: 0 50px 50px 50px;
+			width: $accordion1-img-width;
+			border-radius: 0 500px 500px 500px;
 			overflow: hidden;
 			margin-right: .5rem;
 		}
-		.accordion-title{
-			margin-right: .25rem;
-			font-weight: 500;
+		.accordion-topic{
+			display: flex;
+			flex-wrap: wrap;
+			flex: 1;
+			flex-direction: column;
+			.accordion-title{
+				margin-right: .25rem;
+				font-weight: 500;
+			}	
 		}
 
 		> .accordion-item{
@@ -214,6 +216,7 @@
 						border-color: transparent;
 						box-shadow: none;
 						background-color: rgba($primary, .25);
+						color: $primary;
 					}
 					&:not(.collapsed){
 						background-color: rgba($primary, .1);
@@ -230,7 +233,7 @@
 				}
 				> .accordion-body{
 					padding-top: 0;
-					padding-left: calc(50px + .5rem);
+					padding-left: calc(#{$accordion1-img-width} + .5rem);
 				}
 			}
 		}

@@ -672,14 +672,15 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .log-modal .log-text .log-frame::before { content: ""; display: block; width: 2rem; height: calc(81% - .325rem*4.5); background-color: currentColor; position: absolute; top: 50%; left: calc(.325rem + var(--bs-gutter-x)*.5); transform: translate(0, calc(-50% + 1rem)); clip-path: polygon(0 0, 100% 1.125em, 100% calc(100% - 1.125em), 0 100%); }
 .log-modal .log-text .log-frame .log-txt { color: #343a40; white-space: pre-wrap; padding: 1rem 1.25rem 1rem 3.25rem; font-size: .9rem; }
 .log-modal .log-accordion1 { --bs-accordion-border-color: transparent; }
-.log-modal .log-accordion1 .accordion-img { width: 50px; border-radius: 0 50px 50px 50px; overflow: hidden; margin-right: .5rem; }
-.log-modal .log-accordion1 .accordion-title { margin-right: .25rem; font-weight: 500; }
+.log-modal .log-accordion1 .accordion-img { width: 64px; border-radius: 0 500px 500px 500px; overflow: hidden; margin-right: .5rem; }
+.log-modal .log-accordion1 .accordion-topic { display: flex; flex-wrap: wrap; flex: 1; flex-direction: column; }
+.log-modal .log-accordion1 .accordion-topic .accordion-title { margin-right: .25rem; font-weight: 500; }
 .log-modal .log-accordion1 > .accordion-item > .accordion-header > .accordion-button:focus { border-color: transparent; box-shadow: none; }
-.log-modal .log-accordion1 > .accordion-item > .accordion-header > .accordion-button:hover { border-color: transparent; box-shadow: none; background-color: rgba(10, 167, 115, 0.25); }
+.log-modal .log-accordion1 > .accordion-item > .accordion-header > .accordion-button:hover { border-color: transparent; box-shadow: none; background-color: rgba(10, 167, 115, 0.25); color: #0AA773; }
 .log-modal .log-accordion1 > .accordion-item > .accordion-header > .accordion-button:not(.collapsed) { background-color: rgba(10, 167, 115, 0.1); padding-bottom: 0; }
 .log-modal .log-accordion1 > .accordion-item > .accordion-header > .accordion-button::after { background-image: none; }
 .log-modal .log-accordion1 > .accordion-item > .accordion-collapse.collapse.show { background-color: rgba(10, 167, 115, 0.1); }
-.log-modal .log-accordion1 > .accordion-item > .accordion-collapse > .accordion-body { padding-top: 0; padding-left: calc(50px + .5rem); }
+.log-modal .log-accordion1 > .accordion-item > .accordion-collapse > .accordion-body { padding-top: 0; padding-left: calc(64px + .5rem); }
 .log-modal .log-accordion2 { --bs-accordion-bg: transparent; --bs-accordion-border-color: transparent; }
 .log-modal .log-accordion2 > .accordion-item > .accordion-header > .accordion-button { background-color: transparent; padding-top: calc(1rem*.75); padding-bottom: calc(1rem*.75); flex-direction: row-reverse; justify-content: flex-end; }
 .log-modal .log-accordion2 > .accordion-item > .accordion-header > .accordion-button:focus { border-color: transparent; box-shadow: none; }
