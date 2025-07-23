@@ -76,6 +76,7 @@
 	--bs-modal-bg: transparent;
 	$dge-space: 1.125em;
 	$section-space: 0;
+	$accordion1-img-width: 2.5rem;
 	color: $primary;
 	.modal-header{
 		padding-bottom: 0;
@@ -185,7 +186,7 @@
 		}
 	}
 	
-	$accordion1-img-width: 64px;
+	
 	.log-accordion1{
 		--bs-accordion-border-color: transparent;
 		.accordion-img{
