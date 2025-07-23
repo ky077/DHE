@@ -3,39 +3,6 @@
 	margin-top: 1.5rem;
 	margin-bottom: 3rem;
 	text-align: center;
-	.topic-title{ 
-		display: inline-block;
-		position: relative;
-		margin-bottom: 2rem;
-		span{
-			color: $body-color;
-			position: relative;
-			z-index: 1;
-		}
-		&::before, &::after{
-			content: "";
-			display: block;
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top:0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			transform-origin:bottom;
-			transform:skewX(-30deg);
-		}
-		&::before{
-			border: 2px solid currentColor;
-			top: -.25em;
-			left: -1em;
-		}
-		&::after{
-			background-color: currentColor;
-			right: -1em;
-			bottom: -.25em;
-		}
-	}
 	.card{
 		flex-direction: row;
 		align-items: center;
@@ -96,4 +63,36 @@
 		}
 	}
 }
-
+.topic-title{ 
+		display: inline-block;
+		position: relative;
+		margin-bottom: 2rem;
+		span{
+			color: $body-color;
+			position: relative;
+			z-index: 1;
+		}
+		&::before, &::after{
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top:0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transform-origin:bottom;
+			transform:skewX(-30deg);
+		}
+		&::before{
+			border: 2px solid currentColor;
+			top: -.25em;
+			left: -1em;
+		}
+		&::after{
+			background-color: currentColor;
+			right: -1em;
+			bottom: -.25em;
+		}
+	}

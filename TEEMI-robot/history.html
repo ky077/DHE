@@ -129,7 +129,8 @@
             </div>
           </div>
           <div class="completion-section chat">
-            <div class="completion-title"><span>「生活英語」聊天主題完成度</span></div>
+            <h3 class="topic-title"><span>生活英語</span></h3>
+            <div class="completion-title"><span>生活英語聊天主題完成度</span></div>
             <div class="completion-content">
               <div class="row">
                 <div class="col text-center">
@@ -155,9 +156,40 @@
                 </div>
               </div>
             </div>
+            <div class="completion-title"><span>生活英語練習句子完成度</span></div>
+            <div class="completion-content">
+              <div class="row">
+                <div class="col text-center">
+                  <div class="completion-bar" style="--completed: 1; --total: 10;">
+                    <div class="task-complete easy done"><i class="fas fa-star" aria-hidden="true"></i></div>
+                  </div>
+                  <div>簡單</div>
+                  <div>1/10</div>
+                </div>
+                <div class="col text-center">
+                  <div class="completion-bar" style="--completed: 1; --total: 10;">
+                    <div class="task-complete medium done"><i class="fas fa-star" aria-hidden="true"></i></div>
+                  </div>
+                  <div>中等</div>
+                  <div>1/10</div>
+                </div>
+                <div class="col text-center">
+                  <div class="completion-bar" style="--completed: 10; --total: 10;">
+                    <div class="task-complete hard done"><i class="fas fa-star" aria-hidden="true"></i></div>
+                  </div>
+                  <div>困難</div>
+                  <div>10/10</div>
+                </div>
+              </div>
+            </div>
+            <div class="completion-content">
+              <button type="button" class="btn btn-primary btn-lg rounded-pill m-2 px-4" id="chat-history">聊天紀錄</button>
+              <button type="button" class="btn btn-primary btn-lg rounded-pill m-2 px-4" id="chat-comment">評語清單</button>
+            </div>
           </div>
-          <!--<div class="completion-section practice">
-            <div class="completion-title"><span>練習相關句子完成度</span></div>
+          <div class="completion-section practice">
+            <h3 class="topic-title"><span>專科英語</span></h3>
+            <div class="completion-title"><span>專科英語聊天主題完成度</span></div>
             <div class="completion-content">
               <div class="row">
                 <div class="col text-center">
@@ -183,7 +215,37 @@
                 </div>
               </div>
             </div>
-          </div>-->
+            <div class="completion-title"><span>英語練習句子完成度</span></div>
+            <div class="completion-content">
+              <div class="row">
+                <div class="col text-center">
+                  <div class="completion-bar" style="--completed: 5; --total: 10;">
+                    <div class="task-complete easy done"><i class="fas fa-star" aria-hidden="true"></i></div>
+                  </div>
+                  <div>簡單</div>
+                  <div>5/10</div>
+                </div>
+                <div class="col text-center">
+                  <div class="completion-bar" style="--completed: 1; --total: 10;">
+                    <div class="task-complete medium done"><i class="fas fa-star" aria-hidden="true"></i></div>
+                  </div>
+                  <div>中等</div>
+                  <div>1/10</div>
+                </div>
+                <div class="col text-center">
+                  <div class="completion-bar" style="--completed: 0; --total: 10;">
+                    <div class="task-complete hard done"><i class="fas fa-star" aria-hidden="true"></i></div>
+                  </div>
+                  <div>困難</div>
+                  <div>0/10</div>
+                </div>
+              </div>
+            </div>
+            <div class="completion-content">
+              <button type="button" class="btn btn-primary btn-lg rounded-pill m-2 px-4" id="practice-history">聊天紀錄</button>
+              <button type="button" class="btn btn-primary btn-lg rounded-pill m-2 px-4" id="practice-comment">評語清單</button>
+            </div>
+          </div>
           <!-- --> 
         </div>
       </div>
@@ -191,6 +253,319 @@
     <!-- futuristic-frame END --> 
   </div>
 </main>
+
+<!-- Modal#logPanel-->
+<div class="modal fade log-modal" id="logModal" tabindex="-1" aria-labelledby="logModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row justify-content-center h-100 g-1">
+          <div class="col-lg-6 h-100 log-list" id="logList">
+            <div class="log-title">
+              <h3 class="topic-title" id="logModalLabel"><span>生活英語</span></h3>
+            </div>
+            <div class="log-frame">
+              <div class="accordion accordion-flush log-accordion1">
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" aria-expanded="true">
+                    <div class="accordion-img">
+                      <div class="ratio ratio-1x1"> <img src="Content/images/TEEMI-Bot_daily_topic_1.jpg" alt="我的家鄉 My Hometown"> </div>
+                    </div>
+                    <div class="accordion-title">我的家鄉</div>
+                    <div class="accordion-title">My Hometown</div>
+                    </button>
+                  </h4>
+                  <div class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                      <div class="accordion accordion-flush log-accordion2">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">簡單</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">中等</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                           <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">困難</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">
+                    <div class="accordion-img">
+                      <div class="ratio ratio-1x1"> <img src="Content/images/TEEMI-Bot_daily_topic_1.jpg" alt="介紹學校 My University"> </div>
+                    </div>
+                    <div class="accordion-title">介紹學校</div>
+                    <div class="accordion-title">My University</div>
+                    </button>
+                  </h4>
+                  <div class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <div class="accordion accordion-flush log-accordion2">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">簡單</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">中等</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                           <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">困難</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">
+                    <div class="accordion-img">
+                      <div class="ratio ratio-1x1"> <img src="Content/images/TEEMI-Bot_daily_topic_1.jpg" alt="社交媒體 Social Media"> </div>
+                    </div>
+                    <div class="accordion-title">社交媒體</div>
+                    <div class="accordion-title">Social Media</div>
+                    </button>
+                  </h4>
+                  <div class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <div class="accordion accordion-flush log-accordion2">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">簡單</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">中等</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                           <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">困難</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">
+                    <div class="accordion-img">
+                      <div class="ratio ratio-1x1"> <img src="Content/images/TEEMI-Bot_daily_topic_1.jpg" alt="體育活動 Sports & Physical Activities"> </div>
+                    </div>
+                    <div class="accordion-title">體育活動</div>
+                    <div class="accordion-title">Sports &#38; Physical Activities</div>
+                    </button>
+                  </h4>
+                  <div class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <div class="accordion accordion-flush log-accordion2">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">簡單</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">中等</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                           <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">困難</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">
+                    <div class="accordion-img">
+                      <div class="ratio ratio-1x1"> <img src="Content/images/TEEMI-Bot_daily_topic_1.jpg" alt="家鄉去留 Hometown Roots or New Horizons?"> </div>
+                    </div>
+                    <div class="accordion-title">家鄉去留</div>
+                    <div class="accordion-title">Hometown Roots or New Horizons?</div>
+                    </button>
+                  </h4>
+                  <div class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <div class="accordion accordion-flush log-accordion2">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">簡單</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">中等</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                           <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">困難</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">
+                    <div class="accordion-img">
+                      <div class="ratio ratio-1x1"> <img src="Content/images/TEEMI-Bot_daily_topic_1.jpg" alt="我修的課 From Classroom to Life: Lessons That Stick With You"> </div>
+                    </div>
+                    <div class="accordion-title">我修的課</div>
+                    <div class="accordion-title">From Classroom to Life: Lessons That Stick With You</div>
+                    </button>
+                  </h4>
+                  <div class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <div class="accordion accordion-flush log-accordion2">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">簡單</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">中等</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                           <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">困難</button>
+                          </h2>
+                          <div class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action active">2025.07.16 17:00</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:22</a> <a href="#" class="list-group-item list-group-item-action">2025.07.20 17:55</a> </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>				  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 h-100 log-text" id="logText" style="display: none;">
+            <div class="log-title">
+            </div>
+            <div class="log-frame">
+              <div class="log-txt"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
 <!-- ------- ------- ------- ------- ------- ------- ------- --> 
@@ -200,6 +575,128 @@
 <script src="Content/widgets/WOW-master/dist/wow.min.js"></script> 
 
 <!-- This web Javascript --> 
-<script src="Content/js/main.js"></script>
+<script src="Content/js/main.js"></script> 
+<script>
+//修改BS accordion不用設定目標id
+document.querySelectorAll('.accordion-button').forEach(button => {
+    const item = button.closest('.accordion-item');
+    const collapseElement = item.querySelector('.accordion-collapse');
+    const accordionContainer = collapseElement.closest('.accordion'); 
+
+    button.addEventListener('click', function () {
+		// 每次點擊都重新建立 collapse 並帶入 parent，支援關聯收合
+        const bsCollapse = new bootstrap.Collapse(collapseElement, {
+            toggle: true,
+            parent: accordionContainer
+        });
+    });
+
+	//展開狀態
+    collapseElement.addEventListener('show.bs.collapse', function (e) {
+        if (e.target !== collapseElement) return; // 僅針對當前 collapse 修改
+        button.classList.remove('collapsed');
+        button.setAttribute('aria-expanded', 'true');
+    });
+
+	//收合狀態
+    collapseElement.addEventListener('hide.bs.collapse', function (e) {
+        if (e.target !== collapseElement) return; // 僅針對當前 collapse 修改
+        button.classList.add('collapsed');
+        button.setAttribute('aria-expanded', 'false');
+    });
+});
+
+	
+//[聊天紀錄]、[評語清單]
+$('#chat-history, #chat-comment, #practice-history, #practice-comment').on('click', function() {
+    const classList = $(this).attr('id').split(' ');
+
+    classList.forEach(cls => {
+        const parts = cls.split('-');
+        if (parts.length === 2) {
+            const type = parts[0];   // chat 或 practice
+            const kind = parts[1];   // history 或 comment
+			
+			var logModalElement = document.getElementById('logModal');
+			var logModal = new bootstrap.Modal(logModalElement);
+
+			logModal.show();
+			
+			logModalElement.addEventListener('shown.bs.modal', () => {
+				$('#logModal').removeClass('chat practice').addClass(parts[0]);
+				
+				// modal預設展開第一項
+                /*$('#logModal .accordion-collapse').each(function (index) {
+                    const collapseInstance = bootstrap.Collapse.getOrCreateInstance(this, { toggle: false });
+                    if (index === 0) {
+                        collapseInstance.show();
+                    } else {
+                        collapseInstance.hide();
+                    }
+                });*/
+				
+				$('#logText .log-frame .log-txt').text('');
+				$('#logText').hide();
+				
+				//標題
+				var titleText = '';
+				if (parts[0] === 'chat') {
+					titleText = '生活英語';	 
+				} else if (parts[0] === 'practice') {
+					titleText = '專科英語';	
+				}
+				$('#logList .log-title .topic-title span').text(titleText);
+				
+				//
+				$('.list-group-item').click(function(){
+					var text = $(this).text();
+					
+					showText(type, kind, text);	//假模擬用
+				});
+			});
+			
+			//關閉時，先還原/清空modal
+			logModalElement.addEventListener('hidden.bs.modal', () => {
+				// #logList accordion 預設展開第一項
+				$('#logModal .accordion-collapse').each(function (index) {
+                    const collapseInstance = bootstrap.Collapse.getOrCreateInstance(this, { toggle: false });
+                    if (index === 0) {
+                        collapseInstance.show();
+                    } else {
+                        collapseInstance.hide();
+                    }
+                });
+				
+				// #logText 清空並隱藏
+				$('#logText .log-frame .log-txt').text('');
+				$('#logText').hide();
+			});
+        }
+    });
+});	
+	
+function showText(type, kind, text){
+	var fileNum;
+	switch (text){
+		case '2025.07.16 17:00':
+			fileNum = 1;
+			break;
+		case '2025.07.20 17:22':
+			fileNum = 2;
+			break;
+		case '2025.07.20 17:55':
+			fileNum = 3;
+			break;
+		default:
+			break;
+	}
+	$('#logText .log-frame .log-txt').load('Content/temp/' + kind + fileNum + '.txt');
+	
+	$('#logText').show();
+	$('#logModal .modal-body').animate({
+		scrollTop: $('#logText').offset().top
+	}, 800);
+}
+</script>
 </body>
 </html>

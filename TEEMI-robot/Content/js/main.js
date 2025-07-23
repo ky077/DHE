@@ -400,3 +400,9 @@ function loadingDOM(ms) {
     $(this).remove();
   });
 }
+
+
+//
+function SPEED(e, rate){
+	$(e).parents('.dropdown').find('.dropdown-toggle span').text(rate + 'x');
+}

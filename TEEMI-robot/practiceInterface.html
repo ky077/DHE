@@ -64,6 +64,19 @@
           </div>
           <div class="d-flex flex-column mb-5">
             <div class="practiceInterface-topic">
+              <div class="dropdown">
+                <button class="btn btn-link dropdown-toggle btn__speed" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="調整句子語速"><i class="fa-solid fa-forward"></i><span>1x</span></button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <h6 class="dropdown-header">句子語速</h6>
+                  </li>
+                  <li><a class="dropdown-item" href="javascript:void(0)" onclick="SPEED(this, 0.5);">0.5x</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="SPEED(this, 0.75);">0.75x</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="SPEED(this, 1);">1x</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="SPEED(this, 1.25);">1.25x</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="SPEED(this, 1.5);">1.5x</a></li>
+                </ul>
+              </div>
               <button type="button" class="btn btn-link btn__playTitle" title="聽聽看" onClick="PLAYTITLE(this, 'Content/temp/Does the rent include utilities like gas, water, and electricity_.mp3')"><span class="visually-hidden">聽聽看</span></button>
               <div>
                 <div><!--<span class="speak-good">Does</span> <span class="speak-excellent">the</span> <span class="speak-excellent">rent</span> <span class="speak-excellent">include</span> <span class="speak-fair">utilities</span> <span class="speak-excellent">like</span> <span class="speak-excellent">gas,</span> <span class="speak-excellent">water,</span> <span class="speak-excellent">and</span> <span class="speak-excellent">electricity?</span>--> 

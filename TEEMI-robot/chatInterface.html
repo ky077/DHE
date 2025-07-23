@@ -56,6 +56,26 @@
           <!-- -->
           <div class="futuristic-frame-tool"> <a href="chatEnd.html" id="END"><i class="fa-solid fa-arrow-right-from-bracket me-1" aria-hidden="true" title="結束對話 Finish"></i><span>結束對話</span>&nbsp;<span>Finish</span></a> </div>
           <!-- -->
+          <div class="chatInterface-bar">
+            <div class="progress-count"><span>1</span>/<span>10</span></div>
+            <div class="progress-bar">
+              <div class="progress-bar-fill" style="width: 10%;"></div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-link dropdown-toggle btn__speed" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="調整聊天機器人語速"><i class="fa-solid fa-forward"></i><span>1x</span></button>
+              <ul class="dropdown-menu dropdown-menu-end small">
+                <li>
+                  <h6 class="dropdown-header">聊天機器人語速</h6>
+                </li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="SPEED(this, 0.5);">0.5x</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="SPEED(this, 0.75);">0.75x</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="SPEED(this, 1);">1x</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="SPEED(this, 1.25);">1.25x</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="SPEED(this, 1.5);">1.5x</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- -->
           <div class="chatInterface-content">
             <div class="chatInterface-frame left">
               <div class="avatar"> <span class="avatar-img"><img src="Content/images/TEEMI-Bot/avatar.png" alt="機器人頭像"></span></div>
@@ -71,17 +91,22 @@
                 <div class="dialog-translate" style="display: none;">你叫甚麼名字？</div>
               </div>
             </div>
-            <!--<div class="chatInterface-frame right">
+            <div class="chatInterface-frame right">
               <div class="avatar"><span class="avatar-text">陳</span></div>
               <div class="dialog">
+                <div class="dialog-tools">
+				  <button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="隱藏可以這麼說" title="隱藏可以這麼說" onClick="SUGGEST(this)"></button>	
+                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏我說的話" title="隱藏我說的話" onClick="SCREENTEXT(this)"></button>
+                </div>
                 <div class="dialog-text">
                   <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
-                  <div class="dialog-text-content">Name is the Janie.</div>
+                  <div class="dialog-text-content">Hi, name is the ......</div>
                 </div>
                 <div class="dialog-suggest">
-                  <div>可以說</div>
-                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/My name is Janie..mp3')"><span class="visually-hidden">播放</span></button>
-                  <span>My name is Janie.</span> </div>
+                    <div>可以這麼說 </div>
+                    <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/My name is Janie..mp3')"><span class="visually-hidden">播放</span></button>
+                    <span>My name is ......</span>
+                </div>
               </div>
             </div>
             <div class="chatInterface-frame left">
@@ -101,13 +126,20 @@
             <div class="chatInterface-frame right">
               <div class="avatar"><span class="avatar-text">陳</span></div>
               <div class="dialog">
+                <div class="dialog-tools">
+				  <button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="隱藏可以這麼說" title="隱藏可以這麼說" onClick="SUGGEST(this)"></button>		
+                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏我說的話" title="隱藏我說的話" onClick="SCREENTEXT(this)"></button>
+                </div>
                 <div class="dialog-text">
+                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
                   <div class="dialog-text-content">Name is the Janie.</div>
                 </div>
                 <div class="dialog-suggest" style="display: none;">
-                  <div>可以說</div>
-                  <button type="button" class="btn btn-link btn__playTitle" onClick="" title="播放"><span class="visually-hidden">播放</span></button>
-                  <span></span> </div>
+                  <button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="隱藏可以這麼說" title="隱藏可以這麼說" onClick="SUGGEST(this)"></button>
+                    <div>可以這麼說 </div>
+                    <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/My name is Janie..mp3')"><span class="visually-hidden">播放</span></button>
+                    <span></span> 
+                </div>
               </div>
             </div>
             <div class="chatInterface-frame left">
@@ -123,14 +155,12 @@
                 </div>
                 <div class="dialog-translate" style="display: none;">你叫甚麼名字？</div>
               </div>
-            </div>-->
+            </div>
           </div>
           <!-- -->
-          <div class="chatInterface-footer">
-			<a href="javascript:void(0);" type="button" class="btn btn-primary btn-sm btn__end btn-empty"></a>  
+          <div class="chatInterface-footer"> <div class="btn btn-primary btn-sm btn__end btn-empty"></div>
             <button type="button" class="btn btn-primary btn-lg btn__record" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
-			<a href="chatEnd.html" type="button" class="btn btn-primary btn-sm btn__end" title="結束對話" id="CHAT_END"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i></a>  
-          </div>
+            <a href="chatEnd.html" type="button" class="btn btn-primary btn-sm btn__end" title="結束對話" id="CHAT_END"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i></a> </div>
           <!-- --> 
         </div>
       </div>
@@ -206,12 +236,13 @@
             </div>
           </div>
           <!-- robot-frame END --> 
-          <!-- img START --> 
-			<div class="guide-img">
-          <img src="Content/images/chat-guide.png" alt="聊天介面導覽圖" class="img-fluid"/>  </div>
+          <!-- img START -->
+          <div class="guide-img"> <img src="Content/images/chat-guide.png" alt="聊天介面導覽圖" class="img-fluid"/> </div>
           <!-- img END --> 
-          <!-- btn START --><div class="guide-btn">
-          <button type="button" class="btn btn-outline-guide btn-lg rounded-pill m-2 px-4" id="start" >準備好了! I’m ready!</button></div>
+          <!-- btn START -->
+          <div class="guide-btn">
+            <button type="button" class="btn btn-outline-guide btn-lg rounded-pill m-2 px-4" id="start" >準備好了! I’m ready!</button>
+          </div>
           <!-- btn END --> 
         </div>
       </div>
@@ -242,7 +273,7 @@ $('#END, #CHAT_END').click(function (e) {
 	
 	var _href= $(this).attr('href');
 	
-	confirmModalDOM(`<div class="text-center">確定要結束對話嗎?</div>`);
+	confirmModalDOM(`<div class="text-center">要結束對話嗎? 滿10輪才能得到評語喔!</div>`);
 	
 	$('#OK').click(function () { 
 		window.location = _href;	
@@ -285,27 +316,73 @@ function SCREENTEXT(button) {
     const currentState = $(button).attr('aria-expanded');	
 	// 選取當前的文字區塊
 	const content = $(button).parents('.dialog').find('.dialog-text-content');
+	
+	
 
     if (currentState === 'true') { 
 		// 當前、預設狀態是true-有眼睛-有顯示機器人說的話，要關閉機器人說的話
 		$(button).attr('aria-expanded', 'false'); 
 		content.css('color', 'transparent');
 		
-		$(button).attr({
-			'aria-label': '關閉機器人說的話',
-			'title': 	  '關閉機器人說的話'
-		});
+		if ($(button).parents('.chatInterface-frame').hasClass('left')) {
+			$(button).attr({
+				'aria-label': '關閉機器人說的話',
+				'title': 	  '關閉機器人說的話'
+			});
+		} else if ($(button).parents('.chatInterface-frame').hasClass('right')){
+			$(button).attr({
+				'aria-label': '關閉我說的話',
+				'title': 	  '關閉我說的話'
+			});
+		}
+		
+		
     } else {  
 		// 當前狀態(關閉眼睛)，要顯示機器人說的話
 		$(button).attr('aria-expanded', 'true'); 
 		content.css('color', '');
 		
-        $(button).attr({
-			'aria-label': '顯示機器人說的話',
-			'title': 	  '顯示機器人說的話'
-		});
+		if ($(button).parents('.chatInterface-frame').hasClass('left')) {
+			$(button).attr({
+				'aria-label': '顯示機器人說的話',
+				'title': 	  '顯示機器人說的話'
+			});	
+		} else if ($(button).parents('.chatInterface-frame').hasClass('right')){
+			$(button).attr({
+				'aria-label': '顯示我說的話',
+				'title': 	  '顯示我說的話'
+			});	
+		}
     }
 }
+	
+//[對話] 可以這麼說
+function SUGGEST(button) {
+    // 判斷目前的按鈕狀態
+    const currentState = $(button).attr('aria-expanded');	
+	// 選取當前要控制的文字區塊
+	const content = $(button).parents('.dialog').find('.dialog-suggest');
+
+    if (currentState === 'true') { 
+		// 當前、預設狀態是true-有...顯示可以這麼說，要關閉可以這麼說的文字
+		$(button).attr('aria-expanded', 'false'); 
+		content.addClass('hideText');
+		
+		$(button).attr({
+			'aria-label': '關閉可以這麼說',
+			'title': 	  '關閉可以這麼說'
+		});
+    } else {  
+		// 當前狀態(無...)，要顯示可以這麼說的文字
+		$(button).attr('aria-expanded', 'true'); 
+		content.removeClass('hideText');
+		
+        $(button).attr({
+			'aria-label': '顯示可以這麼說',
+			'title': 	  '顯示可以這麼說'
+		});
+    }
+}	
 	
 //模擬分析loading
 function chat_analyze() {
@@ -328,15 +405,20 @@ function chat_analyze() {
             <div class="chatInterface-frame right">
                 <div class="avatar"><span class="avatar-text">陳</span></div>
                 <div class="dialog">
+                    <div class="dialog-tools">
+						<button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="隱藏可以這麼說" title="隱藏可以這麼說" onClick="SUGGEST(this)"></button>
+                        <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏我說的話" title="隱藏我說的話" onClick="SCREENTEXT(this)"></button>
+                    </div>  
                     <div class="dialog-text">
+                        <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
                         <div class="dialog-text-content">Name is the Janie.</div>
-                    </div>
-                    <div class="dialog-suggest" style="display: none;">
-                        <div>可以說</div>
+                    </div>  
+                    <div class="dialog-suggest" style="display: block;">
+                        <div>可以這麼說</div>
                         <button type="button" class="btn btn-link btn__playTitle" onClick="" title="播放">
                             <span class="visually-hidden">播放</span>
                         </button>
-                        <span></span>
+                        <span>My name is Janie.</span>
                     </div>
                 </div>
             </div>
