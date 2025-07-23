@@ -680,7 +680,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .log-modal .log-accordion1 > .accordion-item > .accordion-header > .accordion-button:not(.collapsed) { background-color: rgba(10, 167, 115, 0.1); padding-bottom: 0; }
 .log-modal .log-accordion1 > .accordion-item > .accordion-header > .accordion-button::after { background-image: none; }
 .log-modal .log-accordion1 > .accordion-item > .accordion-collapse.collapse.show { background-color: rgba(10, 167, 115, 0.1); }
-.log-modal .log-accordion1 > .accordion-item > .accordion-collapse > .accordion-body { padding-top: 0; padding-left: calc(2.5rem + .5rem); }
+.log-modal .log-accordion1 > .accordion-item > .accordion-collapse > .accordion-body { padding-top: 0; padding-left: calc(2.5rem + .5rem); padding-right: 0; }
 .log-modal .log-accordion2 { --bs-accordion-bg: transparent; --bs-accordion-border-color: transparent; }
 .log-modal .log-accordion2 > .accordion-item > .accordion-header > .accordion-button { background-color: transparent; padding-top: calc(1rem*.75); padding-bottom: calc(1rem*.75); flex-direction: row-reverse; justify-content: flex-end; }
 .log-modal .log-accordion2 > .accordion-item > .accordion-header > .accordion-button:focus { border-color: transparent; box-shadow: none; }
