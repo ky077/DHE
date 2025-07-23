@@ -688,6 +688,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .log-modal .log-accordion2 > .accordion-item > .accordion-header > .accordion-button::after { margin-left: 0; margin-right: .25rem; transform: rotate(-90deg); }
 .log-modal .log-accordion2 > .accordion-item > .accordion-header > .accordion-button:not(.collapsed) { padding-bottom: 0; }
 .log-modal .log-accordion2 > .accordion-item > .accordion-header > .accordion-button:not(.collapsed)::after { transform: rotate(0deg); }
-.log-modal .log-accordion2 > .accordion-item > .accordion-collapse > .accordion-body { padding-top: 0; padding-bottom: 0; }
+.log-modal .log-accordion2 > .accordion-item > .accordion-collapse > .accordion-body { padding-top: 0; padding-bottom: 0; padding-right: 0; }
 .log-modal .list-group { --bs-list-group-bg: transparent; --bs-list-group-border-color: rgba(0, 0, 0, 0); --bs-list-group-action-hover-color: #0AA773; --bs-list-group-action-hover-bg: transparent; --bs-list-group-action-active-color: #0AA773; --bs-list-group-action-active-bg: transparent; --bs-list-group-active-color: #0AA773; --bs-list-group-active-bg: transparent; --bs-list-group-active-border-color: transparent; }
 .log-modal .list-group .list-group-item { padding-left: calc(1.25rem + .25rem); }
