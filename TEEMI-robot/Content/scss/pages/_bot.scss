@@ -30,6 +30,14 @@ $bot-tertiary:  #237DAF;  //shadow blue
 	#heart {
 		fill: $bot-secondary;
 	}
+	
+	//tool
+	#dialogueBg, #screwdriver{
+		fill: #EBC83F;
+	}
+	#gear1, #gear2 {
+		fill: #FFFFFF;
+	}
 }
 
 @keyframes footAn {
@@ -261,5 +269,38 @@ $bot-tertiary:  #237DAF;  //shadow blue
 	transform-origin: 463.6px 265.4px;
 	animation: hereLeftAn 3s infinite;
 }
+
+
+//chatInterface  tool.svg
+@keyframes toolGear1An {
+  0% {transform: rotate( 0deg);}
+ 100% {transform: rotate(360deg);}
+}
+#TEEMI-Bot-tool #gear1 {
+	transform-origin: 566.6995px 63.3175px;
+	animation: toolGear1An 11s linear infinite;
+	will-change: transform;
+}
+@keyframes toolGear2An {
+  0% {transform: rotate( 0deg);}
+ 100% {transform: rotate(-360deg);}
+}
+#TEEMI-Bot-tool #gear2 {
+	transform-origin: 613.55px 93.1px;
+	animation: toolGear2An 6s linear infinite;
+	will-change: transform;
+}
+@keyframes toolLeftAn {
+  0% {transform: rotate(  0deg);}
+ 50% {transform: rotate(-10deg);}
+100% {transform: rotate(  0deg);}	
+}
+#TEEMI-Bot-tool #leftHand, 
+#TEEMI-Bot-tool #leftHand2, 
+#TEEMI-Bot-tool #screwdriver{
+	transform-origin: 463.6px 265.4px;
+	animation: toolLeftAn 3s infinite;
+}
+
 
 

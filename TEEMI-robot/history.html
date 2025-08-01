@@ -636,16 +636,6 @@ $('#chat-history, #chat-comment, #practice-history, #practice-comment').on('clic
 			logModalElement.addEventListener('shown.bs.modal', () => {
 				$('#logModal').removeClass('chat practice').addClass(parts[0]);
 				
-				// modal預設展開第一項
-                /*$('#logModal .accordion-collapse').each(function (index) {
-                    const collapseInstance = bootstrap.Collapse.getOrCreateInstance(this, { toggle: false });
-                    if (index === 0) {
-                        collapseInstance.show();
-                    } else {
-                        collapseInstance.hide();
-                    }
-                });*/
-				
 				$('#logText .log-frame .log-txt').text('');
 				$('#logText').hide();
 				

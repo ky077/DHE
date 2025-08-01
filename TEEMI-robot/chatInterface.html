@@ -264,7 +264,7 @@
 $("#start").click(function () { 
   	$(".modal-start").hide();
 
-	chat("[Greetings]");
+	//chat("[Greetings]");
 });
 	
 //[結束對話]
@@ -276,7 +276,11 @@ $('#END, #CHAT_END').click(function (e) {
 	confirmModalDOM(`<div class="text-center">要結束對話嗎? 滿10輪才能得到評語喔!</div>`);
 	
 	$('#OK').click(function () { 
-		window.location = _href;	
+		loadingBotDOM(5000, '評語產生中，請稍後');
+		
+		 setTimeout(() => {
+			window.location = _href;	
+		  }, 5000);
 	});
 });
 	
@@ -310,14 +314,12 @@ function TRANSLATE(button) {
     }
 }
 	
-//[眼睛] 機器人說的話
+//[眼睛] 機器人/我說的話
 function SCREENTEXT(button) {
     // 判斷目前的按鈕狀態
     const currentState = $(button).attr('aria-expanded');	
 	// 選取當前的文字區塊
 	const content = $(button).parents('.dialog').find('.dialog-text-content');
-	
-	
 
     if (currentState === 'true') { 
 		// 當前、預設狀態是true-有眼睛-有顯示機器人說的話，要關閉機器人說的話
@@ -335,7 +337,6 @@ function SCREENTEXT(button) {
 				'title': 	  '關閉我說的話'
 			});
 		}
-		
 		
     } else {  
 		// 當前狀態(關閉眼睛)，要顯示機器人說的話
