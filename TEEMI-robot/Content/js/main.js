@@ -376,8 +376,33 @@ function feedbackModalDOM(v1, v2, v3, v4) {
   });
 }
 
+//Loading Spinners 
+function loadingDOM(ms) { console.log('0');
+  $('body').append(`<div class="modal fade" id="loadingModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content bg-transparent border-0">
+                              <div class="modal-body text-center">
+                                <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                                  <span class="visually-hidden">Loading...</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>`);
+  var myModal = new bootstrap.Modal(document.getElementById('loadingModal'));
+  myModal.show();
+
+  var timeout = setTimeout(function () {
+    myModal.hide();
+  }, ms);
+
+  $('#loadingModal').on('hidden.bs.modal', function () { console.log('0, close');
+    $(this).remove();
+  });
+}
+
 //Loading BOT Spinners 
-function loadingBotDOM(ms, text) {
+function loadingBotDOM(ms, text) { console.log('1');
   $('body').append(`
 <div class="modal fade loading-bot-modal" id="loadingBotModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
   <div class="modal-dialog modal-dialog-centered">
@@ -498,7 +523,7 @@ function loadingBotDOM(ms, text) {
     myModal.hide();
   }, ms);
 
-  $('#loadingBotModal').on('hidden.bs.modal', function () {
+  $('#loadingBotModal').on('hidden.bs.modal', function () { console.log('1, close');
     $(this).remove();
   });
 }

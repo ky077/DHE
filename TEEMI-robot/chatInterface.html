@@ -276,11 +276,7 @@ $('#END, #CHAT_END').click(function (e) {
 	confirmModalDOM(`<div class="text-center">要結束對話嗎? 滿10輪才能得到評語喔!</div>`);
 	
 	$('#OK').click(function () { 
-		loadingBotDOM(5000, '評語產生中，請稍後');
-		
-		 setTimeout(() => {
-			window.location = _href;	
-		  }, 5000);
+		window.location = _href;	
 	});
 });
 	
@@ -433,46 +429,68 @@ function chat_analyze() {
 		chat_robot();
     }, 1000); // 模擬 loading 時間：1 秒
 }
-	
+
+var count = 0;		
 function chat_robot() {	
-	// 顯示 loading 畫面
-    $('body').prepend(`
-        <div id="spinner" class="spinner show">
-			<div class="spinner-border" role="status">
-			  <span class="visually-hidden-focusable">Loading...</span>
-			</div>
-		</div>
-    `);
+	var content = `<div class="chatInterface-frame left">
+					  <div class="avatar"> <span class="avatar-img"><img src="Content/images/TEEMI-Bot/avatar.png" alt="機器人頭像"></span></div>
+					  <div class="dialog">
+						<div class="dialog-tools">
+						  <button type="button" class="btn btn-link btn__translate" aria-expanded="false" aria-label="顯示翻譯" title="顯示翻譯" onClick="TRANSLATE(this)"> </button>
+						  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏機器人說的話" title="隱藏機器人說的話" onClick="SCREENTEXT(this)"></button>
+						</div>
+						<div class="dialog-text">
+						  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Do you live in a dorm, Janie_.mp3')"><span class="visually-hidden">播放</span></button>
+						  <div class="dialog-text-content">Do you live in a dorm, Janie?</div>
+						</div>
+						<div class="dialog-translate" style="display: none;">珍妮，你住在宿舍嗎？</div>
+					  </div>
+					</div>`;
 	
-	// 模擬 loading 結束（例如 1 秒後）
-    setTimeout(function () {
-        // 移除 loading 畫面
-        $('#spinner').remove();
-
-        // 追加內容
-        $('.chatInterface-content').append(`
-             <div class="chatInterface-frame left">
-              <div class="avatar"> <span class="avatar-img"><img src="Content/images/TEEMI-Bot/avatar.png" alt="機器人頭像"></span></div>
-              <div class="dialog">
-                <div class="dialog-tools">
-                  <button type="button" class="btn btn-link btn__translate" aria-expanded="false" aria-label="顯示翻譯" title="顯示翻譯" onClick="TRANSLATE(this)"> </button>
-                  <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏機器人說的話" title="隱藏機器人說的話" onClick="SCREENTEXT(this)"></button>
-                </div>
-                <div class="dialog-text">
-                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Do you live in a dorm, Janie_.mp3')"><span class="visually-hidden">播放</span></button>
-                  <div class="dialog-text-content">Do you live in a dorm, Janie?</div>
-                </div>
-                <div class="dialog-translate" style="display: none;">珍妮，你住在宿舍嗎？</div>
-              </div>
-            </div>
-        `);
-
-        // 捲軸捲動至最底部
-        $('.futuristic-frame-content').animate({
-			scrollTop: $('.futuristic-frame-content')[0].scrollHeight
-		}, 500); 
+	count ++ ;
+	if( count == 1){
+	    // 顯示 loading 畫面
+		$('body').prepend(`
+			<div id="spinner" class="spinner show">
+				<div class="spinner-border" role="status">
+				  <span class="visually-hidden-focusable">Loading...</span>
+				</div>
+			</div>
+		`);  
 		
-    }, 1000); // 模擬 loading 時間：1 秒
+		// 模擬 loading 結束（例如 1 秒後）
+		setTimeout(function () {
+			// 移除 loading 畫面
+			$('#spinner').remove();
+
+			// 追加內容
+			$('.chatInterface-content').append(content);
+
+			// 捲軸捲動至最底部
+			$('.futuristic-frame-content').animate({
+				scrollTop: $('.futuristic-frame-content')[0].scrollHeight
+			}, 500); 
+
+		}, 1000); // 模擬 loading 時間：1 秒
+
+	} else{
+		// 顯示 loading 畫面
+		loadingBotDOM(5000, '評語產生中，請稍後');	
+		
+		// 模擬 loading 結束（例如 1 秒後）
+		setTimeout(function () {
+			// 移除 loading 畫面
+			$('#spinner').remove();
+
+			// 追加內容
+			$('.chatInterface-content').append(content);
+
+			// 捲軸捲動至最底部
+			$('.futuristic-frame-content').animate({
+				scrollTop: $('.futuristic-frame-content')[0].scrollHeight
+			}, 500); 
+		}, 5000); // 模擬 loading 時間：1 秒
+	}
 }
 </script>
 </body>
