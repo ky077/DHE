@@ -213,6 +213,8 @@ samp { font-family: 'Noto Sans', 'Noto Sans TC', 'Microsoft JhengHei',  'PingFan
 
 .text-green { color: #0AA773; }
 
+html[lang="zh-Hans-CN"], html[lang="zh-Hans-CN"] body { font-family: 'Noto Sans', 'Noto Sans SC',   'Microsoft YaHei',  'PingFang SC',   'Heiti SC',  'STXihei',  sans-serif !important; }
+
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { -webkit-text-fill-color: #495057; -webkit-box-shadow: 0 0 0 1000px rgba(139, 213, 220, 0.2) inset; transition: background-color 5000s ease-in-out 0s; }
 
 .sr-only-goContent { background-color: #0AA773; color: #FFF; position: absolute !important; top: 0; left: 0; text-decoration: none; font-size: 1rem; padding: .25rem .5rem 0 .25rem; z-index: 5000; }

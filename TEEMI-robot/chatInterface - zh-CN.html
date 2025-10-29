@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="zh-Hant-TW">
+<html lang="zh-Hans-CN">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="英語文說寫能力檢測平台 聊天機器人">
 <meta name="author" content="英語文說寫能力檢測平台">
-<meta property="og:locale" content="zh-Hant-TW" />
+<meta property="og:locale" content="zh-Hans-CN" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="英語文說寫能力檢測平台 聊天機器人" >
 <meta property="og:description" content="英語文說寫能力檢測平台 聊天機器人" >
@@ -110,7 +110,7 @@
               <div class="dialog">
                 <div class="dialog-text">
                   <h2 class="h4"></h2>
-                  <h2 class="h4">「聊天」介面導覽</h2>
+                  <h2 class="h4">「聊天」介面导览</h2>
                 </div>
               </div>
             </div>
@@ -120,7 +120,7 @@
             <!-- img END --> 
             <!-- btn START -->
             <div class="guide-btn">
-              <button type="button" class="btn btn-outline-guide btn-lg rounded-pill m-2 px-4" id="start" >準備好了! I’m ready!</button>
+              <button type="button" class="btn btn-outline-guide btn-lg rounded-pill m-2 px-4" id="start" >准备好了! I’m ready!</button>
             </div>
             <!-- btn END --> 
           </div>
@@ -134,7 +134,7 @@
       <div class="futuristic-frame-border">
         <div class="futuristic-frame-content px-0"> 
           <!-- -->
-          <div class="futuristic-frame-tool"> <a href="chatEnd.html" id="END"><i class="fa-solid fa-arrow-right-from-bracket me-1" aria-hidden="true" title="結束對話 Finish"></i><span>結束對話</span>&nbsp;<span>End Conversation</span></a> </div>
+          <div class="futuristic-frame-tool"> <a href="chatEnd.html" id="END"><i class="fa-solid fa-arrow-right-from-bracket me-1" aria-hidden="true" title="結束對話 Finish"></i><span>结束对话</span>&nbsp;<span>End Conversation</span></a> </div>
           <!-- -->
           <div class="chatInterface-bar">
             <div class="progress-count"><span>1</span>/<span>10</span></div>
@@ -172,10 +172,10 @@
               </div>
             </div>
             <div class="chatInterface-frame right">
-              <div class="avatar"><span class="avatar-text">陳</span></div>
+              <div class="avatar"><span class="avatar-text">陈</span></div>
               <div class="dialog">
                 <div class="dialog-tools">
-                  <button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="關閉可以這麼說" title="關閉可以這麼說" onClick="SUGGEST(this)"></button>
+                  <button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="關閉可以这么说" title="關閉可以这么说" onClick="SUGGEST(this)"></button>
                   <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏我說的話" title="隱藏我說的話" onClick="SCREENTEXT(this)"></button>
                 </div>
                 <div class="dialog-text">
@@ -183,7 +183,7 @@
                   <div class="dialog-text-content">Hi, name is the ......</div>
                 </div>
                 <div class="dialog-suggest">
-                  <div>可以這麼說 </div>
+                  <div>可以这么说 </div>
                   <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/My name is Janie..mp3')"><span class="visually-hidden">播放</span></button>
                   <span>My name is ......</span> </div>
               </div>
@@ -206,7 +206,7 @@
               <div class="avatar"><span class="avatar-text">陳</span></div>
               <div class="dialog">
                 <div class="dialog-tools">
-                  <button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="關閉可以這麼說" title="關閉可以這麼說" onClick="SUGGEST(this)"></button>
+                  <button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="關閉可以这么说" title="關閉可以这么说" onClick="SUGGEST(this)"></button>
                   <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏我說的話" title="隱藏我說的話" onClick="SCREENTEXT(this)"></button>
                 </div>
                 <div class="dialog-text">
@@ -214,8 +214,8 @@
                   <div class="dialog-text-content">Name is the Janie.</div>
                 </div>
                 <div class="dialog-suggest" style="display: none;">
-                  <button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="隱藏可以這麼說" title="隱藏可以這麼說" onClick="SUGGEST(this)"></button>
-                  <div>可以這麼說 </div>
+                  <button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="隱藏可以这么说" title="隱藏可以这么说" onClick="SUGGEST(this)"></button>
+                  <div>可以这么说 </div>
                   <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/My name is Janie..mp3')"><span class="visually-hidden">播放</span></button>
                   <span></span> </div>
               </div>
@@ -352,7 +352,7 @@ function SCREENTEXT(button) {
     }
 }
 	
-//[對話] 可以這麼說
+//[對話] 可以这么说
 function SUGGEST(button) {
     // 判斷目前的按鈕狀態
     const currentState = $(button).attr('aria-expanded');	
@@ -360,22 +360,22 @@ function SUGGEST(button) {
 	const content = $(button).parents('.dialog').find('.dialog-suggest');
 
     if (currentState === 'true') { 
-		// 當前、預設狀態是true-有...顯示可以這麼說，要關閉可以這麼說的文字
+		// 當前、預設狀態是true-有...顯示可以这么说，要關閉可以这么说的文字
 		$(button).attr('aria-expanded', 'false'); 
 		content.addClass('hideText');
 		
 		$(button).attr({
-			'aria-label': '關閉可以這麼說',
-			'title': 	  '關閉可以這麼說'
+			'aria-label': '關閉可以这么说',
+			'title': 	  '關閉可以这么说'
 		});
     } else {  
-		// 當前狀態(無...)，要顯示可以這麼說的文字
+		// 當前狀態(無...)，要顯示可以这么说的文字
 		$(button).attr('aria-expanded', 'true'); 
 		content.removeClass('hideText');
 		
         $(button).attr({
-			'aria-label': '開啟可以這麼說',
-			'title': 	  '開啟可以這麼說'
+			'aria-label': '開啟可以这么说',
+			'title': 	  '開啟可以这么说'
 		});
     }
 }	
@@ -402,7 +402,7 @@ function chat_analyze() {
                 <div class="avatar"><span class="avatar-text">陳</span></div>
                 <div class="dialog">
                     <div class="dialog-tools">
-						<button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="關閉可以這麼說" title="關閉可以這麼說" onClick="SUGGEST(this)"></button>
+						<button type="button" class="btn btn-link btn__suggest" aria-expanded="true" aria-label="關閉可以这么说" title="關閉可以这么说" onClick="SUGGEST(this)"></button>
                         <button type="button" class="btn btn-link btn__screenText" aria-expanded="true" aria-label="隱藏我說的話" title="隱藏我說的話" onClick="SCREENTEXT(this)"></button>
                     </div>  
                     <div class="dialog-text">
@@ -410,7 +410,7 @@ function chat_analyze() {
                         <div class="dialog-text-content">Name is the Janie.</div>
                     </div>  
                     <div class="dialog-suggest" style="display: block;">
-                        <div>可以這麼說</div>
+                        <div>可以这么说</div>
                         <button type="button" class="btn btn-link btn__playTitle" onClick="" title="播放">
                             <span class="visually-hidden">播放</span>
                         </button>

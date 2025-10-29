@@ -1,3 +1,13 @@
+html[lang="zh-Hans-CN"], html[lang="zh-Hans-CN"] body{
+	 font-family: 'Noto Sans', 
+				  'Noto Sans SC',  
+				  'Microsoft YaHei', 
+				  'PingFang SC',  
+				  'Heiti SC', 
+				  'STXihei', 
+				  sans-serif !important;
+}
+
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active  {
     -webkit-text-fill-color: $gray-700;
     -webkit-box-shadow: 0 0 0 1000px rgba(139,213,220,.2) inset;
