@@ -40,7 +40,6 @@ main > [class*="container"] { height: 100%; }
 .futuristic-frame .futuristic-frame-content::-webkit-scrollbar { width: 7px; background-color: transparent; }
 .futuristic-frame .futuristic-frame-content::-webkit-scrollbar-track { background-color: transparent; }
 .futuristic-frame .futuristic-frame-content::-webkit-scrollbar-thumb { background-color: #0AA773; border-radius: 7px; }
-@media screen and (min-width: 420px) { .futuristic-frame .futuristic-frame-content { justify-content: space-evenly; -webkit-justify-content: space-evenly; } }
 .futuristic-frame .futuristic-frame-content .futuristic-frame-tool { position: absolute; top: 0; left: 0; right: 0; z-index: 9; height: calc(1.5rem + 0.325rem); display: flex; flex-direction: row; align-items: center; padding: 0 .75rem; }
 .futuristic-frame .futuristic-frame-content .futuristic-frame-tool a { color: #0a9f6d; line-height: 1; }
 .futuristic-frame .futuristic-frame-content .futuristic-frame-tool a > span { display: none; }
@@ -58,7 +57,6 @@ main > [class*="container"] { height: 100%; }
 .futuristic-frame.chat .futuristic-frame-content::-webkit-scrollbar { width: 7px; background-color: transparent; }
 .futuristic-frame.chat .futuristic-frame-content::-webkit-scrollbar-track { background-color: transparent; }
 .futuristic-frame.chat .futuristic-frame-content::-webkit-scrollbar-thumb { background-color: #F4CE36; border-radius: 7px; }
-@media screen and (min-width: 420px) { .futuristic-frame.chat .futuristic-frame-content { justify-content: space-evenly; -webkit-justify-content: space-evenly; } }
 .futuristic-frame.chat .futuristic-frame-content .futuristic-frame-tool { position: absolute; top: 0; left: 0; right: 0; z-index: 9; height: calc(1.5rem + 0.325rem); display: flex; flex-direction: row; align-items: center; padding: 0 .75rem; }
 .futuristic-frame.chat .futuristic-frame-content .futuristic-frame-tool a { color: #e8c433; line-height: 1; }
 .futuristic-frame.chat .futuristic-frame-content .futuristic-frame-tool a > span { display: none; }
@@ -76,7 +74,6 @@ main > [class*="container"] { height: 100%; }
 .futuristic-frame.practice .futuristic-frame-content::-webkit-scrollbar { width: 7px; background-color: transparent; }
 .futuristic-frame.practice .futuristic-frame-content::-webkit-scrollbar-track { background-color: transparent; }
 .futuristic-frame.practice .futuristic-frame-content::-webkit-scrollbar-thumb { background-color: #65B5EA; border-radius: 7px; }
-@media screen and (min-width: 420px) { .futuristic-frame.practice .futuristic-frame-content { justify-content: space-evenly; -webkit-justify-content: space-evenly; } }
 .futuristic-frame.practice .futuristic-frame-content .futuristic-frame-tool { position: absolute; top: 0; left: 0; right: 0; z-index: 9; height: calc(1.5rem + 0.325rem); display: flex; flex-direction: row; align-items: center; padding: 0 .75rem; }
 .futuristic-frame.practice .futuristic-frame-content .futuristic-frame-tool a { color: #60acde; line-height: 1; }
 .futuristic-frame.practice .futuristic-frame-content .futuristic-frame-tool a > span { display: none; }
