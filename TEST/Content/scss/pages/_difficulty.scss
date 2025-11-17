@@ -1,0 +1,81 @@
+.difficulty-section{
+	margin-bottom: 3rem;
+	@media screen and (min-width: 576px) and (max-width: 991px) {
+	margin-left: -3rem;
+	margin-right: -3rem;
+	}
+	.difficulty-title{
+		color: $body-color;
+		margin-bottom: 2rem;
+		display: flex;
+		justify-content: center;
+		span{  
+			border-top: 2px solid red;	
+			padding: .25rem 1rem 0 1rem;
+			position: relative;
+			&::before, &::after{ //斜線svg
+				content: "";
+				display: block;
+				width: 0;
+				height: calc(100% - .25em + 2px);
+				padding-left: calc((100% - .25em + 2px) * 36/145*10);
+				position: absolute;
+				top: -1px;
+				bottom: 0;
+				background-color: red; 
+				mask-image: url($slash-svg);
+				mask-repeat: no-repeat;
+				mask-size: auto 100%;
+				transform-origin: top;
+			}
+			&::before{ 
+				transform: translateX(calc(-100% - .25em - 1px)) skewX(-30deg);
+				left: 0;	
+				mask-position: center right;
+			}
+			&::after{  
+				transform: translateX(calc( 100% + .25em + 1px)) skewX( 30deg);
+				right: 0;	
+				mask-position: center left;
+			}
+		}
+		&::before, &::after{  //左右框線
+			content: "";
+			display: block;
+			flex: 1;
+			border-bottom: 2px solid red;
+			transform-origin: top;
+		}
+		&::before{ 
+			border-right: 2px solid red;
+			transform: skewX(-30deg);
+		}
+		&::after{
+			border-left: 2px solid red;
+			transform: skewX(30deg);
+		}
+	}
+	.difficulty-btn{
+		display: block;
+		position: relative;
+		.task-complete{
+			margin-left: 1px;
+			&.easy, &.medium, &.hard{
+				width: calc(1.25rem + .5rem*2 - 8px);
+    			height: calc(1.25rem + .5rem*2 - 8px);
+				font-size: calc(1.25rem + .5rem*2 - 8px);
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%) scale(1.5);
+				transform-origin: left center;
+				&::after{
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+
+
