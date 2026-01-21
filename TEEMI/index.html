@@ -247,7 +247,7 @@ $(function () {
 	if (params.toString() === 'download=1') {
 		const $carousel = $('#downloadCarousel');
 
-		$('#downloadCarousel').find('.item').not(':first').remove();
+		$carousel.find('.item').not(':first').remove();
 
 		if ($carousel.hasClass('owl-loaded')) {
 			$carousel.trigger('destroy.owl.carousel');
