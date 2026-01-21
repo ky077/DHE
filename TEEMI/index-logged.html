@@ -328,32 +328,7 @@ $(function () {
 		resizeTimer = setTimeout(toggleDownloadCarousel, 200);
 	});
 
-
-	//模擬 未登入點系統，跳出訊息
-	$('.section1-btn a').click(function(e){
-			e.preventDefault();
-
-			alertModalDOM('<div class="text-center">請先註冊/登入。</div>');
-
-			switch ($(this).attr('href')){
-					case 'speaking/index.html':
-							$('#alertModal .btn').removeClass('btn-primary').addClass('btn-purple');
-							break;
-
-					case 'writing/index.html':
-							$('#alertModal .btn').removeClass('btn-primary').addClass('btn-teal');
-							break; 
-
-
-					default:
-							break;    
-			}
-
-			//關閉modal後導向登入頁    
-			document.getElementById('alertModal').addEventListener('hide.bs.modal', event => {
-					window.location.href = 'login.html';
-			})
-	});
+	
 	
 	//模擬 學生帳號無下載專區
 	const params = new URLSearchParams(location.search);
