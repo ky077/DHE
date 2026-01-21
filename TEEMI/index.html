@@ -237,12 +237,6 @@ $(function () {
 									break;    
 					}
 			}); 
-		
-		  //模擬網址有 download=1時，只顯示一個item
-		  const params = new URLSearchParams(window.location.search);
-			if (params.toString() === 'download=1') {
-				$('.download-carousel .item').not(':first').remove();
-			} 
 	}); 
 
 	//jQuery load footer
@@ -331,10 +325,13 @@ $(function () {
 		resizeTimer = setTimeout(toggleDownloadCarousel, 200);
 	});
 
+			
+		  //模擬網址有 download=1時，只顯示一個item
+		  const params = new URLSearchParams(window.location.search);
+			if (params.toString() === 'download=1') {
+				$('.download-carousel .item').not(':first').remove();
+			} 
 
-	
-	
-	
 		//模擬 未登入點系統，跳出訊息
 		$('.section1-btn a').click(function(e){
 				e.preventDefault();
