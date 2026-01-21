@@ -206,6 +206,8 @@ header .navbar-nav .navTab-user .nav-link { color: #18ACBA; }
 .news-detail .news-detail-img-caption { color: #6c757d; font-size: 0.875rem; margin-bottom: 1rem; line-height: 1.5; }
 .news-detail .news-detail-img-caption:last-child { margin-bottom: 0; }
 .news-detail .news-detail-text { color: #495057; }
+.news-detail .news-detail-footer { display: flex; flex-wrap: wrap; justify-content: center; text-align: center; }
+@media screen and (max-width: 400px) { .news-detail .news-detail-footer .btn:nth-child(2) { order: 12; } }
 
 .news-detail-img:not(:has(.ratio)) { display: none; }
 

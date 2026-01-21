@@ -107,6 +107,17 @@
 	.news-detail-text{
 		color: $gray-700;
 	}
+	.news-detail-footer{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+		@media screen and (max-width: 400px) {
+		.btn:nth-child(2){
+			order: 12;
+		}
+		}	
+	}
 }
 .news-detail-img:not(:has(.ratio)) {
   display: none;
