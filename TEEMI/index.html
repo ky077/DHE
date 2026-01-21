@@ -242,7 +242,7 @@ $(function () {
 	//jQuery load footer
 	$('footer').load('footer.html');  
 	
-	//模擬 學生帳號無下載專區
+	//模擬 只有一個下載時
 	const params = new URLSearchParams(location.search);
 	if (params.toString() === 'download=1') {
 		const $carousel = $('#downloadCarousel');
@@ -266,7 +266,10 @@ $(function () {
 			nav: true,
 			navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>'],
 			dots: false,
-			items: 3,
+		  responsive: {
+				0: { items: 2 },
+				576: { items: 3 }
+			}
 	});
 
 	//下載專區
@@ -314,7 +317,7 @@ $(function () {
 						],
 						dots: false,
 						responsive: {
-							0: { items: 3 },
+							0: { items: 2 },
 							576: { items: 4 },
 							992: { items: 5 },
 							1200: { items: 6 },
@@ -335,6 +338,18 @@ $(function () {
 	$(window).on('resize', function () {
 		clearTimeout(resizeTimer);
 		resizeTimer = setTimeout(toggleDownloadCarousel, 200);
+	});
+	
+	//owl-carousel Mousewheel
+	$('.owl-carousel').on('mousewheel', '.owl-stage', function (e) {
+		e.preventDefault();
+
+		const $owl = $(this).closest('.owl-carousel');
+		$owl.trigger(
+			e.originalEvent.deltaY > 0
+				? 'next.owl.carousel'
+				: 'prev.owl.carousel'
+		);
 	});
 
 	//模擬 未登入點系統，跳出訊息
