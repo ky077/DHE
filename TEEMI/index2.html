@@ -163,10 +163,8 @@
 $(function () {		
 	//jQuery load header
 	$('header').load('header.html', function(){
-			//jQuery load header (master的話，請拿掉)  
-			$('header').load('header-logged.html', function(){
-					$('.navTab-index .nav-link').addClass('active');//當前頁active狀態 (master的話，請保留此段)   
-			}); 
+			//當前頁active狀態
+			$('.navTab-index .nav-link').addClass('active');
 
 			//模擬 切換語系
 			$('.navTab-lang .dropdown-menu .dropdown-item').click(function(e){

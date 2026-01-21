@@ -1,0 +1,22 @@
+.back-to-top {
+	position: fixed;
+  right: $grid-gutter-width*.5;
+  bottom: 4rem;
+  z-index: 99;
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $primary;
+	border: 0;
+	color: $white;
+	opacity: 1.0;
+	z-index: $zindex-fixed + 1; //1030+1
+	&:hover, &:active{
+		background-color: $secondary;
+		color: $white;
+		opacity: 1.0;
+	}	 
+}

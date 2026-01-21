@@ -1,0 +1,108 @@
+//2026
+.news{
+	background-color: tint-color($secondary, 95%);
+	padding-top: map-get($spacers, 3);
+	padding-bottom: map-get($spacers, 3);
+	min-height: 75vh;
+}
+.news-nav{
+	font-size: $font-size-lg;
+	.nav-link {
+		color: $gray-800;
+		text-underline-offset: .5rem;
+		&:hover, &:focus, &:active, 
+		&.hover, &.focus,{
+			color: $secondary;	
+			text-decoration: none;
+		}
+		&.active{
+			color: $primary;
+			text-decoration: underline;
+		}
+	}
+}
+
+.news-list{
+	margin-bottom: map-get($spacers, 4);
+	.news-list-none{
+		text-align: center;
+		margin: map-get($spacers, 5) auto;
+		color: $secondary;
+	}
+	.news-item{
+		.card{
+			background-color: $white;
+			border: 0;
+			//border-radius: 0;
+			box-shadow: $box-shadow-sm;
+		}
+		.card-title{ 
+			font-size: $font-size-base*1.375;
+			font-weight: 500;
+			line-height: $line-height-base;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+			min-height: calc(1em * #{$line-height-base} * 1);
+			&:hover, &:focus, &:active, 
+			&.hover, &.focus, &.active, {
+				color: $secondary;	
+			}
+			a{
+				color: $body-color;
+				&:hover, &:focus, &:active, 
+				&.hover, &.focus, &.active, {
+					color: $secondary;	
+				}
+			}
+			
+		}
+		.card-text{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 4;
+			-webkit-box-orient: vertical;
+			min-height: calc(1em * #{$line-height-base} * 4);
+			color: $gray-700;
+		}
+		.card-footer{
+			font-size: $font-size-sm;
+			color: $gray-600;
+			background-color: transparent;
+			border: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+
+.news-detail{
+	.news-detail-img{ 
+		width: 41.66666667%;
+		margin-left: map-get($spacers, 3);
+		> .ratio{
+			margin-top: map-get($spacers, 2);
+			margin-bottom: map-get($spacers, 1);
+		}
+	}
+	.news-detail-img-caption{
+		color: $gray-600;
+		font-size: $font-size-sm;
+		margin-bottom: map-get($spacers, 3);
+		line-height: $line-height-base;
+		&:last-child{
+			margin-bottom: 0;	
+		}
+	}
+	.news-detail-text{
+		color: $gray-700;
+	}
+}
+.news-detail-img:not(:has(.ratio)) {
+  display: none;
+}
+

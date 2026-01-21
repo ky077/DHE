@@ -36,3 +36,17 @@
         border-radius: 0 var(--bs-border-radius-pill) var(--bs-border-radius-pill) 0 !important;
     }
 }
+
+.breadcrumb {
+	font-size: $font-size-sm; 
+  .breadcrumb-item {
+    &:not(.active) {
+			a{
+				color: $gray-600; 
+				&:hover {
+					color: $secondary; 
+				}	
+			}
+    }
+  }
+}
