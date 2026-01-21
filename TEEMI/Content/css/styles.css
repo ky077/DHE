@@ -144,6 +144,8 @@ header .navbar-nav .navTab-user .nav-link { color: #18ACBA; }
 .owl-carousel .owl-nav { width: auto; position: absolute; top: 0; right: -.25rem; transform: translateY(calc(-100% - .5rem)); }
 .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next { font-size: .8rem; width: 1.44rem; height: 1.44rem; display: inline-flex; justify-content: center; align-items: center; color: #18ACBA; border: 1px solid #18ACBA; margin: .25rem; }
 .owl-carousel .owl-nav button.owl-prev:hover, .owl-carousel .owl-nav button.owl-next:hover { background-color: #d1eef1; }
+.owl-carousel .owl-nav button.owl-prev.disabled, .owl-carousel .owl-nav button.owl-prev:disabled, .owl-carousel .owl-nav button.owl-next.disabled, .owl-carousel .owl-nav button.owl-next:disabled { opacity: .25; }
+.owl-carousel .owl-nav button.owl-prev.disabled:hover, .owl-carousel .owl-nav button.owl-prev:disabled:hover, .owl-carousel .owl-nav button.owl-next.disabled:hover, .owl-carousel .owl-nav button.owl-next:disabled:hover { background-color: none; }
 
 .index-video { padding-top: 3rem; padding-bottom: 3rem; }
 

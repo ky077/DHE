@@ -375,6 +375,12 @@
 			&:hover{
 				background-color: tint-color($secondary, 80%);
 			}
+			&.disabled, &:disabled{
+				opacity: .25;
+				&:hover{
+					background-color: none;
+				}
+			}
 		}
 	}
 }
