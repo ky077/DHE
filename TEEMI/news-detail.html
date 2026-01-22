@@ -24,7 +24,7 @@
   <a href="#content" title="跳到主要內容" tabindex="1" class="visually-hidden-focusable sr-only-goContent">跳到主要內容</a>
   <header> </header>
   <!-- ------- ------- ------- ------- ------- ------- ------- -->
-  <main id="#content">
+  <main id="content">
     <div class="news">
       <div class="container"> 
         <!-- breadcrumb start -->
@@ -46,13 +46,13 @@
           <div class="pt-4 pb-5">
             <div class="news-detail-img">
               <div class="ratio ratio-16x9"><img src="http://pr.ntnu.edu.tw/archive/news/eb65675cab45a21503389ef5b8ae16fc.jpg" alt="基礎華語課程由張金祝老師與陳家妮老師授課，協助境外新生從基礎發音與日常溝通入門，逐步建立華語學習基礎。"/></div>
-              <div class="news-detail-img-caption">基礎華語課程由張金祝老師與陳家妮老師授課，協助境外新生從基礎發音與日常溝通入門，逐步建立華語學習基礎。</div> 
+              <div class="news-detail-img-caption">基礎華語課程由張金祝老師與陳家妮老師授課，協助境外新生從基礎發音與日常溝通入門，逐步建立華語學習基礎。</div>
               <!-- -->
               <div class="ratio ratio-16x9"><img src="http://pr.ntnu.edu.tw/archive/news/02abdb4bb4cd23b8e6bd00bd584a22b0.jpg" alt="基礎華語課程上課情形"/></div>
-              <div class="news-detail-img-caption">基礎華語課程上課情形</div> 
+              <div class="news-detail-img-caption">基礎華語課程上課情形</div>
               <!-- -->
               <div class="ratio ratio-16x9"><img src="http://pr.ntnu.edu.tw/archive/news/d3ee5a2523d113f92a0487345db05de7.jpg" alt="華語讀書會以小組討論與引導閱讀方式進行，協助具備 B1 程度之境外學生強化閱讀理解與口語表達能力。"/></div>
-              <div class="news-detail-img-caption">華語讀書會以小組討論與引導閱讀方式進行，協助具備 B1 程度之境外學生強化閱讀理解與口語表達能力。</div> 
+              <div class="news-detail-img-caption">華語讀書會以小組討論與引導閱讀方式進行，協助具備 B1 程度之境外學生強化閱讀理解與口語表達能力。</div>
               <!-- --> 
             </div>
             <div class="news-detail-text">
@@ -67,7 +67,7 @@
             </div>
             <div class="clearfix"></div>
           </div>
-          <div class="news-detail-footer"> <a href="news-detail.html?" class="btn btn-link px-4"><i class="fa-solid fa-chevron-left me-1"></i>上一則</a><a href="news.html" class="btn btn-primary rounded-pill px-4">返回消息列表</a><a href="news-detail.html?" class="btn btn-link px-4">下一則<i class="fa-solid fa-chevron-right ms-1"></i></a></div>
+          <div class="news-detail-footer"> <a href="news-detail.html?" class="btn btn-link px-4" aria-label="上一則消息"><i class="fa-solid fa-chevron-left me-1" aria-hidden="true"></i>上一則</a><a href="news.html" class="btn btn-primary rounded-pill px-4">返回消息列表</a><a href="news-detail.html?" class="btn btn-link px-4" aria-hidden="true" aria-label="下一則消息">下一則<i class="fa-solid fa-chevron-right ms-1"></i></a></div>
         </div>
         <!-- news-detail 結束 --> 
       </div>
@@ -76,7 +76,7 @@
   <!-- ------- ------- ------- ------- ------- ------- ------- -->
   <footer class="footer"> </footer>
   <!-- Back to Top --> 
-  <a href="#" class="btn btn-primary rounded-circle back-to-top" style="display: none;" title="返回頂端"><i class="fa-solid fa-arrow-up-long"></i></a> 
+  <a href="#" class="btn btn-primary rounded-circle back-to-top" style="display: none;" title="返回頂端" aria-label="返回頂端"><i class="fa-solid fa-arrow-up-long" aria-hidden="true"></i></a> 
   <!-- ------- ------- ------- ------- ------- ------- ------- --> 
   <!-- ------- ------- ------- ------- ------- ------- ------- --> 
   <!-- ------- ------- ------- ------- ------- ------- ------- --> 
@@ -89,124 +89,11 @@
     //jQuery load header
     $('header').load('header.html', function(){
         //當前頁active狀態
-        $('.navTab-news .nav-link').addClass('active');
-        
-        //模擬 切換語系
-        $('.navTab-lang .dropdown-menu .dropdown-item').click(function(e){
-            e.preventDefault();
-            
-            //取得點取語言
-            let getText = $(this).text();
-            $('.navTab-lang .dropdown-toggle').text(getText);
-
-            //設定html lang=""
-            let getHref = $(this).attr('href').substr(1);
-            $('html').attr('lang', getHref);
-            
-            //模擬 切換語系內容
-            switch( getHref ){
-                case 'zh-Hant-TW': 
-                    $('.navbar-brand h1 img').attr({
-                        'src': 'Content/images/logo_cn-tw.svg',
-                        'alt': '英語文說寫能力檢測平台 (TEEMI) Test of English for English Medium Instruction'
-                    });
-                    
-                    $('.navTab-index a').text('首頁');
-                    $('.navTab-info a').text('更多資訊');
-                    $('.navTab-register a').text('註冊');
-                    $('.navTab-login a').text('登入');
-                    
-                    $('.index-section1 h3').html('EMI課程，你真的準備好了嗎？<br>現在就來評量看看吧！');
-                    $('.index-section1 p').html('英語文說寫能力檢測平台針對EMI課程的學習情境和學科領域內容，協助大專校院學生自我檢視英語口說及英文寫作能力。透過不同題型，學生可以更加理解自己在不同說寫任務的表現；同時，透過即時回饋和作答紀錄，學生得以反覆練習，提升自己的英語文說寫能力。');
-                    
-                    $('.speaking .section1-btn-logo').text('英語口說評量系統');
-                    $('.writing .section1-btn-logo').text('英文寫作評量系統');
-                    
-                    break;
-
-                case 'en-US': 
-                    $('.navbar-brand h1 img').attr({
-                        'src': 'Content/images/logo_en.svg',
-                        'alt': 'TEEMI Test of English for English Medium Instruction'
-                    });
-                    
-                    $('.navTab-index a').text('Home');
-                    $('.navTab-info a').text('More');
-                    $('.navTab-register a').text('Register');
-                    $('.navTab-login a').text('Login');
-                    
-                    $('.index-section1 h3').html('Are you a competent EMI learner?<br>Take TEEMI to find out!');
-                    $('.index-section1 p').html('TEEMI is a platform for assessing college students’ English speaking and writing proficiency in the context of English Medium Instruction (EMI). It provides opportunities for students not only to know their strengths and weaknesses but also to improve their competencies during the process.');
-                    
-                    $('.speaking .section1-btn-logo').text('Speaking');
-                    $('.writing .section1-btn-logo').text('Writing');
-                    
-                    break;
-
-                default:
-                    $('.navbar-brand h1 img').attr({
-                        'src': 'Content/images/logo_cn-tw.svg',
-                        'alt': '英語文說寫能力檢測平台 (TEEMI) Test of English for English Medium Instruction'
-                    });
-                    
-                    $('.navTab-index a').text('Home');
-                    $('.navTab-info a').text('More');
-                    $('.navTab-register a').text('Register');
-                    $('.navTab-login a').text('Login');
-                    
-                    $('.index-section1 h3').html('Are you a competent EMI learner?<br>Take TEEMI to find out!');
-                    $('.index-section1 p').html('TEEMI is a platform for assessing college students’ English speaking and writing proficiency in the context of English Medium Instruction (EMI). It provides opportunities for students not only to know their strengths and weaknesses but also to improve their competencies during the process.');
-                    
-                    $('.speaking .section1-btn-logo').text('英語口說評量系統');
-                    $('.writing .section1-btn-logo').text('英文寫作評量系統');
-                    break;    
-            }
-        }); 
+        $('.navTab-news .nav-link').addClass('active').attr('aria-current','true');
     }); 
       
     //jQuery load footer
     $('footer').load('footer.html');  
-		
-		//首頁輪播carousel
-    $('#videoCarousel').owlCarousel({
-        autoplay: true,
-        autoplayTimeout:  8000,
-        smartSpeed: 3000,
-        loop: true,
-			  margin:20,
-			  video:true,
-        lazyLoad:true,
-        nav: true,
-				navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>'],
-        dots: false,
-        items: 3,
-    });
-     
-    //模擬 未登入點系統，跳出訊息
-    $('a[href="speaking/index.html"], a[href="writing/index.html"]').click(function(e){
-        e.preventDefault();
-        
-        alertModalDOM('<div class="text-center">請先註冊/登入。</div>');
-
-        switch ($(this).attr('href')){
-            case 'speaking/index.html':
-                $('#alertModal .btn').removeClass('btn-primary').addClass('btn-purple');
-                break;
-                
-            case 'writing/index.html':
-                $('#alertModal .btn').removeClass('btn-primary').addClass('btn-teal');
-                break; 
-				
-                
-            default:
-                break;    
-        }
-        
-        //關閉modal後導向登入頁    
-        document.getElementById('alertModal').addEventListener('hide.bs.modal', event => {
-            window.location.href = 'login.html';
-        })
-    });
     </script>
 </form>
 </body>

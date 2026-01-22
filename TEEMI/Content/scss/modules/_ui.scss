@@ -50,3 +50,16 @@
     }
   }
 }
+
+.more-link{
+	font-size: .8rem;
+	color: $secondary;
+	display: inline-flex;
+  align-items: center;
+	&::after{
+		content: "\f054";
+		font-family: "Font Awesome 6 Free"; 
+		font-weight: 900;
+		vertical-align: middle;
+	}
+}
