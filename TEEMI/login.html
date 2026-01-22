@@ -19,7 +19,7 @@
 
 <body>
 <form action="index-logged.html">
-  <a href="#content" title="跳到主要內容" tabindex="1" class="visually-hidden sr-only-goContent">跳到主要內容</a>  
+  <a href="#content" title="跳到主要內容" tabindex="1" class="visually-hidden sr-only-goContent">跳到主要內容</a>
   <header> </header>
   <!-- ------- ------- ------- ------- ------- ------- ------- -->
   <main id="#content">
@@ -34,13 +34,16 @@
             <div class="login-section-block wow animate__animated animate__fadeInUp">
               <h2>登入</h2>
               <div>
-                <div class="mb-3"> <label for="inputEmail" class="form-label mb-0">帳號</label>
-                  <input type="email" class="form-control rounded-pill" id="inputEmail"><!--<input type="email" class="form-control rounded-pill" id="inputEmail" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}.edu.tw" title="格式: xxxxx@xxx.edu.tw" required>-->
+                <div class="mb-3">
+                  <label for="inputEmail" class="form-label mb-0">帳號</label>
+                  <!--<input name="ctl00$Content_body$inputEmail" type="text" id="inputEmail" class="form-control rounded-pill" autocomplete="email" required="True">-->
+									<input name="ctl00$Content_body$inputEmail" type="text" id="inputEmail" class="form-control rounded-pill" autocomplete="email">
                 </div>
-                <div class="mb-3"> <label for="inputPassword" class="form-label mb-0">密碼</label>
+                <div class="mb-3">
+                  <label for="inputPassword" class="form-label mb-0">密碼</label>
                   <div class="input-group rounded-pill">
-                    <input type="password" class="form-control" id="inputPassword">
-										<!--<input type="password" class="form-control" id="inputPassword" pattern="[a-zA-Z0-9]{6,15}" required>-->
+                    <!--<input name="ctl00$Content_body$inputPassword" type="password" id="inputPassword" class="form-control  rounded-pill" pattern="[a-zA-Z0-9]{6,15}" title="格式錯誤" autocomplete="current-password" required="">-->
+										<input name="ctl00$Content_body$inputPassword" type="password" id="inputPassword" class="form-control  rounded-pill" pattern="[a-zA-Z0-9]{6,15}" title="格式錯誤" autocomplete="current-password">
                     <button class="btn btn-outline-gray-400 fun-showHidePD__button" type="button" title="顯示密碼"><i class="fas fa-eye-slash" aria-hidden="true"></i></button>
                   </div>
                 </div>
