@@ -244,18 +244,7 @@ $(function () {
 
 	//jQuery load footer
 	$('footer').load('footer.html');  
-	
-	//模擬 只有一個下載時
-	const params = new URLSearchParams(location.search);
-	if (params.toString() === 'download=1') {
-		const $carousel = $('#downloadCarousel');
 
-		$carousel.find('.item').not(':first').remove();
-
-		if ($carousel.hasClass('owl-loaded')) {
-			$carousel.trigger('destroy.owl.carousel');
-		}
-	}
 
 	//影音資訊
 	$('#videoCarousel').owlCarousel({
