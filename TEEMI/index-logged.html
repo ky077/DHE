@@ -131,7 +131,7 @@
             <h2 class="section-title">下載專區<small>download</small></h2>
             <div class="owl-carousel download-carousel" id="downloadCarousel">
               <div class="item"> <a class="btn btn-secondary btn-sm" data-file-type="file" href="">中心或授課教師團體申請表單</a> </div>
-              <!--<div class="item"> <a class="btn btn-secondary btn-sm" data-file-type="" href="">一般下載</a> </div>
+              <div class="item"> <a class="btn btn-secondary btn-sm" data-file-type="" href="">一般下載</a> </div>
               <div class="item"> <a class="btn btn-secondary btn-sm" data-file-type="file" href="">文件下載</a> </div>
 							<div class="item"> <a class="btn btn-secondary btn-sm" data-file-type="word" href="">Word下載</a> </div>
               <div class="item"> <a class="btn btn-secondary btn-sm" data-file-type="excel" href="">Excel下載</a> </div>
@@ -139,7 +139,7 @@
 							<div class="item"> <a class="btn btn-secondary btn-sm" data-file-type="powerpoint" href="">PowerPoint下載</a> </div>
 							<div class="item"> <a class="btn btn-secondary btn-sm" data-file-type="pdf" href="">PDF下載</a> </div>
               <div class="item"> <a class="btn btn-secondary btn-sm" data-file-type="cloud" href="">雲端下載</a> </div> 
-							<div class="item"> <a class="btn btn-secondary btn-sm" data-file-type="pen" href="">檔案填寫</a> </div> --> 
+							<div class="item"> <a class="btn btn-secondary btn-sm" data-file-type="pen" href="">檔案填寫</a> </div>  
             </div>
           </div>
         </div>
@@ -244,6 +244,18 @@ $(function () {
 
 	//jQuery load footer
 	$('footer').load('footer.html');  
+	
+	//模擬 只有一個下載時
+	const params = new URLSearchParams(location.search);
+	if (params.toString() === 'download=1') {
+		const $carousel = $('#downloadCarousel');
+
+		$carousel.find('.item').not(':first').remove();
+
+		if ($carousel.hasClass('owl-loaded')) {
+			$carousel.trigger('destroy.owl.carousel');
+		}
+	}
 
 	//影音資訊
 	$('#videoCarousel').owlCarousel({
