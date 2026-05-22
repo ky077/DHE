@@ -284,4 +284,7 @@ a.part-item.disabled .part-content .part-content-alert { background-color: #dc35
 .feedback-card-overall { /*整體表現*/ }
 .feedback-card-overall .card-title { background-color: #2E64A6; }
 
+.feedback-card-suggest { /*提升建議*/ }
+.feedback-card-suggest .card-title { background-color: #7B5FC9; }
+
 .feedback-h5::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 100%; background-color: #212529; vertical-align: middle; margin-right: .5rem; }
