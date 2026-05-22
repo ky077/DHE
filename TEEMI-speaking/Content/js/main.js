@@ -453,9 +453,8 @@ function suggestModalDOM(v1, v2, v3, v4, v5) {
                                 </div>
                               </div>
                             </div>
-                            <div class="text-center d-flex justify-content-around"> <a href="feedback.html" role="button" class="btn btn-primary btn-lg rounded-pill px-5 m-3" id="GO_FEEDBACK">以往紀錄及回饋</a> <a href="partIndex.html" role="button" class="btn btn-primary btn-lg rounded-pill px-5 m-3" id="GO_PARTINDEX">Part<label class="mx-1">1</label>首頁</a>
-                              <button type="button" class="btn btn-outline-primary btn-lg rounded-pill px-5 my-3" data-bs-dismiss="modal" id="CLOSE">關閉</button>
-															<button type="button" class="btn btn-primary btn-lg rounded-pill px-5 my-3" id="SUGGEST">口說建議</button>
+                            <div class="text-center d-flex justify-content-around"> 
+                              <button type="button" class="btn btn-outline-primary btn-lg rounded-pill px-5 my-3" data-bs-dismiss="modal" id="CLOSE">關閉BACK</button>
                             </div>
                           </div>
                         </div>

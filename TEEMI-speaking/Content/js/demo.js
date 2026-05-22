@@ -106,16 +106,30 @@ $(document).ready(function () {
           $('#feedbackModal').find('#GO_FEEDBACK, #GO_PARTINDEX').remove();
           $('#feedbackModal h4 label').text($(this).parents('.accordion-item').find('h3 button').text());
           $('#feedbackModal .feedback-h5').text($(this).text());
+					
+					$('#SUGGEST').click(function () {
+						console.log('open suggestModalDOM in click');
+						
+						suggestModalDOM('偏離主題或文意難辨。',
+								'毫無重點，雜亂無章。',
+								'文法、句構多有錯誤，嚴重影響文意表達。',
+								'字彙匱乏，拼字多有錯誤，嚴重影響文意表達。',
+								'你的表現未達到 EMI課程最低英語口說要求。',
+								'你的表現未達到 EMI課程最低英語口說要求。');
+						
+					});
         });
 				
 				$('#SUGGEST').click(function () {
+					console.log('open suggestModalDOM in a');
+					
 					suggestModalDOM('偏離主題或文意難辨。',
 							'毫無重點，雜亂無章。',
 							'文法、句構多有錯誤，嚴重影響文意表達。',
 							'字彙匱乏，拼字多有錯誤，嚴重影響文意表達。',
 							'你的表現未達到 EMI課程最低英語口說要求。',
 							'你的表現未達到 EMI課程最低英語口說要求。');
-					console.log('open suggestModalDOM');
+					
 				});
       });
 
