@@ -116,6 +116,8 @@ $(document).ready(function () {
 								'學習者的發音不夠清晰，尤其是在提到學校名稱時，如 enter you and tea 應為 NTUST，語速不均且有多次停頓，影響了流暢度。',
 								'詞語使用上有多處錯誤，例如 vern technical and evocation of education 應為 vocational and technical education；這些錯誤影響了表達的清晰度和準確性。',
 								'建議學習者加強對學校相關詞彙的準確發音練習，尤其是專有名詞，以提高表達的清晰度。可以通過錄音練習來改善語速和流暢度，嘗試在每個句子之間保持均勻的節奏，減少不必要的停頓。建議學習者多閱讀和練習與學校介紹相關的英文材料，以提高詞彙的準確使用和語法的正確性。');
+          	$('#suggestModal h4 label').text($(this).parents('.accordion-item').find('h3 button').text());
+          	$('#suggestModal .feedback-h5').text($(this).text());
 					});
         });
       });
