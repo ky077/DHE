@@ -468,31 +468,6 @@ function suggestModalDOM(v1, v2, v3, v4, v5) {
   $('#suggestModal').on('hidden.bs.modal', function () {
     $(this).remove();
   });
-
-  //modal 回饋特效(顯示後方題型名稱) 
-  $('#feedbackModal').on('shown.bs.modal', function () {
-    let topH = $('.header').height() + 30;
-
-    if ($(document).height() > $(window).height()) { //網頁有卷軸
-      $('html, body').animate({
-        scrollTop: $('.page').offset().top + topH
-      }, 500);
-    } else { //網頁沒有卷軸
-      $('.page').animate({
-        'margin-top': '-' + topH + 'px'
-      }, 500);
-    }
-
-    $(this).css('padding-top', topH / 2);
-  });
-  $('#feedbackModal').on('hidden.bs.modal', function () {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 500);
-    $('.page').animate({
-      'margin-top': ''
-    }, 500);
-  });
 }
 
 //Loading Spinners 
