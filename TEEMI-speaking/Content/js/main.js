@@ -280,19 +280,6 @@ function feedbackModalDOM(v1, v2, v3, v4) {
                           <div class="modal-body">
                             <h5 class="h6 feedback-h5">2020.10.10</h5>
                             <div class="row row-cols-1 g-0 feedback-card-group px-3">
-															<div class="col">
-                                <div class="card feedback-card-overall">
-                                  <div class="card-body">
-                                    <div class="row">
-                                      <div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/overall.png" alt="overall.png"/> </div>
-                                      <div class="col-10 col-xl-11">
-                                        <h5 class="card-title">整體表現</h5>
-                                        <p class="card-text">` + v4 + `</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
                               <div class="col">
                                 <div class="card feedback-card-text">
                                   <div class="card-body">
@@ -332,10 +319,22 @@ function feedbackModalDOM(v1, v2, v3, v4) {
                                   </div>
                                 </div>
                               </div>
+                              <div class="col">
+                                <div class="card feedback-card-overall">
+                                  <div class="card-body">
+                                    <div class="row">
+                                      <div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/overall.png" alt="overall.png"/> </div>
+                                      <div class="col-10 col-xl-11">
+                                        <h5 class="card-title">整體表現</h5>
+                                        <p class="card-text">` + v4 + `</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                            <div class="text-center d-flex justify-content-around"> <a href="feedback.html" role="button" class="btn btn-primary btn-lg rounded-pill px-5 m-3" id="GO_FEEDBACK">以往紀錄及回饋</a> <a href="partIndex.html" role="button" class="btn btn-primary btn-lg rounded-pill px-5 m-3" id="GO_PARTINDEX">Part<label class="mx-1">1</label>首頁</a>
-                              <button type="button" class="btn btn-outline-primary btn-lg rounded-pill px-5 my-3" data-bs-dismiss="modal" id="CLOSE">關閉</button>
-															<button type="button" class="btn btn-primary btn-lg rounded-pill px-5 my-3" id="SUGGEST">口說建議</button>
+                            <div class="text-center"> <a href="feedback.html" role="button" class="btn btn-primary btn-lg rounded-pill px-5 m-3" id="GO_FEEDBACK">以往紀錄及回饋</a> <a href="partIndex.html" role="button" class="btn btn-primary btn-lg rounded-pill px-5 m-3" id="GO_PARTINDEX">Part<label class="mx-1">1</label>首頁</a>
+                              <button type="button" class="btn btn-primary btn-lg rounded-pill px-5 my-3" data-bs-dismiss="modal" id="CLOSE">關閉</button>
                             </div>
                           </div>
                         </div>
@@ -346,126 +345,6 @@ function feedbackModalDOM(v1, v2, v3, v4) {
   myModal.show();
 
   $('#feedbackModal').on('hidden.bs.modal', function () {
-    $(this).remove();
-  });
-
-  //modal 回饋特效(顯示後方題型名稱) 
-  $('#feedbackModal').on('shown.bs.modal', function () {
-    let topH = $('.header').height() + 30;
-
-    if ($(document).height() > $(window).height()) { //網頁有卷軸
-      $('html, body').animate({
-        scrollTop: $('.page').offset().top + topH
-      }, 500);
-    } else { //網頁沒有卷軸
-      $('.page').animate({
-        'margin-top': '-' + topH + 'px'
-      }, 500);
-    }
-
-    $(this).css('padding-top', topH / 2);
-  });
-  $('#feedbackModal').on('hidden.bs.modal', function () {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 500);
-    $('.page').animate({
-      'margin-top': ''
-    }, 500);
-  });
-}
-
-//suggestModal 口說建議視窗
-function suggestModalDOM(v1, v2, v3, v4, v5) {
-  $('body').append(`<div class="modal fade" id="suggestModal" tabindex="-1" aria-labelledby="suggestModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-                      <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h4 class="modal-title fs-5 text-primary" id="suggestModalLabel"><label class="me-1">Task 1</label>口說建議</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <h5 class="h6 feedback-h5">2020.10.10</h5>
-                            <div class="row row-cols-1 g-0 feedback-card-group px-3">
-															<div class="col">
-                                <div class="card feedback-card-overall">
-                                  <div class="card-body">
-                                    <div class="row">
-                                      <div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/overall.png" alt="overall.png"/> </div>
-                                      <div class="col-10 col-xl-11">
-                                        <h5 class="card-title">整體評析</h5>
-                                        <p class="card-text">` + v4 + `</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col">
-                                <div class="card feedback-card-text">
-                                  <div class="card-body">
-                                    <div class="row">
-                                      <div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/text.png" alt="text.png"/> </div>
-                                      <div class="col-10 col-xl-11">
-                                        <h5 class="card-title">內容評析</h5>
-                                        <p class="card-text">` + v1 + `</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col">
-                                <div class="card feedback-card-phonology">
-                                  <div class="card-body">
-                                    <div class="row">
-                                      <div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/phonology.png" alt="phonology.png"/> </div>
-                                      <div class="col-10 col-xl-11">
-                                        <h5 class="card-title">音韻評析</h5>
-                                        <p class="card-text">` + v2 + `</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col">
-                                <div class="card feedback-card-words">
-                                  <div class="card-body">
-                                    <div class="row">
-                                      <div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/words.png" alt="words.png"/> </div>
-                                      <div class="col-10 col-xl-11">
-                                        <h5 class="card-title">詞語評析</h5>
-                                        <p class="card-text">` + v3 + `</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-														  <div class="col">
-                                <div class="card feedback-card-words">
-                                  <div class="card-body">
-                                    <div class="row">
-                                      <div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/words.png" alt="words.png"/> </div>
-                                      <div class="col-10 col-xl-11">
-                                        <h5 class="card-title">口語能力提升建議</h5>
-                                        <p class="card-text">` + v5 + `</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="text-center d-flex justify-content-around"> <a href="feedback.html" role="button" class="btn btn-primary btn-lg rounded-pill px-5 m-3" id="GO_FEEDBACK">以往紀錄及回饋</a> <a href="partIndex.html" role="button" class="btn btn-primary btn-lg rounded-pill px-5 m-3" id="GO_PARTINDEX">Part<label class="mx-1">1</label>首頁</a>
-                              <button type="button" class="btn btn-outline-primary btn-lg rounded-pill px-5 my-3" data-bs-dismiss="modal" id="CLOSE">關閉</button>
-															<button type="button" class="btn btn-primary btn-lg rounded-pill px-5 my-3" id="SUGGEST">口說建議</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>`);
-
-  var myModal = new bootstrap.Modal(document.getElementById('suggestModal'));
-  myModal.show();
-
-  $('#suggestModal').on('hidden.bs.modal', function () {
     $(this).remove();
   });
 
