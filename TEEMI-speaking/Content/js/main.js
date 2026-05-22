@@ -394,7 +394,7 @@ function suggestModalDOM(v1, v2, v3, v4, v5) {
 																			<div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/overall.png" alt=""/> </div>
 																			<div class="col-10 col-xl-11">
 																				<h5 class="card-title">整體評析</h5>
-																				<p class="card-text">學習者在介紹學校時，內容基本符合要求，但表達上存在發音不清、語速不均及詞語使用不當等問題，影響了整體的溝通效果。</p>
+																				<p class="card-text">` + v1 + `</p>
 																			</div>
 																		</div>
 																	</div>
@@ -407,7 +407,7 @@ function suggestModalDOM(v1, v2, v3, v4, v5) {
 																			<div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/text.png" alt=""/> </div>
 																			<div class="col-10 col-xl-11">
 																				<h5 class="card-title">內容評析</h5>
-																				<p class="card-text">內容方面，學習者提到了學校的創校歷史、技職教育的特色以及國際化的努力，這些都符合題目要求。然而，內容的連貫性稍顯不足，例如在提到學校的國際化時，未能清楚地連接到具體的活動或成就。</p>
+																				<p class="card-text">` + v2 + `</p>
 																			</div>
 																		</div>
 																	</div>
@@ -420,7 +420,7 @@ function suggestModalDOM(v1, v2, v3, v4, v5) {
 																			<div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/phonology.png" alt=""/> </div>
 																			<div class="col-10 col-xl-11">
 																				<h5 class="card-title">音韻評析</h5>
-																				<p class="card-text">學習者的發音不夠清晰，尤其是在提到學校名稱時（如 'enter you and tea' 應為 'NTUST'），語速不均且有多次停頓，影響了流暢度。</p>
+																				<p class="card-text">` + v3 + `</p>
 																			</div>
 																		</div>
 																	</div>
@@ -433,7 +433,7 @@ function suggestModalDOM(v1, v2, v3, v4, v5) {
 																			<div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/words.png" alt=""/> </div>
 																			<div class="col-10 col-xl-11">
 																				<h5 class="card-title">詞語評析</h5>
-																				<p class="card-text">詞語使用上有多處錯誤，例如 'vern technical and evocation of education' 應為 'vocational and technical education'；這些錯誤影響了表達的清晰度和準確性。</p>
+																				<p class="card-text">` + v4 + `</p>
 																			</div>
 																		</div>
 																	</div>
@@ -446,7 +446,7 @@ function suggestModalDOM(v1, v2, v3, v4, v5) {
 																			<div class="col-2 col-xl-1 px-0 px-md-2"> <img src="Content/images/feedback/suggest.png" alt=""/> </div>
 																			<div class="col-10 col-xl-11">
 																				<h5 class="card-title">口語能力提升建議</h5>
-																				<p class="card-text">建議學習者加強對學校相關詞彙的準確發音練習，尤其是專有名詞，以提高表達的清晰度。可以通過錄音練習來改善語速和流暢度，嘗試在每個句子之間保持均勻的節奏，減少不必要的停頓。建議學習者多閱讀和練習與學校介紹相關的英文材料，以提高詞彙的準確使用和語法的正確性。</p>
+																				<p class="card-text">` + v5 + `</p>
 																			</div>
 																		</div>
 																	</div>
@@ -454,7 +454,7 @@ function suggestModalDOM(v1, v2, v3, v4, v5) {
 															</div>
 														</div>
 														 <div class="text-center d-flex justify-content-around">
-															<button type="button" class="btn btn-outline-primary btn-lg rounded-pill px-5 my-3" data-bs-dismiss="modal" id="CLOSE">關閉</button>
+															<button type="button" class="btn btn-outline-primary btn-lg rounded-pill px-5 my-3" data-bs-dismiss="modal" id="CLOSE">返回紀錄及回饋</button>
 														</div>
 													</div>
 												</div>
