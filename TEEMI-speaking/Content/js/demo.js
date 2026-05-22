@@ -107,7 +107,18 @@ $(document).ready(function () {
           $('#feedbackModal h4 label').text($(this).parents('.accordion-item').find('h3 button').text());
           $('#feedbackModal .feedback-h5').text($(this).text());
         });
+				
+				$('#SUGGEST').click(function () {
+					suggestModalDOM('偏離主題或文意難辨。',
+							'毫無重點，雜亂無章。',
+							'文法、句構多有錯誤，嚴重影響文意表達。',
+							'字彙匱乏，拼字多有錯誤，嚴重影響文意表達。',
+							'你的表現未達到 EMI課程最低英語口說要求。',
+							'你的表現未達到 EMI課程最低英語口說要求。');
+					console.log('open suggestModalDOM');
+				});
       });
+
 
       //返回連結 
       a = $('.content > .container > .row > div:last-child a');
