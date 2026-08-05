@@ -25,3 +25,65 @@
         }    
     }
 }
+
+[class*="BOT-select-"]{ //聊天機器人 模式選擇
+	display: block;
+	width: 100%;
+	background-color: rgba($green, .1);
+	border: 2px solid $green-300;
+	border-radius: $border-radius-2xl;
+	box-shadow: $box-shadow-sm;
+	font-size: $h4-font-size;
+	font-weight: 500;
+	margin: 1rem auto;
+	padding: $spacer;
+	text-align: center;
+	transition: $transition-base;
+	.BOT-img{  
+		max-width: 15rem;
+		height: 15rem;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		> img{
+			max-width: 80%;	
+			height: auto;
+		}
+	}
+	&:hover{
+		filter: brightness(1.1);
+		box-shadow: $box-shadow;
+		.BOT-img{ 
+			> img{
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+
+
+.BOT-select-writing{ //聊天機器人  寫作練習
+	color: shade-color($cyan, 10%);
+	.BOT-img{ 
+		background-image: url("../images/BOT-select/BOT-writing-bg.png");
+	}
+	&:hover{
+		color: shade-color($cyan, 10%);
+	}
+}
+
+.BOT-select-speaking{ //聊天機器人 口說練習
+	color: shade-color($yellow, 10%); 
+	.BOT-img{ 
+		background-image: url("../images/BOT-select/BOT-speaking-bg.png");
+	}	
+	&:hover{
+		color: shade-color($yellow, 10%);
+	}
+}
+

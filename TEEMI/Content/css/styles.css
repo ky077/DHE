@@ -91,6 +91,7 @@ header .navbar-nav .navTab-user .nav-link { color: #18ACBA; }
 .index-section1 .section1-btnArea .section1-btn > a .section1-btn-logo > small { display: block; font-weight: normal; }
 .index-section1 .section1-btnArea .section1-btn > a .section1-btn-go { width: 2.2rem; height: 2.2rem; line-height: 2rem; border-radius: 100%; color: #FFF; text-align: center; background-color: #444; position: absolute; right: -1.1rem; top: 50%; margin-top: -1.1rem; }
 .index-section1 .section1-btnArea .section1-btn > a:hover > .section1-btn-go { transform: scale(1.2); }
+.index-section1 .section1-btnArea .section1-btn > a:disabled, .index-section1 .section1-btnArea .section1-btn > a.disabled { filter: grayscale(1) brightness(0.9); opacity: 0.6; cursor: not-allowed; pointer-events: none; }
 .index-section1 .section1-btnArea .section1-btn.speaking > span { background-color: #43469A; }
 .index-section1 .section1-btnArea .section1-btn.speaking::before { background-color: #43469A; }
 .index-section1 .section1-btnArea .section1-btn.speaking::after { background-image: url("../images/index/dot-speaking.svg"); }
@@ -130,8 +131,8 @@ header .navbar-nav .navTab-user .nav-link { color: #18ACBA; }
 @media screen and (min-width: 1800px) { .index-news { margin-top: -7.5rem; } }
 .index-news > [class*="container"] > .row > [class*="col"] { background: #fff; padding-top: 0.5rem; padding-bottom: 1rem; position: relative; }
 .index-news > [class*="container"] > .row > [class*="col"]::before, .index-news > [class*="container"] > .row > [class*="col"]::after { content: ""; display: block; width: 0; height: calc(7.5rem + 1px); padding-left: calc((7.5rem + 1px)*(300/130)); position: absolute; top: 0; background-image: url("../images/index/news-side-bg.png"); background-repeat: no-repeat; background-position: center center; background-size: cover; }
-.index-news > [class*="container"] > .row > [class*="col"]::before { left: 0; transform-origin: left top; transform: rotateY(180deg); }
-.index-news > [class*="container"] > .row > [class*="col"]::after { right: 0; transform: translateX(100%); }
+.index-news > [class*="container"] > .row > [class*="col"]::before { left: 1px; transform-origin: left top; transform: rotateY(180deg); }
+.index-news > [class*="container"] > .row > [class*="col"]::after { right: 1px; transform: translateX(100%); }
 .index-news .section-title { display: flex; margin-bottom: .5rem; }
 .index-news .section-title .more-link { margin-left: auto; }
 .index-news .list-group { --bs-list-group-color: var(--bs-gray-800); --bs-list-group-bg: transparent; --bs-list-group-border-color: rgba(0, 0, 0, 0); --bs-list-group-item-padding-x: 0; --bs-list-group-item-padding-y: 0; }
@@ -234,3 +235,17 @@ header .navbar-nav .navTab-user .nav-link { color: #18ACBA; }
 .indexLogin-section .index-section1 .section1-bg { background-image: none; }
 .indexLogin-section .index-section1 .section1-btnArea { display: flex; justify-content: center; }
 .indexLogin-section .index-section1 .section1-btnArea .section1-btn::before, .indexLogin-section .index-section1 .section1-btnArea .section1-btn::after { display: none; }
+
+[class*="BOT-select-"] { display: block; width: 100%; background-color: rgba(10, 167, 115, 0.1); border: 2px solid #6ccaab; border-radius: 2rem; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); font-size: 1.5rem; font-weight: 500; margin: 1rem auto; padding: 1rem; text-align: center; transition: all 0.2s ease-in-out; }
+[class*="BOT-select-"] .BOT-img { max-width: 15rem; height: 15rem; background-position: center; background-repeat: no-repeat; background-size: 100% auto; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+[class*="BOT-select-"] .BOT-img > img { max-width: 80%; height: auto; }
+[class*="BOT-select-"]:hover { filter: brightness(1.1); box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
+[class*="BOT-select-"]:hover .BOT-img > img { transform: scale(1.1); }
+
+.BOT-select-writing { color: #0cb6d8; }
+.BOT-select-writing .BOT-img { background-image: url("../images/BOT-select/BOT-writing-bg.png"); }
+.BOT-select-writing:hover { color: #0cb6d8; }
+
+.BOT-select-speaking { color: #e6ae06; }
+.BOT-select-speaking .BOT-img { background-image: url("../images/BOT-select/BOT-speaking-bg.png"); }
+.BOT-select-speaking:hover { color: #e6ae06; }

@@ -79,7 +79,7 @@
                 <div class="section1-btnArea">
                   <div class="section1-btn speaking wow animate__animated animate__fadeInDown animate__delay-1s"> <a href="https://ky077.github.io/DHE/TEEMI-speaking/select.html" title="登入後點選進入英語口說評量"> <img src="Content/images/index/icon-speaking.svg" alt="" class="section1-btn-icon"/> <span class="section1-btn-logo">英語口說評量系統</span> <!--<span class="section1-btn-go">go!</span>--> </a></div>
                   <div class="section1-btn writing wow animate__animated animate__fadeInDown animate__delay-1s"> <a href="https://ky077.github.io/DHE/TEEMI-writing/select.html" title="登入後點選進入英文寫作評量"> <img src="Content/images/index/icon-writing.svg" alt="" class="section1-btn-icon"/> <span class="section1-btn-logo">英文寫作評量系統</span> <!--<span class="section1-btn-go">go!</span>--> </a></div>
-                  <div class="section1-btn robot wow animate__animated animate__fadeInDown animate__delay-1s"> <a href="https://ky077.github.io/DHE/TEEMI-robot/index.html" title="登入後點選進入聊天機器人"> <img src="Content/images/index/icon-robot.svg" alt="" class="section1-btn-icon"/> <span class="section1-btn-logo">聊天機器人</span> <!--<span class="section1-btn-go">go!</span>--> </a></div>
+                  <div class="section1-btn robot wow animate__animated animate__fadeInDown animate__delay-1s"> <a href="BOT-select.html" title="登入後點選進入聊天機器人"> <img src="Content/images/index/icon-robot.svg" alt="" class="section1-btn-icon"/> <span class="section1-btn-logo">聊天機器人</span> <!--<span class="section1-btn-go">go!</span>--> </a></div>
                 </div>
               </div>
             </div>
@@ -361,7 +361,29 @@ $(function () {
 		);
 	});
 
+	//[聊天機器人] 模式選擇
+	$('.section1-btn a[href="BOT-select.html"]').click(function(e){
+		e.preventDefault();
 
+		const url = $(this).attr('href');
+
+		$.get(url, function (html) {
+			const $dom = $($.parseHTML(html, document, true));
+			const $modal = $dom.filter('.modal').add($dom.find('.modal')).first();
+
+			if (!$modal.length) return;
+
+			const modalId = $modal.attr('id');
+
+			if (modalId && $('#' + modalId).length) {
+				$('#' + modalId).modal('show'); // Bootstrap 4
+				return;
+			}
+
+			$('body').append($modal);
+			$modal.modal('show'); // Bootstrap 4
+		});
+	});
 });	
 </script>
 </body>
