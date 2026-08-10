@@ -28,17 +28,7 @@ body{
 	background-attachment: fixed;
 	background-position: center center;
 	background-size: cover;
-	&::-webkit-scrollbar{  
-		width: 10px;     
-		background-color: transparent;
-	}  
-	&::-webkit-scrollbar-track {
-		background-color:  transparent;
-	} 
-	&::-webkit-scrollbar-thumb {
-		background-color: $primary;
-		border-radius: 10px;
-	}
+	@include scrollbarStyles;
 }
 
 //主體模板// ************************************************* //
@@ -113,13 +103,7 @@ main{
 			h2:last-child, .h4:last-child{
 				margin-bottom: 0;
 			}
-			&::-webkit-scrollbar{  
-				width: 10px;     
-				background-color: transparent;
-			}  
-			&::-webkit-scrollbar-track {
-				background-color:  transparent;
-			} 
+			@include scrollbarStyles;
 			&::-webkit-scrollbar-thumb {
 				background-color: $gray-500;
 				border: 2px solid $white;
@@ -222,8 +206,8 @@ main{
 	}
 	.futuristic-frame-content{
 		display: flex;
-    	flex-direction: column;
-    	justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;
 		align-items: stretch;
 		height: calc(100% - (1.5rem + #{$futuristic-border}));
 		max-height: calc(100% - (1.5rem + #{$futuristic-border}));
@@ -237,13 +221,10 @@ main{
 		@media screen and (min-width: 1400px) {
 		padding: 3rem 6rem;		
 		}
+		@include scrollbarStyles;
 		&::-webkit-scrollbar{  
 			width: 7px;     
-			background-color: transparent;
 		}  
-		&::-webkit-scrollbar-track {
-			background-color:  transparent;
-		} 
 		&::-webkit-scrollbar-thumb {
 			background-color: $color;
 			border-radius: 7px;
@@ -363,8 +344,8 @@ main{
 		display: block;
 		width: 0;
 		height: 0;
-		border-top: 2rem solid $primary-500;
-		border-right: 2rem solid $primary-500;
+		border-top: 2rem solid transparent;
+		border-left: 2rem solid $primary-500;
 		position: absolute;
 		top: 0;
 		right: 0;

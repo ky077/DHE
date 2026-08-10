@@ -522,28 +522,49 @@ function setHistoryColumns(showLogText) {
     .toggleClass('col-lg-6', !showLogText);
 }
 
+function setHistoryFileClass(historyFile) {
+  const $logText = $('#logText');
+  const previousHistoryClasses = ($logText.attr('class') || '')
+    .split(/\s+/)
+    .filter(function (className) {
+      return className.indexOf('history-') === 0;
+    })
+    .join(' ');
+
+  $logText.removeClass(previousHistoryClasses);
+
+  if (historyFile) {
+    const fileName = String(historyFile).split(/[\\/]/).pop();
+    const historyClass = fileName.replace(/\.html$/i, '');
+
+    if (historyClass.indexOf('history-') === 0) {
+      $logText.addClass(historyClass);
+    }
+  }
+}
+
 function loadHistoryFile(historyFile) {
   const $logText = $('#logText .log-frame .log-txt');
 
+  setHistoryFileClass(historyFile);
+
   $.get(historyFile)
     .done(function (response) {
-      // history-log.html 是完整 HTML 文件，只取 body 內的 DOM，並沿用本頁的 CSS。
+      // 不依賴 historyFile 的 class，直接載入 HTML body 的全部 DOM。
       const historyDocument = new DOMParser().parseFromString(response, 'text/html');
-      const historyContent = historyDocument.querySelector('.chatInterface-content');
-
-      if (historyContent) {
-        // .chatInterface-content 在全站 CSS 預設為 display: none，故只插入其子 DOM。
-        $logText.empty();
-        Array.from(historyContent.children).forEach(function (node) {
-          $logText.append(document.importNode(node, true));
+      const historyNodes = Array.from(historyDocument.body.childNodes)
+        .filter(function (node) {
+          // 排除 HTML 排版產生的空白節點，保留實際文字節點與元素節點。
+          return node.nodeType !== 3 || node.textContent.trim() !== '';
         });
-      } else if (historyDocument.body.children.length > 0) {
-        // 支援沒有 .chatInterface-content，但仍包含 HTML DOM 的歷史檔案。
-        Array.from(historyDocument.body.children).forEach(function (node) {
+
+      if (historyNodes.length > 0) {
+        $logText.empty();
+        historyNodes.forEach(function (node) {
           $logText.append(document.importNode(node, true));
         });
       } else {
-        // history-complete.html、history-suggest.html 目前是純文字檔。
+        // 保留沒有 DOM 的舊檔案相容性。
         $logText.text(response);
       }
     })
@@ -574,6 +595,7 @@ $('#chat-log, #chat-complete, #chat-suggest').on('click', function () {
 
         $('#logText .log-frame .log-txt').text('');
         $('#logText').hide();
+        setHistoryFileClass(null);
         setHistoryColumns(false);
 
         // 依據按鈕顯示 modal 標題
@@ -620,6 +642,7 @@ $('#chat-log, #chat-complete, #chat-suggest').on('click', function () {
         // #logText 清空並隱藏
         $('#logText .log-frame .log-txt').text('');
         $('#logText').hide();
+        setHistoryFileClass(null);
         setHistoryColumns(false);
       });
     }

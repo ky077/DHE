@@ -83,19 +83,9 @@
 	}
 	.modal-body{
 		padding-left: 3rem;
-   		padding-right: 3rem;
+   	padding-right: 3rem;
 		padding-bottom: 2rem;
-		&::-webkit-scrollbar{  
-			width: 10px;     
-			background-color: transparent;
-		}  
-		&::-webkit-scrollbar-track {
-			background-color:  transparent;
-		} 
-		&::-webkit-scrollbar-thumb {
-			background-color: $primary;
-			border-radius: 10px;
-		}
+		@include scrollbarStyles;
 	}
 	
 	.log-title{
@@ -109,23 +99,16 @@
 		border: .325rem solid currentColor;
 		border-radius: $border-radius-xl;
 		overflow-y: auto;
-    	flex: 1;
-		&::-webkit-scrollbar{  
-			width: 10px;     
-			background-color: transparent;
-		}  
-		&::-webkit-scrollbar-track {
-			background-color:  transparent;
-		} 
+    flex: 1;
+		@include scrollbarStyles;
 		&::-webkit-scrollbar-thumb {
-			border-radius: 10px;
 			background-color: currentColor;
 			border-left: 2px solid #fff;
 			border-right: 2px solid #fff;
 		}
 	}
 
-	.log-list{ 
+	.log-list{ //左邊清單
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -155,7 +138,7 @@
 			clip-path: polygon(0 0, 100% $dge-space, 100% calc(100% - #{$dge-space}), 0 100%);
 		}
 	}
-	.log-text{ 
+	.log-text{ //右邊內容
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -178,10 +161,9 @@
 			
 			.log-txt{
 				color: $body-color;
-				white-space: pre-wrap;
-    			//font-family: monospace;
+				//white-space: pre-wrap;
 				padding: 1rem 1.25rem 1rem 2rem + 1.25rem;
-				font-size: .9rem;
+				//font-size: .9rem;
 			}
 		}
 	}
@@ -298,6 +280,103 @@
 		}
 	}	
 }
+
+
+
+//202608 BOT writing
+
+//對話紀錄 右邊樣式
+.log-text.history-log{
+	.log-frame {
+		background-color: tint-color($primary, 95%);
+		.log-txt{
+			.chatInterface-content{
+				font-size: $font-size-sm;	
+				.chatInterface-frame{
+					padding: 1.5rem 0;	
+				}
+			}
+		}
+	}
+}
+//完成作品 右邊樣式
+.log-text.history-complete{
+	.log-frame {
+		.log-txt{
+			.frameBlock-manuscript{
+				padding: 0;
+				clip-path: none;
+				&::before{
+					border-top: 2rem solid $primary-500;
+					border-left: 2rem solid transparent;
+					top: -1rem;
+					right: -1.25rem;	
+				}
+				.manuscript-body{
+					font-size: $font-size-sm;	
+					padding: .5rem;
+					p{
+						cursor: default;	
+						pointer-events: none;
+					}
+				}
+			}
+		}
+	}	
+}
+//語言修改建議 右邊樣式
+.log-text.history-suggest{
+	.log-frame {
+		background-color: tint-color($yellow, 90%);
+		//background-color: lighten($yellow-100, 20%);
+		.log-txt{
+			.frameBlock-edithistory {
+				background-color: transparent;
+				border: 0;
+				border-radius: 0;
+				margin-top: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				.edithistory-body{
+					font-size: $font-size-sm;	
+					padding: .5rem;
+				}
+			}
+		}
+	}	
+}
+
+
+//對話紀錄、完成作品、語言修改建議 標題樣式
+
+.history-log, .history-complete, .history-suggest{
+	[class*="-header"] {
+		border-bottom: 1px solid rgba($primary, .5);
+		color: $primary-600;
+		font-size: $font-size-base;
+		font-weight: 500;
+		margin-bottom: $spacer*.75;
+		padding-bottom: .25rem;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		.header-difficulty{
+			background-color: $primary;
+			border-radius: $border-radius-pill;
+			color: $white;
+			font-size: $sub-sup-font-size;
+			margin-left: .25rem;
+			padding: 0 .5em;
+		}
+		.header-date{
+			color: $text-muted;
+			font-size: $sub-sup-font-size;
+			margin-left: auto;		
+		}
+	}
+}
+
 
 
 
