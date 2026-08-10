@@ -307,6 +307,20 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 
 //202608 BOT writing
+@mixin scrollbarStyles {
+  &::-webkit-scrollbar{  
+		width: 10px;     
+		background-color: transparent;
+	}  
+	&::-webkit-scrollbar-track {
+		background-color:  transparent;
+	} 
+	&::-webkit-scrollbar-thumb {
+		background-color: $primary;
+		border-radius: 10px;
+	}
+}
+
 .cs-flip{
 	transform: rotate(180deg);
 }
@@ -320,8 +334,13 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 		border-radius: $border-radius $border-radius;
 		padding-bottom: calc(#{$btn-font-size} * #{$btn-line-height} + #{$input-padding-y} *2);
 		text-align: left;
-		position: relative;
-		z-index: 2;
+		overflow-y: scroll;
+		@include scrollbarStyles;
+		&::-webkit-scrollbar-thumb {
+			border-radius: 7px;
+			border-left: 2px solid #fff;
+			border-right: 2px solid #fff;
+		}
 	}
 	.contenteditable-btns{
 		background-color: transparent;
@@ -340,21 +359,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 				display: none;
 			}
 		}
-		
-	}
-}
-
-@mixin scrollbarStyles {
-  &::-webkit-scrollbar{  
-		width: 10px;     
-		background-color: transparent;
-	}  
-	&::-webkit-scrollbar-track {
-		background-color:  transparent;
-	} 
-	&::-webkit-scrollbar-thumb {
-		background-color: $primary;
-		border-radius: 10px;
 	}
 }
 
