@@ -1,0 +1,75 @@
+.modal-start{
+	.modal-body{
+		padding-top: 0;
+		padding-bottom: 0;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	} 
+	.robot-frame{ 
+		height: auto;
+		max-height: unset;
+		filter: drop-shadow(#{$box-shadow-sm});
+		.dialog {
+			background-color: transparent;
+			box-shadow: none;
+			.dialog-text {
+				max-height: unset;
+				overflow-y: auto;
+				color: #FFF;
+			}
+			&::before, &::after {
+				display: none;
+			}
+		}
+	}
+}
+
+.guide-img{
+	margin-top: -6vh;
+    position: relative;
+    z-index: 1055;
+	img{
+		max-height: 70vh;
+	}
+}
+.guide-btn{
+	margin: 1rem 0;
+}
+.btn-outline-guide{
+	background-color: $white;
+}
+
+// BOT writing
+.modal-start{
+	.robot-frame + .guide-block{ // BOT writing
+		transform: translateY( calc((#{$modal-inner-padding}*2 + 1.75rem)*-.5) );
+	}
+}
+.guide-block{
+	background-color: $white;
+	border-radius: $modal-content-border-radius;
+	box-shadow: $box-shadow-sm;
+	padding: $modal-inner-padding*2;
+	text-align: left;
+	.guide-block-title{
+		font-size: $h3-font-size;
+		margin-top: 1.25rem;
+		margin-bottom: 1.25rem;
+		text-align: center;	
+	}
+	.guide-block-subtitle{
+		color: $info;
+		font-size: $h5-font-size;
+		font-weight: $font-weight-normal;
+		margin-bottom: 1.25rem;
+		text-align: center;
+	}
+	strong{
+		color: $red;
+	}
+	> [class*="guide-mission-"]{
+		display: none;
+	}
+}

@@ -1,0 +1,75 @@
+{
+  "site": {
+    "name": "TEEMI-Bot",
+    "locale": "zh-Hant-TW",
+    "version": "2026-08-03"
+  },
+  "storage": {
+    "sessionKey": "teemi-bot-writing-session",
+    "retentionHours": 72
+  },
+  "topics": [
+    {
+      "id": "topic-1",
+      "title": "Daily Topic 1",
+      "image": "Content/images/temp-photo/TEEMI-Bot_daily_topic_1.jpg",
+      "status": "done",
+      "completion": { "all": "done", "easy": "done", "medium": "done", "hard": "done" }
+    },
+    {
+      "id": "topic-2",
+      "title": "Daily Topic 2",
+      "image": "Content/images/temp-photo/TEEMI-Bot_daily_topic_2.jpg",
+      "status": "done",
+      "completion": { "all": "pending", "easy": "pending", "medium": "done", "hard": "pending" }
+    },
+    {
+      "id": "topic-3",
+      "title": "Off-Campus Housing",
+      "image": "Content/images/temp-photo/TEEMI-Bot_daily_topic_3.jpg",
+      "status": "active",
+      "completion": { "all": "pending", "easy": "pending", "medium": "pending", "hard": "pending" }
+    },
+    {
+      "id": "topic-4",
+      "title": "Daily Topic 4",
+      "image": "Content/images/temp-photo/TEEMI-Bot_daily_topic_4.jpg",
+      "status": "available",
+      "completion": { "all": "pending", "easy": "pending", "medium": "pending", "hard": "pending" }
+    },
+    {
+      "id": "topic-5",
+      "title": "Daily Topic 5",
+      "image": "Content/images/temp-photo/TEEMI-Bot_daily_topic_5.jpg",
+      "status": "available",
+      "completion": { "all": "pending", "easy": "pending", "medium": "pending", "hard": "pending" }
+    },
+    {
+      "id": "topic-6",
+      "title": "Daily Topic 6",
+      "image": "Content/images/temp-photo/TEEMI-Bot_daily_topic_6.jpg",
+      "status": "available",
+      "completion": { "all": "pending", "easy": "pending", "medium": "pending", "hard": "pending" }
+    }
+  ],
+  "difficultyLevels": [
+    { "id": "en1", "name": "Easy", "status": "done" },
+    { "id": "en2", "name": "Medium", "status": "active" },
+    { "id": "en3", "name": "Hard", "status": "available" }
+  ],
+  "currentTask": {
+    "topicId": "topic-3",
+    "difficultyId": "en2",
+    "status": "active",
+    "durationMinutes": 90,
+    "statusLabel": "任務進行中"
+  },
+  "interface": {
+    "countdownStartSeconds": 5400,
+    "saveMessage": "對話紀錄保留72小時，下一次同一主題練習時輸出",
+    "restartMessage": "之前紀錄將不保留",
+    "loadingMessage": "評語產生中，請稍後",
+    "summaryDelayMs": 5000,
+    "guideSections": ["guide-mission-start", "guide-mission-doing", "guide-mission-continue", "guide-mission-end"]
+  }
+}
