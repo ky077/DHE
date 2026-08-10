@@ -328,7 +328,6 @@
 .log-text.history-suggest{
 	.log-frame {
 		background-color: tint-color($yellow, 90%);
-		//background-color: lighten($yellow-100, 20%);
 		.log-txt{
 			.frameBlock-edithistory {
 				background-color: transparent;
@@ -341,6 +340,25 @@
 				.edithistory-body{
 					font-size: $font-size-sm;	
 					padding: .5rem;
+					&.original{
+						del{
+							color: $danger;
+							background-color: rgba($danger, .25);
+						}
+						strong{
+							background-color: rgba($success, .25);
+							font-weight: $font-weight-normal;
+						}	
+					}
+				}
+				.edithistory-body + .edithistory-header{
+					margin-top: $spacer;
+					+ .edithistory-body{
+						strong{
+							color: $body-color;
+							font-weight: $font-weight-semibold;
+						}	
+					}
 				}
 			}
 		}

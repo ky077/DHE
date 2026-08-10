@@ -325,7 +325,7 @@ main > [class*="container"] { height: 100%; }
 .frameBlock-manuscript .manuscript-body p.active { position: relative; }
 .frameBlock-manuscript .manuscript-body p.active::before { content: ""; display: block; width: calc(100% + .5rem*2); height: calc(100% + .5rem*2); position: absolute; top: -.5rem; left: -.5rem; right: -.5rem; bottom: -.5rem; background-color: #fdf5d7; border: 1px solid #F4CE36; border-left-width: 0.1625rem; border-radius: 0.5rem; z-index: -1; }
 .frameBlock-manuscript .manuscript-body p.active:hover { color: #343a40; }
-.frameBlock-manuscript .manuscript-title { font-weight: bold; }
+.frameBlock-manuscript .manuscript-title { font-weight: 600; }
 
 .frameBlock-edithistory { background-color: #fdf5d7; border: 0.1625rem solid #F4CE36; border-radius: 1rem; margin-top: .5rem; padding: 0.5rem 1rem; display: flex; flex-direction: column; }
 .frameBlock-edithistory .edithistory-header { border-bottom: 1px solid rgba(10, 167, 115, 0.5); color: #08865c; font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; padding-bottom: .25rem; display: flex; }
@@ -335,8 +335,8 @@ main > [class*="container"] { height: 100%; }
 .frameBlock-edithistory .edithistory-body::-webkit-scrollbar-track { background-color: transparent; }
 .frameBlock-edithistory .edithistory-body::-webkit-scrollbar-thumb { background-color: #0AA773; border-radius: 10px; }
 .frameBlock-edithistory .edithistory-body::-webkit-scrollbar { width: 7px; }
-.frameBlock-edithistory .edithistory-body > p { padding-left: 1.25rem; text-indent: -1.25rem; counter-increment: paragraph; }
-.frameBlock-edithistory .edithistory-body > p::before { content: counter(paragraph,decimal-leading-zero); color: #08865c; margin-right: .25rem; font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.frameBlock-edithistory .edithistory-body:not(.original) > p { padding-left: 1.25rem; text-indent: -1.25rem; counter-increment: paragraph; }
+.frameBlock-edithistory .edithistory-body:not(.original) > p::before { content: counter(paragraph,decimal-leading-zero); color: #08865c; margin-right: .25rem; font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 [id*="TEEMI-Bot-"] #face { fill: #fff; }
 [id*="TEEMI-Bot-"] #body, [id*="TEEMI-Bot-"] #rightHand, [id*="TEEMI-Bot-"] #leftHand { fill: #0ADA86; }
@@ -798,6 +798,10 @@ main > [class*="container"] { height: 100%; }
 .log-text.history-suggest .log-frame { background-color: #fefaeb; }
 .log-text.history-suggest .log-frame .log-txt .frameBlock-edithistory { background-color: transparent; border: 0; border-radius: 0; margin-top: 0; padding: 0; display: flex; flex-direction: column; }
 .log-text.history-suggest .log-frame .log-txt .frameBlock-edithistory .edithistory-body { font-size: 0.875rem; padding: .5rem; }
+.log-text.history-suggest .log-frame .log-txt .frameBlock-edithistory .edithistory-body.original del { color: #dc3545; background-color: rgba(220, 53, 69, 0.25); }
+.log-text.history-suggest .log-frame .log-txt .frameBlock-edithistory .edithistory-body.original strong { background-color: rgba(10, 167, 115, 0.25); font-weight: 400; }
+.log-text.history-suggest .log-frame .log-txt .frameBlock-edithistory .edithistory-body + .edithistory-header { margin-top: 1rem; }
+.log-text.history-suggest .log-frame .log-txt .frameBlock-edithistory .edithistory-body + .edithistory-header + .edithistory-body strong { color: #343a40; font-weight: 600; }
 
 .history-log [class*="-header"], .history-complete [class*="-header"], .history-suggest [class*="-header"] { border-bottom: 1px solid rgba(10, 167, 115, 0.5); color: #08865c; font-size: 1rem; font-weight: 500; margin-bottom: 0.75rem; padding-bottom: .25rem; display: flex; flex-direction: row; align-items: center; }
 .history-log [class*="-header"] .header-difficulty, .history-complete [class*="-header"] .header-difficulty, .history-suggest [class*="-header"] .header-difficulty { background-color: #0AA773; border-radius: 50rem; color: #fff; font-size: 0.75em; margin-left: .25rem; padding: 0 .5em; }
