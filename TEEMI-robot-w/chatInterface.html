@@ -50,9 +50,9 @@
 </header>
 <main id="content">
   <!-- Modal#start -->
-  <div class="modal fade show modal-start" tabindex="-1" style="display: block;" aria-modal="true" role="dialog">
+  <div class="modal fade show modal-start" id="modalStart" tabindex="-1" role="dialog" aria-modal="true" aria-hidden="false" style="display: block;">
     <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content border-0 bg-black bg-opacity-75">
+      <div class="modal-content border-0 bg-transparent">
         <div class="modal-body py-0 text-center">
           <div class="d-inline-flex flex-column">
             <!-- robot-frame START -->
@@ -296,25 +296,6 @@
 <!-- This web Javascript -->
 <script src="Content/js/main.js"></script>
 <script>
-//開始
-$("#start").click(function () { 
-	$(".modal-start").hide();
-});
-	
-//[暫存並離開]
-$('#saveAndExit').click(function (e) { 
-	e.preventDefault();
-	
-	var _href= $(this).attr('href');
-	
-	confirmModalDOM(`<div class="text-center">對話紀錄保留72小時，<br>下一次同一主題練習時輸出。</div>`);
-	
-	$('#OK').click(function () { 
-		window.location = _href;	
-	});
-});
-</script>
-<script>
 (function ($) {
   // 既有版型 DOM 保留；這裡只負責初始化顯示狀態、事件與流程。
   var defaultMissionData = {
@@ -333,6 +314,9 @@ $('#saveAndExit').click(function (e) {
   var remainingSeconds = 0;
   var analysisCount = 0;
   var isSummaryLoading = false;
+  var modalStart = bootstrap.Modal.getOrCreateInstance(
+    document.getElementById('modalStart')
+  );
 
   function guideSections() {
     return $('.guide-mission-pending, .guide-mission-activing, .guide-mission-continue, .guide-mission-done, .guide-mission-end');
@@ -409,7 +393,8 @@ $('#saveAndExit').click(function (e) {
   }
 
   function revealTaskContent(mode) {
-    $('.modal-start').hide();
+    modalStart.hide();
+
     $('.chatInterface-content, .manuscript-body').css('display', 'block');
     $('.frameBlock-edithistory').hide();
     scrollChat();
@@ -521,7 +506,7 @@ $('#saveAndExit').click(function (e) {
     setTimeout(function () {
       isSummaryLoading = false;
       showMissionGuide('guide-mission-end');
-      $('.modal-start').show();
+      modalStart.show();
     }, 1000);
   };
 
@@ -529,6 +514,7 @@ $('#saveAndExit').click(function (e) {
     $('.chatInterface-content, .manuscript-body, .frameBlock-edithistory').hide();
     initializeCountdown();
     applyInitialGuide();
+    modalStart.show();
 
     // 開始任務／繼續任務都關閉 modal-start、顯示原有內容並啟動 90 分鐘倒數。
     $('#start').off('click').on('click', function () {
