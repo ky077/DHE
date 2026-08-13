@@ -192,19 +192,20 @@ main{
 	.futuristic-frame-content{
 		display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    //justify-content: space-between;
+		justify-content: space-evenly; //待確認IOS
 		align-items: stretch;
 		height: calc(100% - (1.5rem + #{$futuristic-border}));
 		max-height: calc(100% - (1.5rem + #{$futuristic-border}));
 		overflow-X: hidden;
 		overflow-y: scroll;
-		padding: 3rem 1.5rem;
+		padding: 1.5rem 1.5rem 3rem 1.5rem;
 		margin-top: calc(1.5rem + #{$futuristic-border});
 		@media screen and (min-width: 576px) and (max-width: 991px) {
-		padding: 3rem 6rem;	
+		padding: 1.5rem 6rem 3rem 6rem;	
 		}
 		@media screen and (min-width: 1400px) {
-		padding: 3rem 6rem;		
+		padding: 1.5rem 6rem 3rem 6rem;	
 		}
 		@include scrollbarStyles;
 		&::-webkit-scrollbar{  
@@ -254,16 +255,16 @@ main{
 .split-flex{
 	height: 100%;
 	display: flex;
-	flex-direction: column-reverse;
+	flex-direction: column;
 	@media screen and (min-width: 768px) {
 	flex-direction: row;
 	}
-	.report-frame {
+	.report-frame { 
 		width: 100%;
 		height: 40%;
 		max-width: 100%;
 		max-height: 40%;
-		order: 1;	
+		order: 2;	
 		padding-top: 1rem;
 		@media screen and (min-width: 768px) {
 		width: 40%;
@@ -272,7 +273,7 @@ main{
 		max-height: 100%;
 		order: 2;		
 		padding-left: 1rem;
-		padding-bottom: .25rem;	
+		padding-bottom: 1rem;	
 		}
 		.frameBlock{
 			height: 100%;
@@ -284,17 +285,21 @@ main{
 				flex: 1;
 			}
 			.frameBlock-edithistory{ // 你的修改紀錄
+				height: 40%;
+				max-height: 40%;	
+				@media screen and (min-width: 768px) {
 				height: 20%;
-				max-height: 20%;	
+				max-height: 20%;		
+				}
 			}
 		}
 	}
-	.futuristic-frame { 
+	.futuristic-frame {   
 		width: 100%;
 		height: calc(60% - 1rem);
 		max-width: 100%; 
 		max-height: calc(60% - 1rem);
-		order: 2;
+		order: 1;
 		padding-top: 1rem;
 		@media screen and (min-width: 768px) {
 		width: 60%;
@@ -381,7 +386,7 @@ main{
 	background-color: $yellow-100;
 	border: .325rem*.5 solid $yellow;
 	border-radius: $border-radius-xl;
-	margin-top: .5rem;
+	margin-top: .75rem;
 	padding: $spacer*.5 $spacer;
 	display: flex;
   flex-direction: column;

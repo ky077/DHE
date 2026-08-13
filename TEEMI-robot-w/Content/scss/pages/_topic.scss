@@ -1,12 +1,12 @@
 //待確認改名
 .topic-section{ 
 	margin-top: 1.5rem;
-	margin-bottom: 3rem;
 	text-align: center;
 	.card{
 		flex-direction: row;
 		align-items: center;
 		padding: 0;
+		margin-bottom: map-get($spacers, 3);
 		&.pe-none{
 			color: $gray-600;
 			border-color: $gray-300;
@@ -30,6 +30,12 @@
 				margin-bottom: .25rem;
 				text-align: left;
 				position: relative;
+				max-height: 3em *$headings-line-height;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
 				&:last-child{
 					margin-bottom: 0;
 				}
