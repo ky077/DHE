@@ -178,7 +178,7 @@ main{
 		&::before{
 			content: "";
 			display: block;
-			width: 65%;
+			width: 50%;
 			height: calc(1.5rem + #{$futuristic-border});
 			clip-path: polygon(0 0%, 100% 0, 100% 100%, 1.5rem 100%);
 			background-color: $color;
@@ -187,6 +187,9 @@ main{
 			right: 0;
 			z-index: 5;
 			border-radius: 0 $border-radius-xl*.5 0 0;
+			@media screen and (min-width: 576px) {
+			width: 70%;	
+			}
 		}
 	}
 	.futuristic-frame-content{
