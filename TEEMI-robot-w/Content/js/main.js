@@ -1,4 +1,7 @@
 $(document).ready(function () {
+	//Initiate the wowjs
+  new WOW().init();
+	
   //初始化BS Tooltips
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
