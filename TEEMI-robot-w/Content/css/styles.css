@@ -670,7 +670,7 @@ main > [class*="container"] { height: 100%; }
 
 .index-btn.practice .btn:hover + i { color: #237DAF; transition: all 1s cubic-bezier(0.19, 1, 0.22, 1); }
 
-.topic-section { margin-top: 1.5rem; text-align: center; }
+.topic-section { margin-top: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
 .topic-section .card { flex-direction: row; align-items: center; padding: 0; margin-bottom: 1rem; }
 .topic-section .card.pe-none { color: #6c757d; border-color: #dee2e6; }
 .topic-section .card .card-img { width: 30%; flex: 0 0 30%; overflow: hidden; margin-bottom: auto; }
