@@ -11,9 +11,9 @@
 }
 [class*="index-section"]{
     .section1-title{
-        font-size: 1.8rem; 
-        font-weight: 700; 
-        color: $teal;
+      font-size: 1.8rem; 
+      font-weight: 700; 
+      color: $teal;
     }
     p{
         font-size: 1.1rem;
@@ -34,7 +34,7 @@
 		@media screen and (min-width: 1400px) {  
     background-position: left calc(50% + 5rem) center; 
     }  	
-    }   
+    }  
     h2, .section1-title{
 			line-height: 1.8;
 			padding-left: .75rem;
@@ -47,9 +47,27 @@
 			padding-left: 0;		
 			white-space: nowrap;
 			}
+			margin-top: 1rem;
+			position: relative;
+			&::before{
+				content: "";
+				display: block;
+				width: 2.5em;
+				height: 5px;
+				background-color: $secondary;
+				position: absolute;
+				top: -.5rem;
+				left: .75rem;
+				@media screen and (min-width: 992px) {
+				left: 1.5rem;	
+				}
+				@media screen and (min-width: 1200px) {
+				left: 0;		
+				}
+			}
 			>img{
 					width: 100%;
-					max-width: 320px;    
+					max-width: 320px; 
 			}
 			>small{
 					display: block;

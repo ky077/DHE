@@ -1,14 +1,13 @@
 .footer{
     position: relative;
     z-index: 1030;
-	
 }
 
 .footer-info{
 	background-color: $purple-900;
 	color: #FFF;
 	padding-top: 1rem;
-	padding-bottom: .5rem;
+	padding-bottom: 1rem;
 	text-align: center;
 	@media screen and (min-width: 992px) {
 	text-align: left;	
@@ -71,10 +70,35 @@
 			text-indent: -1.8rem;
 		}
 	}
-	.footer-logo-img{
-		margin: 1rem auto;
+	
+	.footer-info__link{
+		text-align: center;
 		@media screen and (min-width: 992px) {
-		margin-top: 6rem;	
+		height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+		}
+		@media screen and (min-width: 1200px) {
+    flex-direction: row;
+    align-items: center;
+			padding-top: 6rem;
+		}	
+
+		.link-social{ 
+			@media screen and (min-width: 992px) {
+			margin-bottom: 1.5rem;	
+			}
+			@media screen and (min-width: 1200px) {
+			margin-bottom: 0;
+			margin-right: auto;	
+			}
+			> a{
+				display: inline-block;
+				width: 2.4rem;
+				height: 2.4rem;
+				margin: .5rem;	
+			}
 		}
 	}
 }

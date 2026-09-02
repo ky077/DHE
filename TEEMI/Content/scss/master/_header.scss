@@ -63,6 +63,7 @@ header{
             margin-bottom: .25rem;
         }
         .nav-link {
+					white-space: nowrap;
             &:hover, &:focus, &:active{
                 color: $secondary;    
             }
@@ -85,5 +86,9 @@ header{
                 color: $secondary;      
             } 
         }
+			
+				.dropdown-menu{
+					min-width: 100%;	
+				}
     }
 }
