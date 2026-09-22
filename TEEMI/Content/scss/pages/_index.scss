@@ -1,13 +1,37 @@
 .index-banner{
 	background-color: $purple;
-	background-image: url("../images/index/banner-bg.jpg");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
 	position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 37.96875%;
+	width: 100%;
+	height: 0;
+	padding-bottom: 37.96875%;
+	
+	.carousel-control-prev, 
+	.carousel-control-next{
+		width: 10%;
+		opacity: 1.0;
+		&:hover {
+			.carousel-control-prev-icon, .carousel-control-next-icon {
+				transform: scale(1.25);	
+			}
+		}
+	}
+	.carousel-control-prev-icon {
+		background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$purple}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>"));
+	}
+	.carousel-control-next-icon {
+		background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$purple}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>"));
+	}
+	
+	//只有一個輪播，則關閉箭頭與指標
+	.carousel{
+		&:has(.carousel-inner > .carousel-item:only-child){
+		  .carousel-control-prev,
+			.carousel-control-next,
+			.carousel-indicators {
+				display: none;
+			}
+		}
+	}
 }
 [class*="index-section"]{
     .section1-title{
